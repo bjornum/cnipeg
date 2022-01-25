@@ -6,9 +6,11 @@
 
 <script>
 export default {
-  name: 'Digital Learning Design',
+  name: 'Digital-Learning-Design',
   data(){
-
+    return {
+      
+    }
   }
 }
 </script>

@@ -6,9 +6,11 @@
 
 <script>
 export default {
-  name: 'Digital Pedagogical Strategy',
+  name: 'Digital-Pedagogical-Strategy',
   data(){
-
+    return {
+      
+    }
   }
 }
 </script>

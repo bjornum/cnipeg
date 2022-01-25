@@ -6,9 +6,11 @@
 
 <script>
 export default {
-  name: 'Training Modules',
+  name: 'Training-Modules',
   data(){
-
+    return {
+      
+    }
   }
 }
 </script>
