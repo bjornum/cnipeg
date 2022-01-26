@@ -1,6 +1,9 @@
 <template>
   <div>
-    Digital Pedagogical Strategy
+    <v-row>
+      <v-col cols="12" class="mt-5"></v-col>
+      <v-col>Digital Pedagogical Strategy</v-col>
+    </v-row>
   </div>
 </template>
 

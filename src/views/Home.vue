@@ -1,6 +1,9 @@
 <template>
   <div>
-    Home
+    <v-row>
+      <v-col cols="12" class="mt-5"></v-col>
+      <v-col>Home</v-col>
+    </v-row>
   </div>
 </template>
 

@@ -1,6 +1,9 @@
 <template>
-  <div class="about">
-    <h1>This is an about page</h1>
+  <div>
+    <v-row>
+      <v-col cols="12" class="mt-5"></v-col>
+      <v-col>This is the About Game</v-col>
+    </v-row>
   </div>
 </template>
 
