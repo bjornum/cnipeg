@@ -1,6 +1,5 @@
 <template>
   <div>
-
     <!-- FIX -->
     <v-dialog v-model="contactDialog" scrollable persistent max-width="500px" transition="dialog-transition">
       <v-card light>
@@ -12,12 +11,12 @@
           </v-btn>
         </v-card-title>
         <v-card-text>
-          <v-form ref="form" v-model="valid">
+          <v-form ref="form" v-model="isContactFormValid">
             <v-container>
-              <v-text-field v-model="form.name" name="name" label="Name" :rules="[rules.requiredName]" outlined dense required></v-text-field>
-              <v-text-field v-model="form.email" name="email" label="Email" :rules="[rules.requiredEmail, rules.emailRequirement]" outlined dense required></v-text-field>
-              <v-text-field v-model="form.subject" name="subject" label="Subject" :rules="[rules.requiredField]" outlined dense required></v-text-field>
-              <v-textarea v-model="form.message" name="message" label="Message" :rules="[rules.requiredField]" outlined auto-grow counter required></v-textarea>
+              <v-text-field v-model="contactFormData.name" name="name" label="Name" :rules="[rules.requiredName]" outlined dense required></v-text-field>
+              <v-text-field v-model="contactFormData.email" name="email" label="Email" :rules="[rules.requiredEmail, rules.emailRequirement]" outlined dense required></v-text-field>
+              <v-text-field v-model="contactFormData.subject" name="subject" label="Subject" :rules="[rules.requiredField]" outlined dense required></v-text-field>
+              <v-textarea v-model="contactFormData.message" name="message" label="Message" :rules="[rules.requiredField]" outlined auto-grow counter required></v-textarea>
             </v-container>
           </v-form>
         </v-card-text>
@@ -25,7 +24,7 @@
         <v-card-actions>
           <v-spacer></v-spacer>
           <v-btn icon @click="clearForm"><v-icon>mdi-close</v-icon></v-btn>
-          <v-btn color="success" icon :disabled="!valid" @click="getGuid" ><v-icon>mdi-send</v-icon></v-btn>
+          <v-btn color="success" icon :disabled="!isContactFormValid" @click="postContactForm()"><v-icon>mdi-send</v-icon></v-btn>
         </v-card-actions>
       </v-card>
     </v-dialog>
@@ -43,17 +42,16 @@
 export default {
   data() {
     return {
-      formSubject: '',
       contactDialog: false,
       contactToast: false,
-      valid: true,
+      isContactFormValid: true,
       // The formObject to send into the database
-      form: {
+      contactFormData: {
         name: '',
         email: '',
         message: '',
         subject: '',
-        sentFrom: 'Qubast'
+        sentFrom: 'Digiped z gen'
       },
       // Rules for the contact Form
       rules:{
@@ -67,52 +65,46 @@ export default {
 
   methods: {
 
-    // Get Guid
-    getGuid(){
-      const pubRef = this.$fireDbObj().ref('public');
-      const guidRef = pubRef.child('follow-up/guid');
-      guidRef.once("value").then( (data) => {
-        this.postContactForm(data.val())
-      }) 
+    // Open the Contact Form
+    openContactDialog(){
+      // Can include parent data if needed
+      this.contactDialog = true;
     },
 
-    // Send Contact Form to CRM/contactform
-    postContactForm(tenantGUID){
-      const ContactForm = {
-        name: this.form.name,
-        email: this.form.email,
-        subject: this.form.subject,
-        message: this.form.message,
-        sentFrom: this.form.sentFrom
-      }
-      // Send it away
-      this.$axios.post('/crm/contactform/' + tenantGUID, ContactForm).then(()=> {
-        this.messageSent()
-        this.closeContact()
-      })
-    },
-
-    // Open the contact form
-    openContact(formSubject) {
-      this.form.subject = formSubject
-      this.contactDialog = true
-    },
-
-    // Toasty - look into
-    messageSent() {
-      this.contactToast = true
-    },
-
-    // Close and clean the form submit/close
+    // Reset and Close Contact Form
     closeContact() {
       this.$refs.form.reset()
       this.contactDialog = false
     },
 
-    // Clearing form fields
+    // Clear Form data
     clearForm() {
       this.$refs.form.reset()
     },
-  },
+
+    // Message sent through Toast
+    messageSent() {
+      this.contactToast = true
+    },
+
+    // Post Function (Toast, Reset and Close dialog)
+    postContactForm(){
+      const ContactForm = {
+        name: this.contactFormData.name,
+        email: this.contactFormData.email,
+        subject: this.contactFormData.subject,
+        message: this.contactFormData.message,
+        sentFrom: this.contactFormData.sentFrom
+      };
+      console.log("Sending Contact Form", ContactForm);
+      this.messageSent();
+      this.closeContact();
+      // Post it to DB
+      // this.$axios.post('URL' + IfNeedingGuid, ContactForm).then(()=> {
+      //   this.messageSent()
+      //   this.closeContact()
+      // })
+    },
+  }
 }
 </script>
