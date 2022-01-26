@@ -1,6 +1,7 @@
 <template>
   <v-app>
     <Navbar></Navbar>
+    <!-- <NavbarPhone></NavbarPhone> -->
 
     <v-main>
       <router-view/>
@@ -10,10 +11,12 @@
 
 <script>
 import Navbar from "@/components/Global/Navbar.vue"
+import NavbarPhone from "@/components/Global/NavbarPhone.vue"
 export default {
   name: 'App',
   components:{
-    Navbar
+    Navbar,
+    NavbarPhone
   },
   data(){
     return {

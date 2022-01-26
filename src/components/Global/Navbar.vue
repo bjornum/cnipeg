@@ -37,7 +37,7 @@
       <v-btn text to="/digitallearningdesign">Digital Learning Design</v-btn>
       <v-btn text to="/digitalpedagogicalstrategy">Digital Pedagogical Strategy</v-btn>
       <v-btn text @click="$refs.OpenContactForm.openContactDialog()">Contact</v-btn>
-      <v-btn icon @click="$refs.contactForm.openContact()">
+      <v-btn icon @click="$refs.OpenContactForm.openContactDialog()">
         <v-icon>mdi-email-outline</v-icon>
       </v-btn>
     </div>
@@ -46,7 +46,7 @@
     <v-spacer></v-spacer>
     <!-- Login -->
     <div class="mt-5">
-      <v-btn text>Login</v-btn>
+      <v-btn text href="https://app.followup.prios.no/#/login" target="_blank">Login</v-btn>
     </div>
   </v-app-bar>
 </template>
