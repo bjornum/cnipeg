@@ -12,11 +12,16 @@
 <script>
 import Navbar from "@/components/Global/Navbar.vue"
 import NavbarPhone from "@/components/Global/NavbarPhone.vue"
+import LanguageTest from "@/components/TestAndDevelopment/LanguageTest.vue"
+import SelectLocale from "@/components/TestAndDevelopment/SelectLocale.vue"
+
 export default {
   name: 'App',
   components:{
     Navbar,
-    NavbarPhone
+    NavbarPhone,
+    LanguageTest,
+    SelectLocale
   },
   data(){
     return {
