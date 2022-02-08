@@ -6,6 +6,7 @@ import Newss from '../views/News.vue'
 import TrainingModules from '../views/TrainingModules.vue'
 import DigitalLearningDesign from '../views/DigitalLearningDesign.vue'
 import DigitalPedagogicalStrategy from '../views/DigitalPedagogicalStrategy.vue'
+import Resources from '../views/Resources.vue'
 
 Vue.use(VueRouter)
 
@@ -16,7 +17,7 @@ const routes = [
   { path: '/trainingmodules', name: 'TrainingModules', component: TrainingModules },
   { path: '/digitallearningdesign', name: 'DigitalLearningDesign', component: DigitalLearningDesign },
   { path: '/digitalpedagogicalstrategy', name: 'DigitalPedagogicalStrategy', component: DigitalPedagogicalStrategy },
-  
+  { path: '/resources', name: 'Resources', component: Resources },
 ]
 
 const router = new VueRouter({

@@ -8,13 +8,7 @@
     </div> -->
     <!-- <v-img src="img/DIGI_logo.png" height="40" width="260px" contain/> -->
 
-    <v-img
-        class="mt-8 ml-10"
-         src="img/DIGI_logo.png"
-        max-height="80"
-        max-width="80"
-        contain
-      ></v-img>
+    <v-img class="mt-8 ml-10" src="img/DIGI_logo.png"  max-height="80" max-width="80" contain></v-img>
     <v-spacer></v-spacer>
     <!-- Links -->
     <!-- 
@@ -34,8 +28,9 @@
       <v-btn text to="/about">About</v-btn>
       <v-btn text to="/news">News</v-btn>
       <v-btn text to="/trainingmodules">Training Modules</v-btn>
-      <v-btn text to="/digitallearningdesign">Digital Learning Design</v-btn>
-      <v-btn text to="/digitalpedagogicalstrategy">Digital Pedagogical Strategy</v-btn>
+      <v-btn text to="/resources">Resources</v-btn>
+      <!-- <v-btn text to="/digitallearningdesign">Digital Learning Design</v-btn> -->
+      <!-- <v-btn text to="/digitalpedagogicalstrategy">Digital Pedagogical Strategy</v-btn> -->
       <v-btn text @click="$refs.OpenContactForm.openContactDialog()">Contact</v-btn>
       <v-btn icon @click="$refs.OpenContactForm.openContactDialog()">
         <v-icon>mdi-email-outline</v-icon>
