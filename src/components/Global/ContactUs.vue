@@ -51,7 +51,7 @@ export default {
         email: '',
         message: '',
         subject: '',
-        sentFrom: 'Digiped z gen'
+        sentFrom: 'DigiPedZgen'
       },
       // Rules for the contact Form
       rules:{
