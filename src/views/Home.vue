@@ -1,6 +1,7 @@
 <template>
   <div>
     <NewsDialog ref="openingNewsDialog"></NewsDialog>
+    <RssDialog ref="openingRssDialog"></RssDialog>
 
     <v-snackbar v-model="contactToast" dark color="success">
       <span>The message has been sent!</span>
@@ -12,8 +13,9 @@
       <v-col cols="12" class="mt-5"></v-col>
       <!-- BIG Title, center of screen -->
       <v-col cols="12" class="pb-0">
-        <v-card class="pt-15 pb-15">
-          <p class="text-center title pt-15 pb-15">Massiv Title</p>
+        <v-card class="pt-15 pb-3">
+           <v-img src="https://www.ordetbetyr.com/images/ordetbetyr/og/228/tittel.png" alt="Eksempel BakgrunnsBilde" max-height="500px" stretch class="ml-1"></v-img>
+          <!-- <p class="text-center title pt-15 pb-15">Massiv Title</p> -->
         </v-card>
       </v-col>
       <!-- 3 Cards in center of cards -->
@@ -49,7 +51,7 @@
                 </v-col>
                 <v-col cols="12" style="min-height: 50px;">
                   <v-card-actions class="pb-5">
-                    <v-btn block style="background-color:hotpink;">asd</v-btn>
+                    <v-btn block>Åpne Nyhet</v-btn>
                   </v-card-actions>
 
                 </v-col>
@@ -65,13 +67,13 @@
           <!-- half screen RSS FEED -->
           <v-col cols="1"></v-col>
           <v-col cols="4">
-            <v-card>
+            <v-card height="100%">
               <p class="text-center title mb-0 pt-5 pb-5">RSS Feed</p>
               <v-divider></v-divider>
               <v-row>
                 <v-col cols="12" v-for="(rssFeed, rssFeedIndex) in fakeRSSfeed" :key="rssFeedIndex">
-                  <v-row>
-                    <v-col cols="2">
+                  <v-row >
+                    <v-col cols="2"  @click="$refs.openingRssDialog.openRssDialog(rssFeed)">
                       <v-img v-if="rssFeed.image" :src="rssFeed.image" alt="News Image" max-height="50px" contain class="ml-1"></v-img>
                     </v-col>
                     <v-col cols="1"></v-col>
@@ -122,10 +124,12 @@
 
 <script>
 import NewsDialog from "@/components/dialogs/newsDialog.vue"
+import RssDialog from "@/components/dialogs/rssFeedDialog.vue"
   export default {
     name: 'Home',
     components:{
-      NewsDialog
+      NewsDialog,
+      RssDialog
     },
     data(){
       return {
