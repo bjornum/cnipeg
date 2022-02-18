@@ -13,7 +13,13 @@
           <v-col v-for="(item, index) in resourceFolders" :Key="index" cols="4">
             <v-card @click="displayResource(item.template)">
               <!-- <p>{{item}}</p> -->
-              <p class="text-center title pt-10 pb-10">{{item.title}}</p>
+              <p v-if="item.title == 'Video'" class="text-center title pt-10 pb-10">{{ $t('resources.video') }}</p>
+              <p v-else-if="item.title == 'Files'" class="text-center title pt-10 pb-10">{{ $t('resources.files') }}</p>
+              <p v-else-if="item.title == 'Courses'" class="text-center title pt-10 pb-10">{{ $t('resources.courses') }}</p>
+              <p v-else-if="item.title == 'Podcast'" class="text-center title pt-10 pb-10">{{ $t('resources.podcast') }}</p>
+              <p v-else-if="item.title == 'Sound'" class="text-center title pt-10 pb-10">{{ $t('resources.sound') }}</p>
+              <p v-else-if="item.title == 'Other'" class="text-center title pt-10 pb-10">{{ $t('resources.other') }}</p>
+              <p v-else>...</p>
             </v-card>
           </v-col>
         </v-row>
@@ -53,16 +59,18 @@
               </v-col>
               <v-col cols="12" class="pt-0"></v-col>
               <v-col cols="2"></v-col>
-              <v-col cols="4" v-for="(resource, resourceIndex) in resourceContent" :key="resourceIndex">
+              <v-col cols="4" v-for="(resources, resourceIndex) in resourceContent" :key="resourceIndex">
                 <!-- <pre>{{resource}}</pre> -->
                 <v-card height="100%" flat>
+                
                   <!-- Media above title, sort by type -->
                   <v-divider></v-divider>
-                  <p class="title text-center">{{resource.title}}</p>
+                  <p class="title text-center">{{resources.title}}</p>
+                  <!-- {{ $t('resource.other') }} -->
                   <v-divider></v-divider>
                   <!-- Languages -->
                   <v-row>
-                    <v-col cols="12" v-for="(language, languageIndex) in resource.languages" :Key="languageIndex" class="pb-0 pt-0">
+                    <v-col cols="12" v-for="(language, languageIndex) in resources.languages" :Key="languageIndex" class="pb-0 pt-0">
                       <v-card  v-if="language.link" height="100%" @click="test(language.link)">
                         <v-divider style="color:hotpink"></v-divider>
                         <!-- <pre>{{language}}</pre> -->
@@ -97,12 +105,12 @@ export default {
   data(){
     return {
       resourceFolders:[
-        { title: "Videos", colour: "", image: "", description: "", template: 1 },
-        { title: "Files", colour: "", image: "", description: "", template: 2 },
-        { title: "Courses", colour: "", image: "", description: "", template: 3 },
-        { title: "Podcast", colour: "", image: "", description: "", template: 4 },
-        { title: "Sound", colour: "", image: "", description: "", template: 5 },
-        { title: "Other", colour: "", image: "", description: "", template: 6 }
+        { title: this.$t('resources.video'), colour: "", image: "", description: "", template: 1 },
+        { title: this.$t('resources.files'), colour: "", image: "", description: "", template: 2 },
+        { title: this.$i18n.t('resources.courses'), colour: "", image: "", description: "", template: 3 },
+        { title: this.$i18n.t('resources.podcast'), colour: "", image: "", description: "", template: 4 },
+        { title: this.$i18n.t('resources.sound'), colour: "", image: "", description: "", template: 5 },
+        { title: this.$i18n.t('resources.other'), colour: "", image: "", description: "", template: 6 }
       ],
       /* Easy way to display the content
       

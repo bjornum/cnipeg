@@ -1,5 +1,35 @@
 {
   "message": {
     "hello": "Heisann"
+  },
+  "navbar": {
+    "home": "Hjem",
+    "about": "Om oss",
+    "news": " Nyheter",
+    "training modules": "Trenings Moduler",
+    "resources": "Resursser",
+    "contact": "Kontakt oss",
+    "login": "Login"
+  },
+  "contact": {
+    "contact us": "Kontakt oss",
+    "name": "Navn",
+    "email": "Epost",
+    "subject": "Tema",
+    "message": "Melding",
+    "reset all fields": "Fjern data fra alle felt",
+    "close contact form": "Lukk kontakt skjema",
+    "send form": "Send skjema",
+    "your name is required": "Ditt navn er påkrevd",
+    "a propper email adress is required": "Epost er påkrevd",
+    "this field is required": "Dette feltet er påkrevd"
+  },
+  "resources": {
+    "video": "Video",
+    "files": "Filer",
+    "courses": "Kurs",
+    "podcast": "Podcast",
+    "sound": "Lyd",
+    "other": "Annet"
   }
 }

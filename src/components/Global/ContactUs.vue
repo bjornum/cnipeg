@@ -4,7 +4,7 @@
     <v-dialog v-model="contactDialog" scrollable persistent max-width="500px" transition="dialog-transition">
       <v-card light>
         <v-card-title>
-          <span class="headline">Contact us</span>
+          <span class="headline">{{ $t('contact.contact us') }}</span>
           <v-spacer />
           <v-btn color="error" icon @click="closeContact">
             <v-icon>mdi-close</v-icon>

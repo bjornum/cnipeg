@@ -13,8 +13,8 @@
       <v-col cols="12" class="mt-5"></v-col>
       <!-- BIG Title, center of screen -->
       <v-col cols="12" class="pb-0">
-        <v-card class="pt-15 pb-3">
-           <v-img src="https://www.ordetbetyr.com/images/ordetbetyr/og/228/tittel.png" alt="Eksempel BakgrunnsBilde" max-height="500px" stretch class="ml-1"></v-img>
+        <v-card class="pt-15 pb-3" style="height:500px; background-color:grey;">
+           <!-- <v-img src="https://www.ordetbetyr.com/images/ordetbetyr/og/228/tittel.png" alt="Eksempel BakgrunnsBilde" max-height="500px" stretch class="ml-1"></v-img> -->
           <!-- <p class="text-center title pt-15 pb-15">Massiv Title</p> -->
         </v-card>
       </v-col>
@@ -45,7 +45,6 @@
                   <v-img v-if="fakeNews.image" :src="fakeNews.image" alt="News Image" max-height="150px" contain class="ml-1"></v-img>
                 </v-col>
                 <v-col cols="12" style="min-height:150px;">
-
                   <p class="text-center title">{{fakeNews.title}}</p>
                   <p class="pa-2" style="min-height:100px;">{{fakeNews.article}}</p>
                 </v-col>
@@ -53,12 +52,10 @@
                   <v-card-actions class="pb-5">
                     <v-btn block>Åpne Nyhet</v-btn>
                   </v-card-actions>
-
                 </v-col>
               </v-row>
             </v-card>
           </v-col>
-
         </v-row>
       </v-col>
 
@@ -71,6 +68,7 @@
               <p class="text-center title mb-0 pt-5 pb-5">RSS Feed</p>
               <v-divider></v-divider>
               <v-row>
+                
                 <v-col cols="12" v-for="(rssFeed, rssFeedIndex) in fakeRSSfeed" :key="rssFeedIndex">
                   <v-row >
                     <v-col cols="2"  @click="$refs.openingRssDialog.openRssDialog(rssFeed)">
@@ -82,14 +80,15 @@
                       <p>{{rssFeed.content}}</p>
                     </v-col>
                   </v-row>
-                    <v-divider></v-divider>
-                    <v-divider></v-divider>
-                    <v-divider></v-divider>
+                  <v-divider></v-divider>
+                  <v-divider></v-divider>
+                  <v-divider></v-divider>
                 </v-col>
                 <v-col></v-col>
               </v-row>
             </v-card>
           </v-col>
+
           <!-- Other half screen - Contact -->
           <v-col cols="6">
             <v-card>
@@ -115,6 +114,7 @@
               </v-card-actions>
             </v-card>
           </v-col>
+
         </v-row>
       </v-col>
 

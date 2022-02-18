@@ -1,6 +1,8 @@
 <template>
   <v-app-bar app color="light-blue lighten-5" style="height:6em;">
     <ContactForm ref="OpenContactForm"></ContactForm>
+    
+    <!-- <p v-if="$i18n.locale == 'en'">asd</p> -->
     <!-- Logo -->
     <!-- <div class="d-flex align-center">
       <v-img alt="Vuetify Logo" class="shrink mr-2" contain src="img/DIGI_logo.png" transition="scale-transition" width="40"/>
@@ -24,9 +26,9 @@
     -->
     <div class="mt-6">
 
-      <v-btn text to="/">Home</v-btn>
-      <v-btn text to="/about">About</v-btn>
-      <v-btn text to="/news">News</v-btn>
+      <v-btn text to="/">{{ $t('navbar.home') }}</v-btn>
+      <v-btn text to="/about">{{ $t('navbar.about') }}</v-btn>
+      <v-btn text to="/news">{{ $t('navbar.news') }}</v-btn>
       <v-btn text to="/trainingmodules">Training Modules</v-btn>
       <v-btn text to="/resources">Resources</v-btn>
       <!-- <v-btn text to="/digitallearningdesign">Digital Learning Design</v-btn> -->
@@ -35,6 +37,9 @@
       <v-btn icon @click="$refs.OpenContactForm.openContactDialog()">
         <v-icon>mdi-email-outline</v-icon>
       </v-btn>
+    </div>
+    <div class="mt-10">
+      <LanguageSelection></LanguageSelection>
     </div>
 
 
@@ -48,10 +53,12 @@
 
 <script>
 import ContactForm from "@/components/Global/ContactUs.vue"
+import LanguageSelection from "@/components/TestAndDevelopment/SelectLocale.vue"
 
 export default {
   components:{
-    ContactForm
+    ContactForm,
+    LanguageSelection
   },
   data(){
     return {

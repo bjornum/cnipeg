@@ -1,5 +1,35 @@
 {
   "message": {
     "hello": "Hello"
+  },
+  "navbar": {
+    "home": "Home",
+    "about": "About",
+    "news": "News",
+    "training modules": "Training Modules",
+    "resources": "Resources",
+    "contact": "Contact",
+    "login": "Login"
+  }, 
+  "contact": {
+    "contact us": "Contact us",
+    "name": "Name",
+    "email": "Email",
+    "subject": "Subject",
+    "message": "Message",
+    "reset all fields": "Reset all fields",
+    "close contact form": "Close contact form",
+    "send form": "Send form",
+    "your name is required": "Your name is required",
+    "a propper email adress is required": "A propper email adress is required",
+    "this field is required": "This field is required"
+  },
+  "resources": {
+    "video": "Video",
+    "files": "Files",
+    "courses": "Courses",
+    "podcast": "Podcast",
+    "sound": "Sound",
+    "other": "Other"
   }
 }
