@@ -31,5 +31,10 @@
     "podcast": "Podcast",
     "sound": "Sound",
     "other": "Other"
+  },
+  "home": {
+    "elearning": "E-Learning",
+    "resources": "Resources",
+    "project": "Project"
   }
 }

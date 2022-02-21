@@ -24,7 +24,7 @@
       8. Contact (dialog)
       9. Login (Link to followup? OR same as valuable creativity) 
     -->
-    <div class="mt-6">
+    <div class="mt-10">
 
       <v-btn text to="/">{{ $t('navbar.home') }}</v-btn>
       <v-btn text to="/about">{{ $t('navbar.about') }}</v-btn>
@@ -34,9 +34,9 @@
       <!-- <v-btn text to="/digitallearningdesign">Digital Learning Design</v-btn> -->
       <!-- <v-btn text to="/digitalpedagogicalstrategy">Digital Pedagogical Strategy</v-btn> -->
       <v-btn text @click="$refs.OpenContactForm.openContactDialog()">Contact</v-btn>
-      <v-btn icon @click="$refs.OpenContactForm.openContactDialog()">
+      <!-- <v-btn icon @click="$refs.OpenContactForm.openContactDialog()">
         <v-icon>mdi-email-outline</v-icon>
-      </v-btn>
+      </v-btn> -->
     </div>
     <div class="mt-10">
       <LanguageSelection></LanguageSelection>
@@ -45,7 +45,7 @@
 
     <v-spacer></v-spacer>
     <!-- Login -->
-    <div class="mt-5">
+    <div class="mt-7">
       <v-btn text href="https://app.followup.prios.no/#/login" target="_blank">Login</v-btn>
     </div>
   </v-app-bar>

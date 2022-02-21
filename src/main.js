@@ -12,7 +12,7 @@ import messages from "./locales/export.js"
 Vue.use(VueI18n);
 Vue.prototype.$http = axios;
 const i18n = new VueI18n({
-  locale: 'en',
+  locale: (localStorage.getItem('language') || 'en'),
   messages
 });
 

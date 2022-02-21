@@ -13,10 +13,10 @@
         <v-card-text>
           <v-form ref="form" v-model="isContactFormValid">
             <v-container>
-              <v-text-field v-model="contactFormData.name" name="name" label="Name" :rules="[rules.requiredName]" outlined dense required></v-text-field>
-              <v-text-field v-model="contactFormData.email" name="email" label="Email" :rules="[rules.requiredEmail, rules.emailRequirement]" outlined dense required></v-text-field>
-              <v-text-field v-model="contactFormData.subject" name="subject" label="Subject" :rules="[rules.requiredField]" outlined dense required></v-text-field>
-              <v-textarea v-model="contactFormData.message" name="message" label="Message" :rules="[rules.requiredField]" outlined auto-grow counter required></v-textarea>
+              <v-text-field v-model="contactFormData.name" name="name" :label="$t('contact.name')" :rules="[rules.requiredName]" outlined dense required></v-text-field>
+              <v-text-field v-model="contactFormData.email" name="email" :label="$t('contact.email')" :rules="[rules.requiredEmail, rules.emailRequirement]" outlined dense required></v-text-field>
+              <v-text-field v-model="contactFormData.subject" name="subject" :label="$t('contact.subject')" :rules="[rules.requiredField]" outlined dense required></v-text-field>
+              <v-textarea v-model="contactFormData.message" name="message" :label="$t('contact.message')" :rules="[rules.requiredField]" outlined auto-grow counter required></v-textarea>
             </v-container>
           </v-form>
         </v-card-text>
@@ -55,10 +55,10 @@ export default {
       },
       // Rules for the contact Form
       rules:{
-        requiredField: value => !!value || 'This field is required',
-        requiredName: value => !!value || 'Your name is required',
-        requiredEmail: value => !!value || 'A propper email adress is required',
-        emailRequirement: value => /.+@.+\..+/.test(value) || 'A proper email address is required',
+        requiredField: value => !!value || this.$t('contact.this field is required'),
+        requiredName: value => !!value || this.$t('contact.your name is required'),
+        requiredEmail: value => !!value || this.$t('a propper email adress is required'),
+        emailRequirement: value => /.+@.+\..+/.test(value) || this.$t('a propper email adress is required'),
       },
     }
   },

@@ -12,13 +12,12 @@
         <v-row>
           <v-col v-for="(item, index) in resourceFolders" :Key="index" cols="4">
             <v-card @click="displayResource(item.template)">
-              <!-- <p>{{item}}</p> -->
-              <p v-if="item.title == 'Video'" class="text-center title pt-10 pb-10">{{ $t('resources.video') }}</p>
-              <p v-else-if="item.title == 'Files'" class="text-center title pt-10 pb-10">{{ $t('resources.files') }}</p>
-              <p v-else-if="item.title == 'Courses'" class="text-center title pt-10 pb-10">{{ $t('resources.courses') }}</p>
-              <p v-else-if="item.title == 'Podcast'" class="text-center title pt-10 pb-10">{{ $t('resources.podcast') }}</p>
-              <p v-else-if="item.title == 'Sound'" class="text-center title pt-10 pb-10">{{ $t('resources.sound') }}</p>
-              <p v-else-if="item.title == 'Other'" class="text-center title pt-10 pb-10">{{ $t('resources.other') }}</p>
+              <p v-if="item.title == 'Video' || item.title == 'Video'" class="text-center title pt-10 pb-10">{{ $t('resources.video') }}</p>
+              <p v-else-if="item.title == 'Files' || item.title == 'Filer'" class="text-center title pt-10 pb-10">{{ $t('resources.files') }}</p>
+              <p v-else-if="item.title == 'Courses' || item.title == 'Kurs'" class="text-center title pt-10 pb-10">{{ $t('resources.courses') }}</p>
+              <p v-else-if="item.title == 'Podcast' || item.title == 'Podcast'" class="text-center title pt-10 pb-10">{{ $t('resources.podcast') }}</p>
+              <p v-else-if="item.title == 'Sound' || item.title == 'Lyd'" class="text-center title pt-10 pb-10">{{ $t('resources.sound') }}</p>
+              <p v-else-if="item.title == 'Other' || item.title == 'Annet'" class="text-center title pt-10 pb-10">{{ $t('resources.other') }}</p>
               <p v-else>...</p>
             </v-card>
           </v-col>
@@ -107,7 +106,7 @@ export default {
       resourceFolders:[
         { title: this.$t('resources.video'), colour: "", image: "", description: "", template: 1 },
         { title: this.$t('resources.files'), colour: "", image: "", description: "", template: 2 },
-        { title: this.$i18n.t('resources.courses'), colour: "", image: "", description: "", template: 3 },
+        { title: this.$t('resources.courses'), colour: "", image: "", description: "", template: 3 },
         { title: this.$i18n.t('resources.podcast'), colour: "", image: "", description: "", template: 4 },
         { title: this.$i18n.t('resources.sound'), colour: "", image: "", description: "", template: 5 },
         { title: this.$i18n.t('resources.other'), colour: "", image: "", description: "", template: 6 }

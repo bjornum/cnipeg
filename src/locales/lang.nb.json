@@ -31,5 +31,10 @@
     "podcast": "Podcast",
     "sound": "Lyd",
     "other": "Annet"
+  },
+  "home": {
+    "elearning": "E-Læring",
+    "resources": "Ressurser",
+    "project": "Prosjekt"
   }
 }

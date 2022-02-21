@@ -1,19 +1,39 @@
 <template>
-  <div class="pa-2">
+  <div class="">
     <!-- <v-btn text @click="changeLanguage()">
       <p v-if="$i18n.locale == 'en'">asd</p>
     </v-btn> -->
 
-
-    <v-select :items="langs" v-model="$i18n.locale" style="max-width:35px;" class="ma-0" append-icon="" :menu-props="{ bottom: true, offsetY: true }" >
-      <!-- <template v-slot:append>
-        <v-icon> </v-icon>
-      </template> -->
-      <template v-slot:selection="{ item }">
+<!-- 
+    <v-select :items="langs" v-model="$i18n.locale" style="max-width:35px;" class="ma-0" append-icon="" :menu-props="{ bottom: true, offsetY: true }" @click="setLanguage(item)">
+      <template v-slot:selection="{ item }" >
         <v-img v-if="item == 'en'" src="../../assets/flags/england.png" alt="English Flag" max-height="25" max-width="30" contain></v-img>
         <v-img v-if="item == 'nb'" src="../../assets/flags/norway.png" alt="English Flag" max-height="19" max-width="30" contain></v-img>
       </template>
-    </v-select>
+    </v-select> -->
+
+    <v-menu offset-y>
+      <template v-slot:activator="{ on }">
+        <v-btn class="transparent" rounded outlined v-on="on" v-model="$i18n.locale">
+          <v-img v-if="$i18n.locale == 'en'" src="../../assets/flags/england.png" alt="English Flag" max-height="25" max-width="30" contain></v-img>
+          <v-img v-if="$i18n.locale == 'nb'" src="../../assets/flags/norway.png" alt="English Flag" max-height="19" max-width="30" contain></v-img>
+          <!-- <v-icon class="pr-3">mdi-web</v-icon>  -->
+           <!-- {{  $store.getters.getAppLanguage }} -->
+           {{$i18n.locale}}
+          <v-icon class="pl-3">mdi-menu-down</v-icon> 
+        </v-btn>
+      </template>
+
+      <v-list>
+        <v-list-item-group>
+          <v-list-item v-for="(item, i) in items" :key="i" @click="setLanguage(item)">
+            <v-list-item-content class="text-center">
+              <v-list-item-title v-text="item.text" v-model="$i18n.locale"></v-list-item-title>
+            </v-list-item-content>
+          </v-list-item>
+        </v-list-item-group>
+      </v-list>
+    </v-menu>
 
 
     <!-- <select v-model="$i18n.locale">
@@ -73,11 +93,26 @@ export default {
     return { 
       langs: ['en', , 'nb'],
       languageDialog: false,
+      selectedLanguage: this.$store.getters.getAppLanguage,
+      items:[
+        {text: 'nb'},
+        {text: 'en'},
+      ]
     }
   },
   methods:{
+    setLanguage (item) {
+      if (item.text == 'en') {
+        this.$i18n.locale = 'en'
+        this.$store.commit('setAppLanguage', 'en')
+      } else if (item.text == 'nb') {
+        this.$i18n.locale = 'nb'
+        this.$store.commit('setAppLanguage', 'nb')     
+      }
+    },
     changeLanguage(){
       this.languageDialog = true;
+      localStorage.setItem('lang',localeCode)
     }
   }
 }
