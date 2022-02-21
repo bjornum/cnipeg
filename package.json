@@ -1,5 +1,5 @@
 {
-  "name": "digipedzgen",
+  "name": "projtemplate",
   "version": "0.1.0",
   "private": true,
   "scripts": {
@@ -7,10 +7,10 @@
     "build": "vue-cli-service build"
   },
   "dependencies": {
-    "axios": "^0.25.0",
+    "axios": "^0.21.1",
     "register-service-worker": "^1.7.1",
     "vue": "^2.6.11",
-    "vue-axios": "^3.4.0",
+    "vue-axios": "^3.2.4",
     "vue-i18n": "^8.27.0",
     "vue-router": "^3.2.0",
     "vuetify": "^2.4.0",

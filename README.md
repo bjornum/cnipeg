@@ -1,4 +1,4 @@
-# digipedzgen
+# Project Template
 
 ## Project setup
 ```

@@ -30,6 +30,7 @@
         </v-row>
       </v-col>
       <v-col cols="12">
+        <!-- <RssTest></RssTest> -->
         <v-divider></v-divider>
         <v-divider></v-divider>
         <v-divider></v-divider>
@@ -125,11 +126,13 @@
 <script>
 import NewsDialog from "@/components/dialogs/newsDialog.vue"
 import RssDialog from "@/components/dialogs/rssFeedDialog.vue"
+import RssTest from "@/components/rss/rssTest.vue"
   export default {
     name: 'Home',
     components:{
       NewsDialog,
-      RssDialog
+      RssDialog,
+      RssTest
     },
     data(){
       return {
@@ -140,7 +143,7 @@ import RssDialog from "@/components/dialogs/rssFeedDialog.vue"
           email: "",
           message: "",
           subject: "",
-          sentFrom: "DigiPedZgen"
+          sentFrom: "Project Template"
         },
         // Rules for the contact Form
         rules:{

@@ -4,11 +4,13 @@ import './registerServiceWorker';
 import router from './router';
 import store from './store';
 import vuetify from './plugins/vuetify';
+import axios from 'axios'
+import VueAxios from 'vue-axios'
 import VueI18n from 'vue-i18n';
 import messages from "./locales/export.js"
 
 Vue.use(VueI18n);
-
+Vue.prototype.$http = axios;
 const i18n = new VueI18n({
   locale: 'en',
   messages

@@ -51,7 +51,7 @@ export default {
         email: '',
         message: '',
         subject: '',
-        sentFrom: 'DigiPedZgen'
+        sentFrom: 'project Template'
       },
       // Rules for the contact Form
       rules:{
