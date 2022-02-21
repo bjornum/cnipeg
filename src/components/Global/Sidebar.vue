@@ -3,6 +3,7 @@
     <ContactUs ref="OpenContactForm"></ContactUs>
     <!-- Navbar -->
     <v-app-bar app color="light-blue lighten-5" style="height:6em;">
+      <v-img class="mt-8 ml-10" src="img/DIGI_logo.png"  max-height="80" max-width="80" contain></v-img>
       <v-spacer></v-spacer>
       <v-btn icon @click="toggleNavbar()">
         <v-icon>mdi-menu</v-icon>
@@ -18,22 +19,22 @@
       </a>
       <v-divider></v-divider>
       <v-list dense>
-        <v-list-item >
+        <v-list-item v-for="(item, index) in pageNavigation" :key="index" :to="item.location">
           <v-list-item-icon>
-            <v-icon>mdi-arrow-right</v-icon>
+            <v-icon>{{item.icon}}</v-icon>
           </v-list-item-icon>
           <v-list-item-content>
-            <v-list-item-title>yes</v-list-item-title>
+            <v-list-item-title>{{item.name}}</v-list-item-title>
           </v-list-item-content>
         </v-list-item>
-        <v-list-item @click="$refs.OpenContactForm.openContactDialog()">
+        <!-- <v-list-item @click="$refs.OpenContactForm.openContactDialog()">
           <v-list-item-icon>
             <v-icon>mdi-email-outline</v-icon>
           </v-list-item-icon>
           <v-list-item-content>
             <v-list-item-title>Contact</v-list-item-title>
           </v-list-item-content>
-        </v-list-item>
+        </v-list-item> -->
       </v-list>
     </v-navigation-drawer>
   </div>
@@ -49,7 +50,14 @@ export default {
   data(){
     return {
       navDrawer: true,
-      expand: false,
+      expand: true,
+      pageNavigation: [
+        { name: "Home", location: "/", icon: "" },
+        { name: "About", location: "/about", icon: "" },
+        { name: "News", location: "/news", icon: "" },
+        { name: "Training Modules", location: "/trainingmodules", icon: "" },
+        { name: "Resources", location: "/resources", icon: "" },
+      ]
     }
   },
 
