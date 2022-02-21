@@ -1,8 +1,9 @@
 <template>
   <v-app>
-    <Navbar></Navbar>
+    <Sidebar v-if="$vuetify.breakpoint.mdAndDown"></Sidebar>
+    <Navbar v-else></Navbar>
+    
     <!-- <NavbarPhone></NavbarPhone> -->
-
     <v-main>
       <router-view/>
     </v-main>
@@ -14,11 +15,13 @@ import Navbar from "@/components/Global/Navbar.vue"
 import NavbarPhone from "@/components/Global/NavbarPhone.vue"
 import LanguageTest from "@/components/TestAndDevelopment/LanguageTest.vue"
 import SelectLocale from "@/components/TestAndDevelopment/SelectLocale.vue"
+import Sidebar from "@/components/Global/Sidebar.vue"
 
 export default {
   name: 'App',
   components:{
     Navbar,
+    Sidebar,
     NavbarPhone,
     LanguageTest,
     SelectLocale
