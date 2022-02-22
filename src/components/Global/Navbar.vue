@@ -10,7 +10,7 @@
     </div> -->
     <!-- <v-img src="img/DIGI_logo.png" height="40" width="260px" contain/> -->
 
-    <v-img class="mt-8 ml-10" src="img/DIGI_logo.png"  max-height="80" max-width="80" contain></v-img>
+    <v-img class="mt-8 ml-10" src="img/logo.png"  max-height="80" max-width="80" contain></v-img>
     <v-spacer></v-spacer>
     <!-- Links -->
     <!-- 

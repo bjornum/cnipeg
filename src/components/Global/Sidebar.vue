@@ -3,7 +3,7 @@
     <ContactUs ref="OpenContactForm"></ContactUs>
     <!-- Navbar -->
     <v-app-bar app color="light-blue lighten-5" style="height:6em;">
-      <v-img class="mt-8 ml-10" src="img/DIGI_logo.png"  max-height="80" max-width="80" contain></v-img>
+      <v-img class="mt-8 ml-10" src="img/logo.png"  max-height="80" max-width="80" contain></v-img>
       <v-spacer></v-spacer>
       <v-btn icon @click="toggleNavbar()">
         <v-icon>mdi-menu</v-icon>
@@ -15,7 +15,7 @@
     <!-- Navbar -->
     <v-navigation-drawer v-model="navDrawer" app >
       <a href="/">
-        <v-img  class="mt-2 mb-2" src="img/DIGI_logo.png"  height="60" contain></v-img>
+        <v-img  class="mt-2 mb-2" src="img/logo.png"  height="60" contain></v-img>
       </a>
       <v-divider></v-divider>
       <v-list dense>
@@ -35,7 +35,16 @@
             <v-list-item-title>Contact</v-list-item-title>
           </v-list-item-content>
         </v-list-item> -->
+        <v-list-item href="https://app.followup.prios.no/#/login" target="_blank">
+          <v-list-item-icon>
+            <!-- <v-icon>{{item.icon}}</v-icon> -->
+          </v-list-item-icon>
+          <v-list-item-content>
+            <v-list-item-title >Login</v-list-item-title>
+          </v-list-item-content>
+        </v-list-item>
       </v-list>
+      <!-- <v-btn text href="https://app.followup.prios.no/#/login" target="_blank">Login</v-btn> -->
     </v-navigation-drawer>
   </div>
 </template>
