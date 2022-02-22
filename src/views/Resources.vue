@@ -5,7 +5,7 @@
       <v-col cols="12" class="mt-10"></v-col>
       <v-col cols="12">
         <p class="text-center title">Resources</p>
-        <p>{{resourceTemplate}}</p>
+        <!-- <p>{{resourceTemplate}}</p> -->
       </v-col>
       <v-col cols="2"></v-col>
       <v-col cols="8">
