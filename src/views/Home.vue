@@ -63,7 +63,7 @@
       <v-col cols="12">
         <v-row>
           <!-- half screen RSS FEED -->
-          <!-- <v-col cols="1"></v-col>
+          <v-col cols="1"></v-col>
           <v-col cols="4">
             <v-card height="100%">
               <p class="text-center title mb-0 pt-5 pb-5">RSS Feed</p>
@@ -88,10 +88,10 @@
                 <v-col></v-col>
               </v-row>
             </v-card>
-          </v-col> -->
+          </v-col>
 
           <!-- Other half screen - Contact -->
-          <!-- <v-col cols="6">
+          <v-col cols="6">
             <v-card>
               <v-card-title>
                 <span class="headline">Contact us</span>
@@ -114,7 +114,7 @@
                 <v-btn color="success" icon :disabled="!isContactFormValid" @click="postContactForm()"><v-icon>mdi-send</v-icon></v-btn>
               </v-card-actions>
             </v-card>
-          </v-col> -->
+          </v-col>
 
         </v-row>
       </v-col>
