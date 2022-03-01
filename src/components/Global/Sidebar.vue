@@ -3,7 +3,7 @@
     <ContactUs ref="OpenContactForm"></ContactUs>
     <!-- Navbar -->
     <v-app-bar app color="light-blue lighten-5" style="height:6em;">
-      <v-img class="mt-8 ml-10" src="img/logo.png"  max-height="80" max-width="80" contain></v-img>
+      <v-img class="mt-8 ml-10" src="img/EVOLVE.png"  max-height="80" max-width="80" contain></v-img>
       <v-spacer></v-spacer>
       <v-btn icon @click="toggleNavbar()">
         <v-icon>mdi-menu</v-icon>
@@ -15,7 +15,7 @@
     <!-- Navbar -->
     <v-navigation-drawer v-model="navDrawer" app >
       <a href="/">
-        <v-img  class="mt-2 mb-2" src="img/logo.png"  height="60" contain></v-img>
+        <v-img  class="mt-2 mb-2" src="img/EVOLVE.png"  height="60" contain></v-img>
       </a>
       <v-divider></v-divider>
       <v-list dense>

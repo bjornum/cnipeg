@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div style="width: 90vw; margin:auto auto;">
     <NewsDialog ref="openingNewsDialog"></NewsDialog>
     <RssDialog ref="openingRssDialog"></RssDialog>
 
@@ -13,9 +13,9 @@
       <v-col cols="12" class="mt-5"></v-col>
       <!-- BIG Title, center of screen -->
       <v-col cols="12" class="pb-0">
-        <v-card class="pt-15 pb-3" style="height:500px; background-color:grey;">
-           <!-- <v-img src="https://www.ordetbetyr.com/images/ordetbetyr/og/228/tittel.png" alt="Eksempel BakgrunnsBilde" max-height="500px" stretch class="ml-1"></v-img> -->
-          <!-- <p class="text-center title pt-15 pb-15">Massiv Title</p> -->
+        <v-card class="pt-15 pb-3 introImage">
+          <p class="introTitle">Welcome to "Title"</p>
+          <p class="introDescription">Here is some information about the project</p>
         </v-card>
       </v-col>
       <!-- 3 Cards in center of cards -->
@@ -23,42 +23,88 @@
       <v-col cols="8" class="pt-0">
         <v-row>
           <v-col cols="12" xl="4" lg="4" md="4" sm="12" xs="12" v-for="(pageCard, pageCardIndex) in pageCards" :key="pageCardIndex">
-            <v-card class="pageCardPositioning" :to="pageCard.link">
-              <p class="text-center title pt-5">{{pageCard.name}}</p>
+            <v-card class="pageCardPositioning" :to="pageCard.link" style="position:relative;">
+              <v-divider v-if="pageCardIndex == 0" class="pageCardDividerBlue"></v-divider>
+              <v-divider v-if="pageCardIndex == 1" class="pageCardDividerGreen"></v-divider>
+              <v-divider v-if="pageCardIndex == 2" class="pageCardDividerRed"></v-divider>
+              <v-row>
+                <v-col cols="10">
+                  <p class="title pt-2">{{pageCard.name}}</p>
+                </v-col>
+                <v-col cols="2">
+                  <v-icon large class="pt-2" style="color:black;">mdi-arrow-right</v-icon>
+                </v-col>
+              </v-row>
+              <p>{{pageCard.description}}</p>
             </v-card>
           </v-col>
         </v-row>
       </v-col>
+
+      <!-- Info Text -->
+      <v-col cols="12">
+        <v-row>
+          <v-col cols="4"></v-col>
+          <v-col cols="4">
+            <p class="text-center title">Some short info</p>
+            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Provident voluptas asperiores dolores aspernatur, inventore blanditiis mollitia harum quo adipisci quisquam, quod odit ad explicabo consequuntur eos saepe animi quasi maiores.</p>
+          </v-col>
+        </v-row>
+      </v-col>
+
+      <!-- News -->
+      <v-col cols="2" class="pt-0"></v-col>
+      <v-col cols="8">
+        <v-row>
+          <v-col cols="12" class="pt-15 mt-15">
+            <p class="title">News</p>
+          </v-col>
+          <v-col cols="12" xl="4" lg="4" md="4" sm="12" xs="12" v-for="(fakeNews, fakeNewsIndex) in fakeNewsCards" :key="fakeNewsIndex">
+            <v-card height="100%" @click="$refs.openingNewsDialog.openNewsDialog(fakeNews)">
+              <v-row>
+                <v-col cols="12" class="pb-0">
+                  <v-row>
+                    <v-col cols="12">
+                      <v-img v-if="fakeNews.image" :src="fakeNews.image" alt="News Image" width="auto" height="200px" cover class="ml-2 mr-2"></v-img>
+                    </v-col>
+                    <v-col cols="12" style="height:125px;" class="mb-0 ml-2">
+                      <p class="pl-2 mb-0 article-title">{{fakeNews.title}}</p>
+                      <p class="pa-2 mb-0 article-length">{{fakeNews.article}}</p>
+                    </v-col>
+                    <v-col cols="12" class="pt-0">
+                      <v-card-actions class="pt-0">
+                        <p class="article-button mr-2">Read article</p>
+                        <v-icon style="color:black;">mdi-arrow-right</v-icon>
+                      </v-card-actions>
+                    </v-col>
+                  </v-row>
+                  <v-divider v-if="fakeNewsIndex == 0" class="pageCardDividerBlue article-dividers" width="98%"></v-divider>
+                  <v-divider v-if="fakeNewsIndex == 1" class="pageCardDividerGreen article-dividers" width="98%"></v-divider>
+                  <v-divider v-if="fakeNewsIndex == 2" class="pageCardDividerRed article-dividers" width="98%"></v-divider>
+                </v-col>
+                <v-col cols="12"></v-col>
+              </v-row>
+            </v-card>
+          </v-col>
+        </v-row>
+      </v-col>
+
+      <v-col cols="12" align="center">
+          <!-- <v-btn class="text-center" rounded outlined shadow style="box-shadow: 0 0 10px #000000;"> -->
+          <!-- <v-btn class="text-center " rounded style="border:solid 2px red; border-radius:4em;"> -->
+          <v-btn class="text-center buttonBorder" rounded>
+            See all news
+          </v-btn>
+      </v-col>
+
+
       <v-col cols="12">
         <!-- <RssTest></RssTest> -->
         <v-divider></v-divider>
         <v-divider></v-divider>
         <v-divider></v-divider>
       </v-col>
-      <v-col cols="1"></v-col>
-      <v-col cols="10">
-        <v-row>
-          <!-- 4 news cards -->
-          <v-col cols="12" xl="3" lg="3" md="4" sm="12" xs="12" v-for="(fakeNews, fakeNewsIndex) in fakeNewsCards" :key="fakeNewsIndex">
-            <v-card height="100%" @click="$refs.openingNewsDialog.openNewsDialog(fakeNews)">
-              <v-row>
-                <v-col cols="12" style="min-height:180px;">
-                  <v-img v-if="fakeNews.image" :src="fakeNews.image" alt="News Image" max-height="150px" contain class="ml-1"></v-img>
-                </v-col>
-                <v-col cols="12" style="min-height:150px;">
-                  <p class="text-center title">{{fakeNews.title}}</p>
-                  <p class="pa-2" style="min-height:100px;">{{fakeNews.article}}</p>
-                </v-col>
-                <v-col cols="12" style="min-height: 50px;">
-                  <v-card-actions class="pb-5">
-                    <v-btn block>Åpne Nyhet</v-btn>
-                  </v-card-actions>
-                </v-col>
-              </v-row>
-            </v-card>
-          </v-col>
-        </v-row>
-      </v-col>
+     
 
       <v-col cols="12">
         <v-row>
@@ -156,9 +202,9 @@ import RssTest from "@/components/rss/rssTest.vue"
         isContactFormValid: true,
         // In Page Pages Cards
         pageCards:[
-          { name: "E-Learning", color: "", link: "trainingmodules" },
-          { name: "Resources", color: "", link: "/resources" },
-          { name: "Project", color: "", link: "" }
+          { name: "E-Learning", color: "", link: "trainingmodules", description: "Lorem ipsum dolores sit amet. Nihil repellat architecto asperiores sequi facere" },
+          { name: "Resources", color: "", link: "/resources",  description: "Lorem ipsum dolores sit amet. Nihil repellat architecto asperiores sequi facere" },
+          { name: "Project", color: "", link: "",  description: "Lorem ipsum dolores sit amet. Nihil repellat architecto asperiores sequi facere" }
         ],
         // Dummy data below - Replace when db are implemented
         fakeNewsCards:[
@@ -179,12 +225,6 @@ import RssTest from "@/components/rss/rssTest.vue"
             article: "Lorem Ipsum dolores dahls ",
             external_link: "https://www.lipsum.com/", 
             image: "https://www.multimediaxp.com/images/article_190508124638.1557333998.jpg" 
-            },
-          { 
-            title: "Worlds best newspaper", 
-            article: "Awarded as the best newspaper in the world.", 
-            external_link: "https://www.vg.no/", 
-            image: "https://akamai.vgc.no/v2/images/a7a69de2-d715-44b4-8344-b96b404806a0?fit=crop&format=auto&h=2665&w=1895&s=ea2af8dc0642cd84ceefb36f7d05649706c3084d" 
           },
         ],
         fakeRSSfeed: [
@@ -233,10 +273,80 @@ import RssTest from "@/components/rss/rssTest.vue"
 </script>
 
 <style scoped>
+/* Intro Classes for box and text at the top */
+.introImage {
+  height:650px;
+  background-color:rgb(213, 211, 211);
+}
+.introTitle {
+  font-size:34px;
+  color: rgb(48, 47, 47);
+  margin-left: 15%; 
+  margin-top:5%;
+  font-weight: bold;
+}
+.introDescription {
+  font-size:20px;
+  color: rgb(48, 47, 47);
+  margin-left: 15%;
+  font-weight: bold;
+}
+/* Styling the 3 cards close to the intro top */
 .pageCardPositioning {
   position:relative;
   top: -5em;
   right: 50;
-  padding: 50px;
+  padding: 10px;
 }
+.pageCardDividerBlue {
+  background-color:#205072; 
+  padding: 2px
+}
+.pageCardDividerGreen {
+  background-color:#329D9C; 
+  padding: 2px;
+}
+.pageCardDividerRed {
+  background-color:#D83636; 
+  padding: 2px;
+}
+
+/* NEWS */
+.article-title {
+  font-size: 20px;
+  font-weight: bold;
+}
+.article-length {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 2; /* number of lines to show */
+  line-clamp: 2; 
+  -webkit-box-orient: vertical;
+}
+.article-button{
+  font-size: 18px;
+  font-weight: bold;
+}
+.article-dividers {
+  margin-left:1%; 
+  margin-bottom:2%;
+}
+
+.buttonBorder {
+  border: 3px solid #205072;
+  font-family: 'Lato', sans-serif;
+}
+
+.buttonBorder:after {
+  border: 3px solid #d6d2d24d;
+  content: '';
+  position: absolute;
+  top: -12px;
+  right: -12px;
+  bottom: -12px;
+  left: -12px;
+  border-radius: 4em;
+}
+
 </style>
