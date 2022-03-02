@@ -72,7 +72,7 @@
                   <v-row>
                     <v-col cols="12">
                       <v-img v-if="fakeNews.image" :src="fakeNews.image" alt="News Image" width="auto" height="200px" cover class="ml-2 mr-2"></v-img>
-                      <div v-else style="height:200px; width:auto; background-color:grey; margin:0px 15px 0px 15px;"></div>
+                      <div v-else style="height:200px; width:auto; background-color:#D1D1D1; margin:0px 15px 0px 15px;"></div>
                     </v-col>
                     <v-col cols="12" style="height:110px;" class="mb-0 ml-2 pb-0">
                       <p class="pl-2 mb-0 newsCardTitle">{{fakeNews.title}}</p>
@@ -115,7 +115,7 @@
                 <!-- Image -->
                 <v-col cols="3" style="height: 100px;" class="ma-0 pa-0">
                   <v-img v-if="rssFeed.image" :src="rssFeed.image" alt="News Image" max-height="50px" contain></v-img>
-                  <div v-else style="height:95px; width:100px; background-color:grey; margin:5px 15px 15px 15px;"></div>
+                  <div v-else style="height:95px; width:100px; background-color:#D1D1D1; margin:5px 15px 15px 15px;"></div>
                 </v-col>
                 <!-- Title and Content -->
                 <v-col cols="6">
