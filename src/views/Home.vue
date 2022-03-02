@@ -115,17 +115,17 @@
                 <!-- Image -->
                 <v-col cols="3" style="height: 100px;" class="ma-0 pa-0">
                   <v-img v-if="rssFeed.image" :src="rssFeed.image" alt="News Image" max-height="50px" contain></v-img>
-                  <div v-else style="height:95px; width:100px; background-color:#D1D1D1; margin:5px 15px 15px 15px;"></div>
+                  <div v-else style="height:105px; width:100px; background-color:#D1D1D1; margin:5px 15px 15px 15px;"></div>
                 </v-col>
                 <!-- Title and Content -->
                 <v-col cols="6">
-                  <p>{{rssFeed.title}}</p>
-                  <p>{{rssFeed.content}}</p>
+                  <p class="rssCardTitle">{{rssFeed.title}}</p>
+                  <p class="rssCardDescription">{{rssFeed.content}}</p>
                 </v-col>
                 <!-- Date and Arrow -->
                 <v-col cols="3">
-                  <p>Date</p>
-                  <p>arrow</p>
+                  <p class="rssCardDate">{{rssFeed.date}}</p>
+                  <v-icon class="ml-5 rssCardArrow">mdi-arrow-right</v-icon>
                 </v-col>
               </v-row>
             </v-card>
@@ -223,21 +223,25 @@ import RssTest from "@/components/rss/rssTest.vue"
             title: "RSS feed title", 
             image: "", 
             content: "Lorem ipsum dolor sit amet, eligendi distinctio iste Iste quis rerum", 
+            date: "02.03.2022"
           },
           { 
             title: "RSS feed title", 
             image: "", 
             content: "Lorem ipsum dolor sit amet, eligendi distinctio iste Iste quis rerum", 
+            date: "02.03.2022"
           },
           { 
             title: "RSS feed title", 
             image: "", 
             content: "Lorem ipsum dolor sit amet, eligendi distinctio iste Iste quis rerum", 
+            date: "02.03.2022"
           },
           { 
             title: "RSS feed title", 
             image: "", 
             content: "Lorem ipsum dolor sit amet, eligendi distinctio iste Iste quis rerum", 
+            date: "02.03.2022"
           },
         ],
       }
@@ -445,9 +449,36 @@ import RssTest from "@/components/rss/rssTest.vue"
 }
 
 /* RSS feed */
-.rssRightBorder {
-  border-right:3px solid pink;
-  
+.rssCardTitle {
+  font-family: 'Barlow', sans-serif;
+  font-weight: bold;
+  font-size: 28px;
+  color: #434343;
+  opacity: 1;
+  letter-spacing: 0px;
+  text-align: left;
+}
+.rssCardDescription {
+  font-family: 'Lato', sans-serif;
+  font-weight: normal;
+  font-size: 14px;
+  color: #6A6A6A;
+  opacity: 1;
+  letter-spacing: 0px;
+  text-align: left;
+}
+.rssCardDate {
+  font-family: 'Lato', sans-serif;
+  font-weight: normal;
+  font-size: 11px;
+  color: #6A6A6A;
+  opacity: 1;
+  letter-spacing: 0px;
+  text-align: left;
+}
+.rssCardArrow {
+  color: #205072;
+  opacity: 1;
 }
 
 </style>
