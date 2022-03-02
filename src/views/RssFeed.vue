@@ -1,5 +1,6 @@
 <template>
   <div class="homePageWidth">
+    <RssDialog ref="openingRssDialog"></RssDialog>
     <v-row>
       <v-col cols="12" class="mt-15"></v-col>
       <v-col cols="2"></v-col>
@@ -12,7 +13,7 @@
           </v-col>
           <!-- RSS feed Cards -->
           <v-col cols="12" xl="12" lg="12" md="12" sm="12" xs="12" class="mb-3" v-for="(rssFeed, rssFeedIndex) in fakeRSSfeed" :key="rssFeedIndex">
-            <v-card height="100%" :style="`border-right:3px solid ${colorArr[rssFeedIndex]}`">
+            <v-card height="100%" :style="`border-right:3px solid ${colorArr[rssFeedIndex]}`" @click="$refs.openingRssDialog.openRssDialog(rssFeed)">
               <v-row>
                 <!-- Image -->
                 <v-col cols="3" style="height: 100px;" class="ma-0 pa-0">
@@ -39,7 +40,11 @@
 </template>
 
 <script>
+import RssDialog from "@/components/dialogs/rssFeedDialog.vue"
 export default {
+  components: {
+    RssDialog
+  },
   data() {
     return {
       colorArr:[

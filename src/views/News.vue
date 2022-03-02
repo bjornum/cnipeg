@@ -1,5 +1,6 @@
 <template>
   <div class="homePageWidth">
+    <NewsDialog ref="openingNewsDialog"></NewsDialog>
     <v-row>
       <v-col cols="12" class="mt-15"></v-col>
       <v-col cols="2"></v-col>
@@ -47,8 +48,12 @@
 </template>
 
 <script>
+import NewsDialog from "@/components/dialogs/newsDialog.vue"
 export default {
   name: 'News',
+  components: {
+    NewsDialog
+  },
   data(){
     return {
       colorArr:[ "#205072", "#329D9C", "#D83636", "#DD9A30", "#205072", "#329D9C" ],
