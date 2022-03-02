@@ -1,23 +1,27 @@
 <template>
-  <div style="width: 90vw; margin:auto auto;">
+  <div class="homePageWidth">
     <NewsDialog ref="openingNewsDialog"></NewsDialog>
     <RssDialog ref="openingRssDialog"></RssDialog>
 
+    <!-- Snackbar for Contact Form -->
     <v-snackbar v-model="contactToast" dark color="success">
       <span>The message has been sent!</span>
       <v-btn class="float-right" x-small dark icon @click="contactToast = false">
         <v-icon>mdi-close</v-icon>
       </v-btn>
     </v-snackbar>
+
+    <!-- Home Page Content -->
     <v-row>
       <v-col cols="12" class="mt-5"></v-col>
-      <!-- BIG Title, center of screen -->
+      <!-- Intro Image -->
       <v-col cols="12" class="pb-0">
         <v-card class="pt-15 pb-3 introImage">
-          <p class="introTitle">Welcome to "Title"</p>
-          <p class="introDescription">Here is some information about the project</p>
+          <p class="introTitle">Welcome to EVOLVE 5.0 headline</p>
+          <p class="introDescription">Some short information about the project</p>
         </v-card>
       </v-col>
+
       <!-- 3 Cards in center of cards -->
       <v-col cols="2" class="pt-0"></v-col>
       <v-col cols="8" class="pt-0">
@@ -29,13 +33,13 @@
               <v-divider v-if="pageCardIndex == 2" class="pageCardDividerRed"></v-divider>
               <v-row>
                 <v-col cols="10">
-                  <p class="title pt-2">{{pageCard.name}}</p>
+                  <p class="pt-2 pageCardTitle">{{pageCard.name}}</p>
                 </v-col>
                 <v-col cols="2">
-                  <v-icon large class="pt-2" style="color:black;">mdi-arrow-right</v-icon>
+                  <v-icon large class="pt-2 pageCardArrow">mdi-arrow-right</v-icon>
                 </v-col>
               </v-row>
-              <p>{{pageCard.description}}</p>
+              <p class="pageCardDescription">{{pageCard.description}}</p>
             </v-card>
           </v-col>
         </v-row>
@@ -46,8 +50,8 @@
         <v-row>
           <v-col cols="4"></v-col>
           <v-col cols="4">
-            <p class="text-center title">Some short info</p>
-            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Provident voluptas asperiores dolores aspernatur, inventore blanditiis mollitia harum quo adipisci quisquam, quod odit ad explicabo consequuntur eos saepe animi quasi maiores.</p>
+            <p class="shortInfoTitle">Some short info</p>
+            <p class="shortInfoDescription">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Provident voluptas asperiores dolores aspernatur, inventore blanditiis mollitia harum quo adipisci quisquam, quod odit ad explicabo consequuntur eos saepe animi quasi maiores.</p>
           </v-col>
         </v-row>
       </v-col>
@@ -56,9 +60,11 @@
       <v-col cols="2" class="pt-0"></v-col>
       <v-col cols="8">
         <v-row>
+          <!-- Chapter Title -->
           <v-col cols="12" class="pt-15 mt-15">
-            <p class="title">News</p>
+            <p class="newsChapterTitle">News</p>
           </v-col>
+          <!-- News Articles - Need a slice later (simulate) -->
           <v-col cols="12" xl="4" lg="4" md="4" sm="12" xs="12" v-for="(fakeNews, fakeNewsIndex) in fakeNewsCards" :key="fakeNewsIndex">
             <v-card height="100%" @click="$refs.openingNewsDialog.openNewsDialog(fakeNews)">
               <v-row>
@@ -66,21 +72,22 @@
                   <v-row>
                     <v-col cols="12">
                       <v-img v-if="fakeNews.image" :src="fakeNews.image" alt="News Image" width="auto" height="200px" cover class="ml-2 mr-2"></v-img>
+                      <div v-else style="height:200px; width:auto; background-color:grey; margin:0px 15px 0px 15px;"></div>
                     </v-col>
-                    <v-col cols="12" style="height:125px;" class="mb-0 ml-2">
-                      <p class="pl-2 mb-0 article-title">{{fakeNews.title}}</p>
-                      <p class="pa-2 mb-0 article-length">{{fakeNews.article}}</p>
+                    <v-col cols="12" style="height:110px;" class="mb-0 ml-2 pb-0">
+                      <p class="pl-2 mb-0 newsCardTitle">{{fakeNews.title}}</p>
+                      <p class="pa-2 mb-0 pb-0 newsCardDescription">{{fakeNews.article}}</p>
                     </v-col>
-                    <v-col cols="12" class="pt-0">
+                    <v-col cols="12" class="pt-0 mt-0">
                       <v-card-actions class="pt-0">
-                        <p class="article-button mr-2">Read article</p>
-                        <v-icon style="color:black;">mdi-arrow-right</v-icon>
+                        <p class="newsCardButton mr-2 pt-3">Read article</p>
+                        <v-icon class="newsCardButtonArrow">mdi-arrow-right</v-icon>
                       </v-card-actions>
                     </v-col>
                   </v-row>
-                  <v-divider v-if="fakeNewsIndex == 0" class="pageCardDividerBlue article-dividers" width="98%"></v-divider>
-                  <v-divider v-if="fakeNewsIndex == 1" class="pageCardDividerGreen article-dividers" width="98%"></v-divider>
-                  <v-divider v-if="fakeNewsIndex == 2" class="pageCardDividerRed article-dividers" width="98%"></v-divider>
+                  <v-divider v-if="fakeNewsIndex == 0" class="pageCardDividerBlue newsCardDividerPositioning" width="98%"></v-divider>
+                  <v-divider v-if="fakeNewsIndex == 1" class="pageCardDividerGreen newsCardDividerPositioning" width="98%"></v-divider>
+                  <v-divider v-if="fakeNewsIndex == 2" class="pageCardDividerRed newsCardDividerPositioning" width="98%"></v-divider>
                 </v-col>
                 <v-col cols="12"></v-col>
               </v-row>
@@ -88,83 +95,49 @@
           </v-col>
         </v-row>
       </v-col>
-
+      <!-- See all news button - go to page -->
       <v-col cols="12" align="center">
-          <!-- <v-btn class="text-center" rounded outlined shadow style="box-shadow: 0 0 10px #000000;"> -->
-          <!-- <v-btn class="text-center " rounded style="border:solid 2px red; border-radius:4em;"> -->
-          <v-btn class="text-center buttonBorder" rounded>
-            See all news
-          </v-btn>
+        <v-btn class="seeAllButtonBorder seeAllButtonText" rounded to="/news">
+          See all news
+        </v-btn>
       </v-col>
 
-
-      <v-col cols="12">
-        <!-- <RssTest></RssTest> -->
-        <v-divider></v-divider>
-        <v-divider></v-divider>
-        <v-divider></v-divider>
-      </v-col>
-     
-
-      <v-col cols="12">
+      <!-- RSS -->
+      <v-col cols="2" class="pt-0"></v-col>
+      <v-col cols="8">
         <v-row>
-          <!-- half screen RSS FEED -->
-          <v-col cols="1"></v-col>
-          <v-col cols="4">
-            <v-card height="100%">
-              <p class="text-center title mb-0 pt-5 pb-5">RSS Feed</p>
-              <v-divider></v-divider>
+          <v-col cols="12" class="pt-15 mt-15">
+            <p class="newsChapterTitle">RSS feed</p>
+          </v-col>
+          <v-col cols="12" xl="6" lg="6" md="6" sm="12" xs="12" v-for="(rssFeed, rssFeedIndex) in fakeRSSfeed" :key="rssFeedIndex">
+            <v-card height="100%" @click="$refs.openingNewsDialog.openRssDialog(rssFeed)" :style="`border-right:3px solid ${colorArr[rssFeedIndex]}`">
               <v-row>
-                
-                <v-col cols="12" v-for="(rssFeed, rssFeedIndex) in fakeRSSfeed" :key="rssFeedIndex">
-                  <v-row >
-                    <v-col cols="2"  @click="$refs.openingRssDialog.openRssDialog(rssFeed)">
-                      <v-img v-if="rssFeed.image" :src="rssFeed.image" alt="News Image" max-height="50px" contain class="ml-1"></v-img>
-                    </v-col>
-                    <v-col cols="1"></v-col>
-                    <v-col cols="9">
-                      <p class="text-center title mb-0">{{rssFeed.title}}</p>
-                      <p>{{rssFeed.content}}</p>
-                    </v-col>
-                  </v-row>
-                  <v-divider></v-divider>
-                  <v-divider></v-divider>
-                  <v-divider></v-divider>
+                <!-- Image -->
+                <v-col cols="3" style="height: 100px;" class="ma-0 pa-0">
+                  <v-img v-if="rssFeed.image" :src="rssFeed.image" alt="News Image" max-height="50px" contain></v-img>
+                  <div v-else style="height:95px; width:100px; background-color:grey; margin:5px 15px 15px 15px;"></div>
                 </v-col>
-                <v-col></v-col>
+                <!-- Title and Content -->
+                <v-col cols="6">
+                  <p>{{rssFeed.title}}</p>
+                  <p>{{rssFeed.content}}</p>
+                </v-col>
+                <!-- Date and Arrow -->
+                <v-col cols="3">
+                  <p>Date</p>
+                  <p>arrow</p>
+                </v-col>
               </v-row>
             </v-card>
           </v-col>
-
-          <!-- Other half screen - Contact -->
-          <v-col cols="6">
-            <v-card>
-              <v-card-title>
-                <span class="headline">Contact us</span>
-                <v-spacer />
-              </v-card-title>
-              <v-card-text>
-                <v-form ref="form" v-model="isContactFormValid">
-                  <v-container>
-                    <v-text-field v-model="contactForm.name" name="name" label="Name" :rules="[rules.requiredName]" outlined dense required></v-text-field>
-                    <v-text-field v-model="contactForm.email" name="email" label="Email" :rules="[rules.requiredEmail, rules.emailRequirement]" outlined dense required></v-text-field>
-                    <v-text-field v-model="contactForm.subject" name="subject" label="Subject" :rules="[rules.requiredField]" outlined dense required></v-text-field>
-                    <v-textarea v-model="contactForm.message" name="message" label="Message" :rules="[rules.requiredField]" outlined auto-grow counter required></v-textarea>
-                  </v-container>
-                </v-form>
-              </v-card-text>
-              <v-divider></v-divider>
-              <v-card-actions>
-                <v-spacer></v-spacer>
-                <v-btn icon @click="clearForm"><v-icon>mdi-close</v-icon></v-btn>
-                <v-btn color="success" icon :disabled="!isContactFormValid" @click="postContactForm()"><v-icon>mdi-send</v-icon></v-btn>
-              </v-card-actions>
-            </v-card>
-          </v-col>
-
         </v-row>
       </v-col>
-
+      <!-- See all RSS button - go to page -->
+      <v-col cols="12" class="mb-15 pb-15" align="center">
+        <v-btn class="seeAllButtonBorder seeAllButtonText" rounded to="/rss">
+          View RSS feed
+        </v-btn>
+      </v-col>
     </v-row>
   </div>
 </template>
@@ -182,6 +155,12 @@ import RssTest from "@/components/rss/rssTest.vue"
     },
     data(){
       return {
+        colorArr:[
+          "#205072",
+          "#329D9C",
+          "#D83636",
+          "#DD9A30"
+        ],
         contactToast: false,
         // Contact Form
         contactForm: {
@@ -203,50 +182,68 @@ import RssTest from "@/components/rss/rssTest.vue"
         // In Page Pages Cards
         pageCards:[
           { name: "E-Learning", color: "", link: "trainingmodules", description: "Lorem ipsum dolores sit amet. Nihil repellat architecto asperiores sequi facere" },
-          { name: "Resources", color: "", link: "/resources",  description: "Lorem ipsum dolores sit amet. Nihil repellat architecto asperiores sequi facere" },
-          { name: "Project", color: "", link: "",  description: "Lorem ipsum dolores sit amet. Nihil repellat architecto asperiores sequi facere" }
+          { name: "Available resources", color: "", link: "/resources",  description: "Lorem ipsum dolores sit amet. Nihil repellat architecto asperiores sequi facere" },
+          { name: "About the project", color: "", link: "/about",  description: "Lorem ipsum dolores sit amet. Nihil repellat architecto asperiores sequi facere" }
         ],
         // Dummy data below - Replace when db are implemented
         fakeNewsCards:[
+          // { 
+          //   title: "Smite officially the best game!", 
+          //   article: "10/10 best game! Play it now!", 
+          //   external_link: "https://www.smitegame.com/gods/", 
+          //   image: "https://i.ytimg.com/vi/xAPsmI_zDZs/maxresdefault.jpg" 
+          // },
+          // { 
+          //   title: "Lorem Ipsum", 
+          //   article: "Lorem Ipsum dolores dahls ",
+          //   external_link: "https://www.lipsum.com/", 
+          //   image: "https://www.multimediaxp.com/images/article_190508124638.1557333998.jpg" 
+          // },
           { 
-            title: "Google Analytics Banned", 
-            article: "Google Analytics are now officially banned in Austria.  Eu Next?", 
-            external_link: "https://www.wired.com/story/google-analytics-europe-austria-privacy-shield/", 
-            image: "https://miro.medium.com/max/1400/1*AXFPIoNhxOXepRDvqOisUg.png" 
+            title: "News title", 
+            article: "Lorem ipsum dolor sit amet, nihil repellat arcitecto asperiores sequi facere",
+            external_link: "", 
+            image: "" 
           },
           { 
-            title: "Smite officially the best game!", 
-            article: "10/10 best game! Play it now!", 
-            external_link: "https://www.smitegame.com/gods/", 
-            image: "https://i.ytimg.com/vi/xAPsmI_zDZs/maxresdefault.jpg" 
+            title: "News title", 
+            article: "Lorem ipsum dolor sit amet, nihil repellat arcitecto asperiores sequi facere",
+            external_link: "", 
+            image: "" 
           },
           { 
-            title: "Lorem Ipsum", 
-            article: "Lorem Ipsum dolores dahls ",
-            external_link: "https://www.lipsum.com/", 
-            image: "https://www.multimediaxp.com/images/article_190508124638.1557333998.jpg" 
+            title: "News title", 
+            article: "Lorem ipsum dolor sit amet, nihil repellat arcitecto asperiores sequi facere",
+            external_link: "", 
+            image: "" 
           },
         ],
         fakeRSSfeed: [
           { 
-            title: "Smite best game", 
-            image: "https://i.ytimg.com/vi/xAPsmI_zDZs/maxresdefault.jpg", 
-            content: "Winner of the golden controller", 
+            title: "RSS feed title", 
+            image: "", 
+            content: "Lorem ipsum dolor sit amet, eligendi distinctio iste Iste quis rerum", 
           },
           { 
-            title: "Worlds best newspaper", 
-            image: "https://akamai.vgc.no/v2/images/a7a69de2-d715-44b4-8344-b96b404806a0?fit=crop&format=auto&h=2665&w=1895&s=ea2af8dc0642cd84ceefb36f7d05649706c3084d", 
-            content: "Awarded as the best newspaper in the world.", 
+            title: "RSS feed title", 
+            image: "", 
+            content: "Lorem ipsum dolor sit amet, eligendi distinctio iste Iste quis rerum", 
           },
           { 
-            title: "Lorem Ipsum", 
-            image: "https://www.multimediaxp.com/images/article_190508124638.1557333998.jpg", 
-            content: "Lorm Ipsum Dolores", 
+            title: "RSS feed title", 
+            image: "", 
+            content: "Lorem ipsum dolor sit amet, eligendi distinctio iste Iste quis rerum", 
+          },
+          { 
+            title: "RSS feed title", 
+            image: "", 
+            content: "Lorem ipsum dolor sit amet, eligendi distinctio iste Iste quis rerum", 
           },
         ],
       }
     },
     methods: {
+      
       // Form: Clear all data
       clearForm(){
         this.$refs.form.reset()
@@ -273,23 +270,37 @@ import RssTest from "@/components/rss/rssTest.vue"
 </script>
 
 <style scoped>
+/* General Page */
+.homePageWidth {
+  width: 90vw; 
+  margin:auto auto;
+}
+
 /* Intro Classes for box and text at the top */
 .introImage {
   height:650px;
   background-color:rgb(213, 211, 211);
 }
 .introTitle {
-  font-size:34px;
-  color: rgb(48, 47, 47);
+  font-size:48px;
+  color: #434343;
+  opacity: 1;
+  letter-spacing: 0px;
   margin-left: 15%; 
-  margin-top:5%;
+  margin-top:10%;
   font-weight: bold;
+  font-family: 'Barlow', sans-serif;
+  font-style:normal;
 }
 .introDescription {
-  font-size:20px;
-  color: rgb(48, 47, 47);
+  font-size:28px;
+  color: #434343; 
+  opacity: 1;
+  letter-spacing: 0px;
   margin-left: 15%;
   font-weight: bold;
+  font-family: 'Barlow', sans-serif;
+  font-style:normal;
 }
 /* Styling the 3 cards close to the intro top */
 .pageCardPositioning {
@@ -310,13 +321,74 @@ import RssTest from "@/components/rss/rssTest.vue"
   background-color:#D83636; 
   padding: 2px;
 }
+.pageCardTitle {
+  font-family: 'Barlow', sans-serif;
+  font-weight: bold;
+  font-size: 24px;
+  color: #434343;
+  letter-spacing: 0;
+}
+.pageCardDescription {
+  font-family: 'Lato', sans-serif;
+  font-weight: regular;
+  font-size: 14px;
+  color: #6A6A6A;
+  letter-spacing: 0;
+}
+
+.pageCardArrow {
+  color: #205072;
+  opacity: 1;
+}
+
+/* Short Info Text */
+.shortInfoTitle {
+  font-family: 'Barlow', sans-serif;
+  font-weight: bold;
+  font-size: 26px;
+  text-align: center;
+  color: #434343;
+  opacity: 1;
+  letter-spacing: 0px;
+}
+
+.shortInfoDescription {
+  font-family: 'Lato', sans-serif;
+  font-weight: regular;
+  text-align: center;
+  color: #6A6A6A;
+  opacity: 1;
+  letter-spacing: 0px;
+}
+
+/* Used several places */
+
 
 /* NEWS */
-.article-title {
-  font-size: 20px;
+.newsChapterTitle {
+  font-family: 'Barlow', sans-serif;
   font-weight: bold;
+  font-size: 26px;
+  color: #434343;
+  opacity: 1;
+  letter-spacing: 0px;
+  text-align: left;
 }
-.article-length {
+.newsCardTitle {
+  font-family: 'Barlow', sans-serif;
+  font-weight: bold;
+  font-size: 24px;
+  color: #434343;
+  letter-spacing: 0px;
+  text-align: left;
+}
+.newsCardDescription {
+  font-family: 'Lato', sans-serif;
+  font-weight: regular;
+  text-align: left;
+  color: #6A6A6A;
+  opacity: 1;
+  letter-spacing: 0px;
   overflow: hidden;
   text-overflow: ellipsis;
   display: -webkit-box;
@@ -324,29 +396,58 @@ import RssTest from "@/components/rss/rssTest.vue"
   line-clamp: 2; 
   -webkit-box-orient: vertical;
 }
-.article-button{
+.newsCardButton {
+  font-family: 'Lato', sans-serif;
+  font-weight: regular;
   font-size: 18px;
-  font-weight: bold;
+  text-align: left;
+  color: #205072;
+  opacity: 1;
+  letter-spacing: 0px;
+  text-decoration: underline;
 }
-.article-dividers {
+.newsCardButtonArrow {
+  color: #205072;
+  opacity: 1;
+}
+.newsCardDividerPositioning {
   margin-left:1%; 
   margin-bottom:2%;
 }
 
-.buttonBorder {
+/* See All News / RSS Button */
+.seeAllButtonText {
+  font-family: 'Lato', sans-serif;
+  font-weight: normal;
+  font-size: 18px;
+  color: #205072;
+  opacity: 1;
+  text-align: center;
+  letter-spacing: 0px;
+  text-transform: initial;
+}
+.seeAllButtonBorder {
   border: 3px solid #205072;
   font-family: 'Lato', sans-serif;
+  opacity: 1;
+  border-radius: 52px;
 }
-
-.buttonBorder:after {
+.seeAllButtonBorder:after {
   border: 3px solid #d6d2d24d;
   content: '';
   position: absolute;
-  top: -12px;
-  right: -12px;
-  bottom: -12px;
-  left: -12px;
+  top: -9px;
+  right: -9px;
+  bottom: -9px;
+  left: -9px;
   border-radius: 4em;
+  box-shadow: 0px 2px 12px #00000033;
+}
+
+/* RSS feed */
+.rssRightBorder {
+  border-right:3px solid pink;
+  
 }
 
 </style>

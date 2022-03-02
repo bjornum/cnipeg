@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="homePageWidth">
     <v-row>
       <!-- Cards -->
       <v-col cols="12" class="mt-10"></v-col>
@@ -155,3 +155,12 @@ export default {
   }
 }
 </script>
+
+<style scoped>
+/* General Page */
+.homePageWidth {
+  width: 90vw; 
+  margin:auto auto;
+}
+
+</style>

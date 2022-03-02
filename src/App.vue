@@ -7,6 +7,8 @@
     <v-main>
       <router-view/>
     </v-main>
+
+    <Footer></Footer>
   </v-app>
 </template>
 
@@ -16,6 +18,7 @@ import NavbarPhone from "@/components/Global/NavbarPhone.vue"
 import LanguageTest from "@/components/TestAndDevelopment/LanguageTest.vue"
 import SelectLocale from "@/components/TestAndDevelopment/SelectLocale.vue"
 import Sidebar from "@/components/Global/Sidebar.vue"
+import Footer from "@/components/Global/Footer.vue"
 
 export default {
   name: 'App',
@@ -24,7 +27,8 @@ export default {
     Sidebar,
     NavbarPhone,
     LanguageTest,
-    SelectLocale
+    SelectLocale,
+    Footer
   },
   data(){
     return {
