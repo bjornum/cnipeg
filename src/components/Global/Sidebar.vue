@@ -64,6 +64,7 @@ export default {
         { name: "Home", location: "/", icon: "" },
         { name: "About", location: "/about", icon: "" },
         { name: "News", location: "/news", icon: "" },
+        { name: "RSS", location: "/rss", icon: "" },
         { name: "Training Modules", location: "/trainingmodules", icon: "" },
         { name: "Resources", location: "/resources", icon: "" },
       ]

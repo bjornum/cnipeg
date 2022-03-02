@@ -110,7 +110,7 @@
             <p class="newsChapterTitle">RSS feed</p>
           </v-col>
           <v-col cols="12" xl="6" lg="6" md="6" sm="12" xs="12" v-for="(rssFeed, rssFeedIndex) in fakeRSSfeed" :key="rssFeedIndex">
-            <v-card height="100%" @click="$refs.openingNewsDialog.openRssDialog(rssFeed)" :style="`border-right:3px solid ${colorArr[rssFeedIndex]}`">
+            <v-card height="100%" :style="`border-right:3px solid ${colorArr[rssFeedIndex]}`">
               <v-row>
                 <!-- Image -->
                 <v-col cols="3" style="height: 100px;" class="ma-0 pa-0">

@@ -28,6 +28,7 @@ O<template>
       <a href="/">Home</a>
       <a href="/about">About</a>
       <a href="/news">News</a>
+      <a href="/rss">RSS</a>
       <a href="/trainingmodules">Training Modules</a>
       <a href="/resources" class="mr-2">Resources</a>
 

@@ -19,6 +19,8 @@
               <p v-else-if="item.title == 'Sound' || item.title == 'Lyd'" class="text-center title pt-10 pb-10">{{ $t('resources.sound') }}</p>
               <p v-else-if="item.title == 'Other' || item.title == 'Annet'" class="text-center title pt-10 pb-10">{{ $t('resources.other') }}</p>
               <p v-else>...</p>
+              <v-divider class="newsCardDividerPositioning" width="98%" style="padding: 2px;" :style="`background-color:${colorArr[index]}`"></v-divider>
+              <v-col cols="12" class="ma-0 pa-0" style="padding-top: 0.1px !important;"></v-col>
             </v-card>
           </v-col>
         </v-row>
@@ -28,7 +30,7 @@
       </v-col>
 
       <!-- Resource Content -->
-      <v-col cols="12" class="pt-5">
+      <v-col cols="12" class="pt-5 mb-15">
         <v-card flat>
           <v-row>
             <!-- Default -->
@@ -50,8 +52,9 @@
 
             <!-- Display Content -->
             <template v-else-if="resourceContent">
-              <v-col cols="7" class="pb-0">
-                <p class="text-end title">Resource Content</p>
+              <v-col cols="2"></v-col>
+              <v-col cols="5" class="pb-0">
+                <p class=" title">Resource Content</p>
               </v-col>
                <v-col cols="3" class="d-flex align-end flex-column">
                 <v-btn class="mr-5" @click="closeTheResourceBox()">X</v-btn>
@@ -95,6 +98,7 @@
           </v-row>
         </v-card>
       </v-col>
+
     </v-row>
   </div>
 </template>
@@ -103,6 +107,7 @@
 export default {
   data(){
     return {
+      colorArr:[ "#205072", "#329D9C", "#D83636", "#DD9A30", "#205072", "#329D9C" ],
       resourceFolders:[
         { title: this.$t('resources.video'), colour: "", image: "", description: "", template: 1 },
         { title: this.$t('resources.files'), colour: "", image: "", description: "", template: 2 },
@@ -161,6 +166,11 @@ export default {
 .homePageWidth {
   width: 90vw; 
   margin:auto auto;
+}
+
+.newsCardDividerPositioning {
+  margin-left:1%; 
+  margin-bottom:2%;
 }
 
 </style>
