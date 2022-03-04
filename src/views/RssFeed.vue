@@ -8,7 +8,7 @@
         <v-row>
           <!-- RSS feed Chapter info -->
           <v-col cols="12">
-            <RssTest></RssTest>
+            <!-- <RssTest></RssTest> -->
             <p class="rssChapterTitle">RSS feed</p>
             <p class="rssChapterDescription">Keep up to date about the Evolve project</p>
           </v-col>
