@@ -27,7 +27,7 @@ O<template>
     <div class="mt-10">
       <a href="/">Home</a>
       <a href="/about">About</a>
-      <!-- <a href="/partners">Partners</a> -->
+      <a href="/partners">Partners</a>
       <a href="/news">News</a>
       <a href="/rss">RSS</a>
       <a href="/trainingmodules">Training Modules</a>
