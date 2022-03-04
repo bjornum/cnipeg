@@ -89,11 +89,11 @@ export default {
 /* Card CSS */
 .box{
   border-bottom: 3px solid transparent;
-  border-image: linear-gradient(to right,  #B8530D 5%, transparent 5%);
+  border-image: linear-gradient(to right,  #DD9A30 5%, transparent 5%);
   border-image-slice: 1;
 }
 .cardBorder{
-  border: 3px #147937 solid;
+  border: 3px #329D9C solid;
 }
 
 
