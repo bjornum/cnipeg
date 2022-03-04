@@ -5,7 +5,7 @@
       <v-col cols="12" class="mt-15"></v-col>
       <v-col cols="2"></v-col>
       <v-col cols="8">
-        <v-row>
+        <v-row> 
           <!-- RSS feed Chapter info -->
           <v-col cols="12">
             <!-- <RssTest></RssTest> -->
