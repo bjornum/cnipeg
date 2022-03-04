@@ -85,14 +85,14 @@ export default {
 }
 a {
   padding: 14px;
-  color: rgb(92, 89, 89);
+  color: #6A6A6A;
   text-decoration: none;
   font-size: 16px;
   font-family: 'Lato', sans-serif;
   /* font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif */
 }
 a:visited {
-  color: rgb(109, 104, 104);
+  color: #6A6A6A;
   text-decoration: none;
 }
 a:hover {
