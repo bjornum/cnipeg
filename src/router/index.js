@@ -8,14 +8,14 @@ import DigitalLearningDesign from '../views/DigitalLearningDesign.vue'
 import DigitalPedagogicalStrategy from '../views/DigitalPedagogicalStrategy.vue'
 import Resources from '../views/Resources.vue'
 import RSSfeed from '../views/RssFeed.vue'
-import Partners from '../views/Partners.vue'
+import Partners from '../views/Partner.vue'
 
 Vue.use(VueRouter)
 
 const routes = [
   { path: '/', name: 'Home', component: Home },
   { path: '/about', name: 'About', component: About },
-  { path: '/partners', name: 'Partners', component: Partners },
+  { path: '/partners', name: 'Partner', component: Partners },
   { path: '/news', name: 'News', component: Newss },
   { path: '/trainingmodules', name: 'TrainingModules', component: TrainingModules },
   { path: '/digitallearningdesign', name: 'DigitalLearningDesign', component: DigitalLearningDesign },
