@@ -5,9 +5,12 @@
       <v-divider class="dividerStyling"></v-divider>
 
       </v-col>
-      <v-col cols="2"></v-col>
+      <!-- Erasmus Logo -->
+      <v-col cols="2">
+        <v-img src="img/erasmusLogoFooter.jpg" contain></v-img>
+      </v-col>
       <!-- Text -->
-      <v-col cols="8">
+      <v-col cols="8" class="pl-15 pt-3">
         <p class="footerText">Footer design will change depending on content</p>
         <p class="footerText">Contact info</p>
       </v-col>
