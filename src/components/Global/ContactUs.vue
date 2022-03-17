@@ -42,6 +42,7 @@
 export default {
   data() {
     return {
+      accessKey:window.btoa('bac436b32a36431bb437b9509b6d3495'),
       contactDialog: false,
       contactToast: false,
       isContactFormValid: true,
@@ -97,13 +98,13 @@ export default {
         sentFrom: this.contactFormData.sentFrom
       };
       console.log("Sending Contact Form", ContactForm);
-      this.messageSent();
-      this.closeContact();
+      // this.messageSent();
+      // this.closeContact();
       // Post it to DB
-      // this.$axios.post('URL' + IfNeedingGuid, ContactForm).then(()=> {
-      //   this.messageSent()
-      //   this.closeContact()
-      // })
+      this.$http.post('https://app.followup.prios.no/api/crm/contactform/prios', ContactForm,{headers:{Tempaccess:this.accessKey}}).then(()=> {
+        this.messageSent()
+        this.closeContact()
+      })
     },
   }
 }

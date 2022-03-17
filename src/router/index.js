@@ -13,6 +13,7 @@ import HomeSMAP from '../views/smab/SmabHome.vue'
 import AboutSMAP from '../views/smab/SmabAbout.vue'
 import NewsOneSMAP from '../views/smab/SmabNewsOne.vue'
 import TrainingModulesSMAP from '../views/smab/SmabTrainingModules.vue'
+import ResourcesSMAB from '../views/smab/SmabResources.vue'
 
 Vue.use(VueRouter)
 
@@ -26,7 +27,7 @@ const routes = [
   { path: '/digitalpedagogicalstrategy', name: 'DigitalPedagogicalStrategy', component: DigitalPedagogicalStrategy },
   { path: '/resources', name: 'Resources', component: Resources },
   { path: '/rss', name: 'RSS', component: RSSfeed },
-  { path: '/test', name: 'Test', component: TrainingModulesSMAP },
+  { path: '/test', name: 'Test', component: ResourcesSMAB },
   
 ]
 
