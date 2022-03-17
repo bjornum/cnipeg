@@ -8,6 +8,9 @@ import axios from 'axios'
 import VueAxios from 'vue-axios'
 import VueI18n from 'vue-i18n';
 import messages from "./locales/export.js"
+import dotenv from 'dotenv';
+
+dotenv.config()
 
 Vue.use(VueI18n);
 Vue.prototype.$http = axios;
