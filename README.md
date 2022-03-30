@@ -1,4 +1,5 @@
-# Project Template
+# projectTemplate
+  - Search and replace this
 
 ## Project setup
 ```

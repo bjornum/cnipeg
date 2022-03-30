@@ -1,19 +1,17 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
-import Home from '../views/Home.vue'
-import About from '../views/About.vue'
-import Newss from '../views/News.vue'
-import TrainingModules from '../views/TrainingModules.vue'
-import DigitalLearningDesign from '../views/DigitalLearningDesign.vue'
-import DigitalPedagogicalStrategy from '../views/DigitalPedagogicalStrategy.vue'
-import Resources from '../views/Resources.vue'
-import RSSfeed from '../views/RssFeed.vue'
-import Partners from '../views/Partner.vue'
-import HomeSMAP from '../views/smab/SmabHome.vue'
-import AboutSMAP from '../views/smab/SmabAbout.vue'
-import NewsOneSMAP from '../views/smab/SmabNewsOne.vue'
-import TrainingModulesSMAP from '../views/smab/SmabTrainingModules.vue'
-import ResourcesSMAB from '../views/smab/SmabResources.vue'
+import Home from '../views/HomePage/Home.vue'
+import About from '../views/AboutPage/About.vue'
+import News from '../views/NewsPage/News.vue'
+import Partners from '../views/PartnerPage/Partner.vue'
+import TrainingModules from '../views/TrainingModulePage/TrainingModules.vue'
+import DigitalLearningDesign from '../views/DigitalLearningPage/DigitalLearningDesign.vue'
+import DigitalPedagogicalStrategy from '../views/DigitalPedagogPage/DigitalPedagogicalStrategy.vue'
+import Resources from '../views/RessourcePage/Resources.vue'
+import RSSfeed from '../views/RssPage/RssFeed.vue'
+
+// Testing Pages
+import ResourcesSMAB from '../views/RessourcePage/SmabResources.vue'
 
 Vue.use(VueRouter)
 
@@ -21,7 +19,7 @@ const routes = [
   { path: '/', name: 'Home', component: Home },
   { path: '/about', name: 'About', component: About },
   { path: '/partners', name: 'Partner', component: Partners },
-  { path: '/news', name: 'News', component: Newss },
+  { path: '/news', name: 'News', component: News },
   { path: '/trainingmodules', name: 'TrainingModules', component: TrainingModules },
   { path: '/digitallearningdesign', name: 'DigitalLearningDesign', component: DigitalLearningDesign },
   { path: '/digitalpedagogicalstrategy', name: 'DigitalPedagogicalStrategy', component: DigitalPedagogicalStrategy },
