@@ -1,20 +1,18 @@
-# projectTemplate
-  - Search and replace this
+# Template Project
+Project template to quickly create new projects.
+## Run the project
+  - Within the terminal ```npm run serve```
 
-## Project setup
-```
-npm install
-```
+## Build the project for deployment
+  - Within the terminal ```npm run build```
 
-### Compiles and hot-reloads for development
-```
-npm run serve
-```
+## Tip
+  - All places within the project where ```projectTemplate``` are mentioned, require change
 
-### Compiles and minifies for production
-```
-npm run build
-```
+## Reminder
+  - Install all used dependencies within the project. ```npm install```
+  - Change project name within package.json
+  - Change favicon and title.
+  - Change Logo (navbar, sidebar and footer)
+  - Change Text (Marked as ```projectTemplate```) 
 
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).

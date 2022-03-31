@@ -1,7 +1,11 @@
 <template>
   <div>
+
+    <!-- There is an error message within the console. that comes up.   -  Check this one out -->
     <v-dialog v-model="newsDialog" width="50vw">
       <v-card>
+         <!-- <p>{{theNewsContent[0]}}</p>
+        <p>{{newsContent}}</p> -->
         <v-card-title>
           <v-spacer></v-spacer>
           <span class="newsDialogTitle">{{newsContent.title}}</span>
@@ -11,18 +15,19 @@
           </v-btn>
         </v-card-title>
         <div style="min-height:180px;">
-          <v-img v-if="newsContent.image" :src="newsContent.image" alt="News Image" max-height="300px" contain class="ml-1"></v-img>
+          <v-img v-if="newsContent.media_url" :src="newsContent.media_url" alt="News Image" max-height="300px" contain class="ml-1"></v-img>
           <div v-else style="height:200px; width:auto; background-color:#D1D1D1; margin:0px 15px 0px 15px;"></div>
         </div>
-        <div>
-          <p class="pl-5 pt-15 newsDialogDescription" style="font-size:20px">{{newsContent.article}}</p>
+        <div v-if="theNewsContent != ''">
+          <p v-html="theNewsContent[0].content" class="pl-5 pt-15 pb-5 mb-0 newsDialogDescription" style="font-size:20px"></p>
         </div>
-        <v-divider></v-divider>
+        <div v-else></div>
+        <!-- <v-divider></v-divider>
         <v-card-actions class="pb-5">
           <v-btn class="seeAllButtonBorder seeAllButtonText" rounded to="/news">
             Go to External Page
           </v-btn>
-        </v-card-actions>
+        </v-card-actions> -->
       </v-card>
     </v-dialog>
   </div>
@@ -32,8 +37,11 @@
 export default {
   data(){
     return {
+      // Save this key within the .env file  - FIX
+      accessKey:window.btoa('bac436b32a36431bb437b9509b6d3495'),
       newsDialog: false,
-      newsContent: [],
+      newsContent: {},
+      theNewsContent: {}
     }
   },
   methods: {
@@ -42,6 +50,7 @@ export default {
     openNewsDialog(data){
       this.newsDialog = true;
       this.newsContent = data;
+      this.getNewsContent(data.id);
     },
 
     // Close Dialog
@@ -54,6 +63,13 @@ export default {
     resetDialogData(){
       this.newsContent = [];
     },
+
+    // Get the content of the news, based on the newsID
+    getNewsContent(newsID){
+       this.$http.get(`https://app.followup.prios.no/api/resource_management/news_content?mode=getpublicnews&news_id=${newsID}`,{headers:{Tempaccess:this.accessKey}}).then(response =>{
+        this.theNewsContent = response.data;
+      })
+    }
 
   }
 }
