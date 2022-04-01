@@ -15,7 +15,7 @@
             <p class="newsChapterDescription">Keep up to date about the EVOLVE project</p>
           </v-col>
           <!-- FakeNews Cards - Delete this section once propper tenant_id have been made -->
-          <!-- <v-col cols="12" xl="4" lg="4" md="4" sm="12" xs="12" v-for="(fakeNews, fakeNewsIndex) in fakeNewsCards" :key="fakeNewsIndex">
+          <v-col cols="12" xl="4" lg="4" md="4" sm="12" xs="12" v-for="(fakeNews, fakeNewsIndex) in fakeNewsCards" :key="fakeNewsIndex">
             <v-card height="100%" @click="$refs.openingNewsDialog.openNewsDialog(fakeNews)">
               <v-row>
                 <v-col cols="12" class="pb-0">
@@ -40,12 +40,12 @@
                 <v-col cols="12"></v-col>
               </v-row>
             </v-card>
-          </v-col> -->
+          </v-col>
 
 
           <!-- Uncomment the code below once having an actual path to the news -->
-           <v-col cols="12" xl="4" lg="4" md="4" sm="12" xs="12" v-for="(newsData, newsDataIndex) in allTheNews" :key="newsDataIndex">
-            <v-card height="100%" @click="$refs.openingNewsDialog.openNewsDialog(newsData)">
+          <!-- <v-col cols="12" xl="4" lg="4" md="4" sm="12" xs="12" v-for="(newsData, newsDataIndex) in allTheNews" :key="newsDataIndex">
+            <v-card height="100%" @click="getNewsContent(newsData)">
               <v-row>
                 <v-col cols="12" class="pb-0">
                   <v-row>
@@ -69,7 +69,7 @@
                 <v-col cols="12"></v-col>
               </v-row>
             </v-card>
-          </v-col>
+          </v-col> -->
 
         </v-row>
       </v-col>
@@ -88,11 +88,10 @@ export default {
     return {
       // Crypt the access key within the .env file
       accessKey:window.btoa('bac436b32a36431bb437b9509b6d3495'),
-      // accessKey:'YmFjNDM2YjMyYTM2NDMxYmI0MzdiOTUwOWI2ZDM0OTU=',
-
-      // Change the tenant into the correct ID
-      tenant: 106,
+      // Test is 106 or 107
+      tenant: 999,
       allTheNews: [],
+      theNewsContent: [],
       colorArr:[ "#205072", "#329D9C", "#D83636", "#DD9A30", "#205072", "#329D9C" ],
       fakeNewsCards:[
         { 
@@ -138,13 +137,29 @@ export default {
     this.getAllNews();
   },
   methods: {
-    // Get all the news saved toward this tenant (change tenant_id)
+    // Get all news made for this tenant
     getAllNews(){
       this.$http.get(`https://app.followup.prios.no/api/resource_management/news?mode=getpublicnews&tenant_id=${this.tenant}`,{headers:{Tempaccess:this.accessKey}}).then(response =>{
         this.allTheNews = response.data;
+        console.log("Responsen", response.data);
       })
     },
-  },
+
+    // Get all the content of the clicked news
+    getNewsContent(data){
+      this.$http.get(`https://app.followup.prios.no/api/resource_management/news_content?mode=getpublicnews&news_id=${data.id}`,{headers:{Tempaccess:this.accessKey}}).then(response =>{
+        this.theNewsContent = response.data;
+        console.log("Responsen", response.data);
+      }).then(responsen => {
+        this.openTheDialog(data, this.theNewsContent);
+      })
+    },
+
+    // Open the Dialog while passing the correct data
+    openTheDialog(originalData, contentData){
+      this.$refs.openingNewsDialog.openNewsDialog(originalData, contentData);
+    },
+  }
 }
 </script>
 
