@@ -23,8 +23,8 @@
       </v-col>
 
       <!-- 3 Cards in center of cards -->
-      <v-col cols="2" class="pt-0"></v-col>
-      <v-col cols="8" class="pt-0">
+      <v-col cols="12" xl="2" lg="2" md="2" sm="12" xs="12" class="pt-0"></v-col>
+      <v-col cols="12" xl="8" lg="8" md="8" sm="12" xs="12" class="pt-0">
         <v-row>
           <v-col cols="12" xl="4" lg="4" md="4" sm="12" xs="12" v-for="(pageCard, pageCardIndex) in pageCards" :key="pageCardIndex">
             <v-card class="pageCardPositioning" :to="pageCard.link" style="position:relative;">
@@ -48,8 +48,8 @@
       <!-- Info Text -->
       <v-col cols="12">
         <v-row>
-          <v-col cols="4"></v-col>
-          <v-col cols="4">
+          <v-col cols="12" xl="4" lg="4" md="4" sm="12" xs="12"></v-col>
+          <v-col cols="12" xl="4" lg="4" md="4" sm="12" xs="12">
             <p class="shortInfoTitle">Some short info</p>
             <p class="shortInfoDescription">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Provident voluptas asperiores dolores aspernatur, inventore blanditiis mollitia harum quo adipisci quisquam, quod odit ad explicabo consequuntur eos saepe animi quasi maiores.</p>
           </v-col>
@@ -57,14 +57,14 @@
       </v-col>
 
       <!-- News -->
-      <v-col cols="2" class="pt-0"></v-col>
-      <v-col cols="8">
+      <v-col cols="12" xl="2" lg="2" md="2" sm="12" xs="12" class="pt-0"></v-col>
+      <v-col cols="12" xl="8" lg="8" md="8" sm="12" xs="12">
         <v-row>
           <!-- Chapter Title -->
           <v-col cols="12" class="pt-15 mt-15">
             <p class="newsChapterTitle">News</p>
           </v-col>
-          <!-- News Articles - Need a slice later (simulate) -->
+          <!-- News Articles - Need a slice later (simulate) - Delete when having actual news -->
           <v-col cols="12" xl="4" lg="4" md="4" sm="12" xs="12" v-for="(fakeNews, fakeNewsIndex) in fakeNewsCards" :key="fakeNewsIndex">
             <v-card height="100%" @click="$refs.openingNewsDialog.openNewsDialog(fakeNews)">
               <v-row>
@@ -93,6 +93,34 @@
               </v-row>
             </v-card>
           </v-col>
+
+          <!-- Comment this in, once page got actual news -->
+          <!-- <v-col cols="12" xl="4" lg="4" md="4" sm="12" xs="12" v-for="(newsData, newsDataIndex) in allTheNews.slice(0, 3)" :key="newsDataIndex">
+            <v-card height="100%" @click="getNewsContent(newsData)">
+              <v-row>
+                <v-col cols="12" class="pb-0">
+                  <v-row>
+                    <v-col cols="12">
+                      <v-img v-if="newsData.media_url" :src="newsData.media_url" alt="News Image" width="auto" height="200px" cover class="ml-2 mr-2"></v-img>
+                      <div v-else style="height:200px; width:auto; background-color:#D1D1D1; margin:0px 15px 0px 15px;"></div>
+                    </v-col>
+                    <v-col cols="12" style="height:110px;" class="mb-0 ml-2 pb-0">
+                      <p class="pl-2 mb-0 newsCardTitle">{{newsData.title}}</p>
+                      <p class="pa-2 mb-0 pb-0 newsCardDescription">{{newsData.description}}</p>
+                    </v-col>
+                    <v-col cols="12" class="pt-0 mt-0">
+                      <v-card-actions class="pt-0">
+                        <p class="newsCardButton mr-2 pt-3">Read article</p>
+                        <v-icon class="newsCardButtonArrow">mdi-arrow-right</v-icon>
+                      </v-card-actions>
+                    </v-col>
+                  </v-row>
+                  <v-divider class="newsCardDividerPositioning" width="98%" style="padding: 2px;" :style="`background-color:${colorArr[newsDataIndex]}`"></v-divider>
+                </v-col>
+                <v-col cols="12"></v-col>
+              </v-row>
+            </v-card>
+          </v-col> -->
         </v-row>
       </v-col>
       <!-- See all news button - go to page -->
@@ -103,8 +131,8 @@
       </v-col>
 
       <!-- RSS -->
-      <v-col cols="2" class="pt-0"></v-col>
-      <v-col cols="8">
+      <v-col cols="12" xl="2" lg="2" md="2" sm="12" xs="12" class="pt-0"></v-col>
+      <v-col cols="12" xl="8" lg="8" md="8" sm="12" xs="12">
         <v-row>
           <v-col cols="12" class="pt-15 mt-15">
             <p class="newsChapterTitle">RSS feed</p>
@@ -155,6 +183,10 @@ import RssTest from "@/components/rss/rssTest.vue"
     },
     data(){
       return {
+        accessKey:window.btoa('bac436b32a36431bb437b9509b6d3495'),
+        tenant: 999,
+        allTheNews: [],
+        theNewsContent: [],
         colorArr:[
           "#205072",
           "#329D9C",
@@ -185,20 +217,9 @@ import RssTest from "@/components/rss/rssTest.vue"
           { name: "Available resources", color: "", link: "/resources",  description: "Lorem ipsum dolores sit amet. Nihil repellat architecto asperiores sequi facere" },
           { name: "About the project", color: "", link: "/about",  description: "Lorem ipsum dolores sit amet. Nihil repellat architecto asperiores sequi facere" }
         ],
+        
         // Dummy data below - Replace when db are implemented
         fakeNewsCards:[
-          // { 
-          //   title: "Smite officially the best game!", 
-          //   article: "10/10 best game! Play it now!", 
-          //   external_link: "https://www.smitegame.com/gods/", 
-          //   image: "https://i.ytimg.com/vi/xAPsmI_zDZs/maxresdefault.jpg" 
-          // },
-          // { 
-          //   title: "Lorem Ipsum", 
-          //   article: "Lorem Ipsum dolores dahls ",
-          //   external_link: "https://www.lipsum.com/", 
-          //   image: "https://www.multimediaxp.com/images/article_190508124638.1557333998.jpg" 
-          // },
           { 
             title: "News title", 
             article: "Lorem ipsum dolor sit amet, nihil repellat arcitecto asperiores sequi facere",
@@ -246,6 +267,9 @@ import RssTest from "@/components/rss/rssTest.vue"
         ],
       }
     },
+    mounted(){
+      this.getAllNews();
+    },
     methods: {
       
       // Form: Clear all data
@@ -268,6 +292,29 @@ import RssTest from "@/components/rss/rssTest.vue"
       // Form: Notification that message have been sent, through Toast.
       messageSent() {
         this.contactToast = true
+      },
+
+      // Get all news made for this tenant
+      getAllNews(){
+        this.$http.get(`https://app.followup.prios.no/api/resource_management/news?mode=getpublicnews&tenant_id=${this.tenant}`,{headers:{Tempaccess:this.accessKey}}).then(response =>{
+          this.allTheNews = response.data;
+          console.log("Responsen", response.data);
+        })
+      },
+
+      // Get all the content of the clicked news
+      getNewsContent(data){
+        this.$http.get(`https://app.followup.prios.no/api/resource_management/news_content?mode=getpublicnews&news_id=${data.id}`,{headers:{Tempaccess:this.accessKey}}).then(response =>{
+          this.theNewsContent = response.data;
+          console.log("Responsen", response.data);
+        }).then(responsen => {
+          this.openTheDialog(data, this.theNewsContent);
+        })
+      },
+
+      // Open the Dialog while passing the correct data
+      openTheDialog(originalData, contentData){
+        this.$refs.openingNewsDialog.openNewsDialog(originalData, contentData);
       },
     }
   }
