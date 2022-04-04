@@ -65,17 +65,37 @@ export default {
 
     // Reset Dialog
     resetDialogData(){
-      this.newsContent = [];
+      this.newsCardData = [];
+      this.newsCardContentData = [];
     },
   }
 }
 </script>
 
 <style scoped>
+
+.closeButtonStyling {
+  position:fixed; 
+  top:30px; 
+  right:30px; 
+  z-index: 5; 
+  border:1px solid black; 
+  background-color:rgba(255, 0, 0, 0.2);
+}
 .newsDialogTitle {
   font-family: 'Barlow', sans-serif;
   font-weight: bold;
   font-size: 46px;
+  color: #434343;
+  opacity: 1;
+  letter-spacing: 0px;
+  text-align: left;
+}
+
+.newsDialogTitlePhone {
+  font-family: 'Barlow', sans-serif;
+  font-weight: bold;
+  font-size: 36px;
   color: #434343;
   opacity: 1;
   letter-spacing: 0px;

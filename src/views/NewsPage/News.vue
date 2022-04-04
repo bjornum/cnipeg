@@ -3,8 +3,8 @@
     <NewsDialog ref="openingNewsDialog"></NewsDialog>
     <v-row>
       <v-col cols="12" class="mt-15"></v-col>
-      <v-col cols="2"></v-col>
-      <v-col cols="8" class="mb-15">
+      <v-col cols="12" xl="2" lg="2" md="2" sm="12" xs="12"></v-col>
+      <v-col cols="12" xl="8" lg="8" md="8" sm="12" xs="12" class="mb-15">
         <v-row>
           <!-- Headliner -->
           <v-col cols="12">
