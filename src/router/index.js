@@ -12,6 +12,7 @@ import RSSfeed from '../views/RssPage/RssFeed.vue'
 
 // Testing Pages
 import ResourcesSMAB from '../views/RessourcePage/SmabResources.vue'
+import HomeEntrepreneurshipSystem from '../views/HomePage/EntrepreneurSystemHome.vue'
 
 Vue.use(VueRouter)
 
@@ -25,7 +26,7 @@ const routes = [
   { path: '/digitalpedagogicalstrategy', name: 'DigitalPedagogicalStrategy', component: DigitalPedagogicalStrategy },
   { path: '/resources', name: 'Resources', component: Resources },
   { path: '/rss', name: 'RSS', component: RSSfeed },
-  { path: '/test', name: 'Test', component: ResourcesSMAB },
+  { path: '/test', name: 'Test', component: HomeEntrepreneurshipSystem },
   
 ]
 

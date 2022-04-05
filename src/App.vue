@@ -39,5 +39,6 @@ export default {
 </script>
 
 <style>
-  @import url('https://fonts.googleapis.com/css2?family=Barlow:wght@700&family=Lato:wght@400;700&display=swap');
+  /* @import url('https://fonts.googleapis.com/css2?family=Barlow:wght@700&family=Lato:wght@400;700&display=swap'); */
+  @import url('https://fonts.googleapis.com/css2?family=Barlow:wght@700&family=Josefin+Sans&family=Lato:wght@400;700&display=swap');
 </style>
