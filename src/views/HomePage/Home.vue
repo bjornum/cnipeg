@@ -64,6 +64,11 @@
           <v-col cols="12" class="pt-15 mt-15">
             <p class="newsChapterTitle">News</p>
           </v-col>
+
+          <!-- <v-col cols="12" v-if="allTheNews == ''">
+            <p class="text-center title">No news made public yet.</p>
+          </v-col> -->
+
           <!-- News Articles - Need a slice later (simulate) - Delete when having actual news -->
           <v-col cols="12" xl="4" lg="4" md="4" sm="12" xs="12" v-for="(fakeNews, fakeNewsIndex) in fakeNewsCards" :key="fakeNewsIndex">
             <v-card height="100%" @click="$refs.openingNewsDialog.openNewsDialog(fakeNews)">
@@ -129,6 +134,12 @@
           See all news
         </v-btn>
       </v-col>
+
+      <!-- <v-col cols="12" align="center">
+        <v-btn class="seeAllButtonBorder seeAllButtonText" rounded to="/news" v-if="allTheNews != ''">
+          See all news
+        </v-btn>
+      </v-col> -->
 
       <!-- RSS -->
       <v-col cols="12" xl="2" lg="2" md="2" sm="12" xs="12" class="pt-0"></v-col>

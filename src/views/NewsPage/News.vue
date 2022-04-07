@@ -14,6 +14,11 @@
           <v-col cols="12" class="mb-15">
             <p class="newsChapterDescription">Keep up to date about the EVOLVE project</p>
           </v-col>
+
+          <!-- <v-col cols="12" v-if="allTheNews == ''">
+            <p class="text-center title">No news made public yet.</p>
+          </v-col> -->
+
           <!-- FakeNews Cards - Delete this section once propper tenant_id have been made -->
           <v-col cols="12" xl="4" lg="4" md="4" sm="12" xs="12" v-for="(fakeNews, fakeNewsIndex) in fakeNewsCards" :key="fakeNewsIndex">
             <v-card height="100%" @click="$refs.openingNewsDialog.openNewsDialog(fakeNews)">

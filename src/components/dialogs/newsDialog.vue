@@ -19,13 +19,29 @@
         <v-divider></v-divider>
         <v-divider></v-divider>
         <v-row class="ma-0 pa-0">
+          <!-- News Content -->
           <v-col cols="12" sm="12" xs="12" :xl="item.class_list.split('xs')[1]" :lg="item.class_list.split('xs')[1]" :md="item.class_list.split('xs')[1]" class="ma-0 pa-0 pa-5" v-for="(item, index) in newsCardContentData" :key="index">
+            <!-- Image Content -->
             <div v-if="item.type == 'image'">
               <v-img v-if="item.content" :src="item.content" alt="News Image" max-height="600" contain></v-img>
             </div>
+            <!-- Text Content -->
             <div v-else-if="item.type == 'text'">
               <p v-html="item.content" class="pl-5 pb-5 mb-0 newsDialogDescription"></p>
             </div>
+            <!-- Youtube Content -->
+            <div v-else-if="item.type == 'youtube_video'">
+              <iframe :src="item.content" width="90%" style="min-height:600px;" ></iframe>
+            </div>
+            <!-- Link Content -->
+            <div v-else-if="item.type == 'embededLink'">
+              <iframe :src="item.content" width="90%" style="min-height:600px;" ></iframe>
+            </div>
+            <!-- Divider Content -->
+            <div v-else-if="item.type == 'rowDivider'">
+              <v-divider style="border:1px solid lightgrey;"></v-divider>
+            </div>
+            <!-- Unknown type -->
             <div v-else>
               <p>{{item}}</p>
             </div>
