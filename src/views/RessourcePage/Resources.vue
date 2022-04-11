@@ -15,7 +15,7 @@
               <p v-if="item.title == 'Video' || item.title == 'Video'" class="text-center title pt-10 pb-10">{{ $t('resources.video') }}</p>
               <p v-else-if="item.title == 'Files' || item.title == 'Filer'" class="text-center title pt-10 pb-10">{{ $t('resources.files') }}</p>
               <p v-else-if="item.title == 'Courses' || item.title == 'Kurs'" class="text-center title pt-10 pb-10">{{ $t('resources.courses') }}</p>
-              <p v-else-if="item.title == 'Podcast' || item.title == 'Podcast'" class="text-center title pt-10 pb-10">{{ $t('resources.podcast') }}</p>
+              <p v-else-if="item.title == 'Podcast' || item.title == 'Podcast'" class="text-center title pt-10 pb-10">{{ $t('resources.podcast') }} {{item.template}}</p>
               <p v-else-if="item.title == 'Sound' || item.title == 'Lyd'" class="text-center title pt-10 pb-10">{{ $t('resources.sound') }}</p>
               <p v-else-if="item.title == 'Other' || item.title == 'Annet'" class="text-center title pt-10 pb-10">{{ $t('resources.other') }}</p>
               <p v-else>...</p>
@@ -33,10 +33,10 @@
       <v-col cols="12" class="pt-5 mb-15">
         <v-card flat>
           <v-row>
-            <!-- Default -->
+            <!-- Default, when nothing have been selected -->
             <template v-if="resourceTemplate == 0">
               <v-col cols="12">
-                <p class="text-center title">HOME</p>
+                <p class="text-center title"></p>
               </v-col>
             </template>
 
@@ -68,7 +68,6 @@
                   <!-- Media above title, sort by type -->
                   <v-divider></v-divider>
                   <p class="title text-center">{{resources.title}}</p>
-                  <!-- {{ $t('resource.other') }} -->
                   <v-divider></v-divider>
                   <!-- Languages -->
                   <v-row>
@@ -107,6 +106,7 @@
 export default {
   data(){
     return {
+      
       colorArr:[ "#205072", "#329D9C", "#D83636", "#DD9A30", "#205072", "#329D9C" ],
       resourceFolders:[
         { title: this.$t('resources.video'), colour: "", image: "", description: "", template: 1 },
