@@ -213,7 +213,7 @@ import RssTest from "@/components/rss/rssTest.vue"
           email: "",
           message: "",
           subject: "",
-          sentFrom: "Project Template"
+          sentFrom: "projectTemplate"
         },
         // Rules for the contact Form
         rules:{

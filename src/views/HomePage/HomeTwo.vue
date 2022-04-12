@@ -17,7 +17,7 @@
       <!-- Intro Image -->
 
       <v-col cols="12">
-        <v-img src="../assets/images/evolvebackground.jpg"><p class="introTitle">Welcome to EVOLVE 5.0 headline</p>
+        <v-img src="../assets/images/evolvebackground.jpg"><p class="introTitle">Welcome to projectTemplate</p>
           <p class="introDescription">Some short information about the project</p></v-img>
         
       </v-col>
@@ -57,7 +57,7 @@
           <v-col cols="4"></v-col>
           <v-col cols="4">
             <p class="shortInfoTitle">Some short info</p>
-            <p class="shortInfoDescription">EVOLVE 5.0 project will aim to develop an innovative training toolbox for VET organizations and trainers to exploit in order to support the industry and the industry workers through a successful transition to the industry 5.0 principles and values.</p>
+            <p class="shortInfoDescription">projectTemplate will aim to develop an innovative training toolbox for VET organizations and trainers to exploit in order to support the industry and the industry workers through a successful transition to the industry 5.0 principles and values.</p>
           </v-col>
         </v-row>
       </v-col>
@@ -174,7 +174,7 @@ import RssTest from "@/components/rss/rssTest.vue"
           email: "",
           message: "",
           subject: "",
-          sentFrom: "Project Template"
+          sentFrom: "projectTemplate"
         },
         // Rules for the contact Form
         rules:{

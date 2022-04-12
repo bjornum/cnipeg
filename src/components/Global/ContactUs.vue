@@ -53,7 +53,7 @@ export default {
         email: '',
         message: '',
         subject: '',
-        sentFrom: 'project Template'
+        sentFrom: 'projectTemplate'
       },
       // Rules for the contact Form
       rules:{
