@@ -29,7 +29,8 @@
       </v-col>
       <!-- Image -->
       <v-col cols="12" xl="2" lg="2" md="2" sm="12" xs="12">
-        <v-img class="mt-5" src="img/EVOLVE.png"  max-height="130" max-width="130" contain></v-img>
+        <!-- <v-img class="mt-5" src="img/EVOLVE.png"  max-height="130" max-width="130" contain></v-img> -->
+        <p class="pt-7" style="font-weight: bold; font-size: 20px; color: blue;">projectTemplate</p>
       </v-col>
     </v-row>
   </v-footer>
