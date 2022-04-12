@@ -12,7 +12,7 @@
           </v-col>
           <!-- Description -->
           <v-col cols="12" class="mb-15">
-            <p class="newsChapterDescription">Keep up to date about the EVOLVE project</p>
+            <p class="newsChapterDescription">Keep up to date about the projectTemplate</p>
           </v-col>
 
           <!-- <v-col cols="12" v-if="allTheNews == ''">
