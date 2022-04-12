@@ -1,5 +1,6 @@
 <template>
   <div class="homePageWidth">
+    <ResourceDialog ref="openingResourceDialog"></ResourceDialog>
     <v-row>
       <!-- Cards -->
       <v-col cols="12" class="mt-10"></v-col>
@@ -63,18 +64,22 @@
               </v-col>
               <v-col cols="12" class="pt-0"></v-col>
               <v-col cols="12" xl="2" lg="2" md="2" sm="12" xs="12"></v-col>
-              <v-col cols="12" xl="4" lg="4" md="4" sm="12" xs="12" v-for="(resources, resourceIndex) in resourceContent" :key="resourceIndex">
+              <v-col cols="6" xl="4" lg="4" md="4" sm="6" xs="6" v-for="(resources, resourceIndex) in resourceContent" :key="resourceIndex">
                 <!-- <pre>{{resource}}</pre> -->
                 <v-card height="100%" flat>
 
                   <!-- Video -->
                   <template v-if="resourceTemplate == 1">
-                    <pre>{{resources}}</pre>
+                    <v-col cols="12" xl="4" lg="4" md="4" sm="12" xs="12" @click="$refs.openingResourceDialog.openDialog(resources)">
+                      <v-img :src="resources.thumbnail_url"></v-img>
+                    </v-col>
                   </template>
 
                   <!-- Files -->
                   <template v-else-if="resourceTemplate == 2">
-                    <pre>{{resources}}</pre>
+                    <v-card @click="$refs.openingResourceDialog.openDialog(resources)">
+                      <p class="pa-2">{{resources.title}}</p>
+                    </v-card>
                   </template>
 
                   <!-- Courses -->
@@ -89,15 +94,21 @@
 
                   <!-- External Content -->
                   <template v-else-if="resourceTemplate == 5">
-                    <pre>{{resources}}</pre>
+                    <v-row>
+                      <v-col cols="12" xl="12" lg="12" md="12" sm="12" xs="12" @click="$refs.openingResourceDialog.openDialog(resources)">
+                        <v-card @click="$refs.openingResourceDialog.openDialog(resources)" class="pa-2">
+                          <p class="pa-0 mb-0 title">{{resources.title}}</p>
+                          <!-- <p class="pa-0 mt-0 mb-0">{{resources.description}}</p> -->
+                        </v-card>
+                      </v-col>
+                    </v-row>
                   </template>
 
                   <!-- Images -->
                   <template v-else-if="resourceTemplate == 6">
                     <v-row>
-                      <v-col cols="4">
+                      <v-col cols="12" xl="4" lg="4" md="4" sm="12" xs="12" @click="$refs.openingResourceDialog.openDialog(resources)">
                         <v-img :src="resources.thumbnail_url"></v-img>
-                        <pre>{{resources}}</pre>
                       </v-col>
                     </v-row>
                   </template>
@@ -143,7 +154,11 @@
 </template>
 
 <script>
+import ResourceDialog from "@/components/dialogs/resourceDialog.vue"
 export default {
+  components: {
+    ResourceDialog
+  },
   data(){
     return {
       accessKey:window.btoa('bac436b32a36431bb437b9509b6d3495'),
