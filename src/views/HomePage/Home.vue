@@ -17,8 +17,10 @@
       <!-- Intro Image -->
       <v-col cols="12" class="pb-0">
         <v-card class="pt-15 pb-3 introImage">
-          <p class="introTitle">Welcome to EVOLVE 5.0 headline</p>
-          <p class="introDescription">Some short information about the project</p>
+          <p v-if="$vuetify.breakpoint.mdAndDown" class="introTitlePhone">Welcome to projectTemplate</p>
+          <p v-else class="introTitle">Welcome to projectTemplate</p>
+          <p v-if="$vuetify.breakpoint.mdAndDown" class="introDescriptionPhone">Some short information about the project</p>
+          <p v-else class="introDescription">Some short information about the project</p>
         </v-card>
       </v-col>
 
@@ -83,7 +85,7 @@
                       <p class="pl-2 mb-0 newsCardTitle">{{fakeNews.title}}</p>
                       <p class="pa-2 mb-0 pb-0 newsCardDescription">{{fakeNews.article}}</p>
                     </v-col>
-                    <v-col cols="12" class="pt-0 mt-0">
+                    <v-col cols="12" class="pt-0 mt-0 pt-7">
                       <v-card-actions class="pt-0">
                         <p class="newsCardButton mr-2 pt-3">Read article</p>
                         <v-icon class="newsCardButtonArrow">mdi-arrow-right</v-icon>
@@ -224,9 +226,9 @@ import RssTest from "@/components/rss/rssTest.vue"
         isContactFormValid: true,
         // In Page Pages Cards
         pageCards:[
-          { name: "E-Learning", color: "", link: "trainingmodules", description: "Lorem ipsum dolores sit amet. Nihil repellat architecto asperiores sequi facere" },
-          { name: "Available resources", color: "", link: "/resources",  description: "Lorem ipsum dolores sit amet. Nihil repellat architecto asperiores sequi facere" },
-          { name: "About the project", color: "", link: "/about",  description: "Lorem ipsum dolores sit amet. Nihil repellat architecto asperiores sequi facere" }
+          { name: "Available resources", color: "", link: "/resources",  description: "Here you will find different resources made in the project" },
+          { name: "About the project", color: "", link: "/about",  description: "Read about the project, aims and the result it will produce" },
+          { name: "Partners", color: "", link: "/partners", description: "Find the partners and learn more about them" },
         ],
         
         // Dummy data below - Replace when db are implemented
@@ -354,8 +356,29 @@ import RssTest from "@/components/rss/rssTest.vue"
   font-family: 'Barlow', sans-serif;
   font-style:normal;
 }
+.introTitlePhone {
+  font-size:36px;
+  color: #434343;
+  opacity: 1;
+  letter-spacing: 0px;
+  margin-left: 15%; 
+  margin-top:10%;
+  font-weight: bold;
+  font-family: 'Barlow', sans-serif;
+  font-style:normal;
+}
 .introDescription {
   font-size:28px;
+  color: #434343; 
+  opacity: 1;
+  letter-spacing: 0px;
+  margin-left: 15%;
+  font-weight: bold;
+  font-family: 'Barlow', sans-serif;
+  font-style:normal;
+}
+.introDescriptionPhone {
+  font-size:18px;
   color: #434343; 
   opacity: 1;
   letter-spacing: 0px;
@@ -396,6 +419,7 @@ import RssTest from "@/components/rss/rssTest.vue"
   font-size: 14px;
   color: #6A6A6A;
   letter-spacing: 0;
+  height: 50px;
 }
 
 .pageCardArrow {

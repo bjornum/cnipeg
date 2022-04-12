@@ -1,5 +1,7 @@
 # Template Project
 Project template to quickly create new projects.
+
+
 ## Run the project
   - Within the terminal ```npm run serve```
 
