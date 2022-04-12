@@ -6,7 +6,7 @@
       <v-col cols="12" xl="8" lg="8" md="8" sm="12" xs="12" class="mt-15">
         <v-row>
           <v-col cols="12" xl="6" lg="6" md="6" sm="12" xs="12">
-            <p class="aboutTitle">About Evolve 5.0</p>
+            <p class="aboutTitle">About projectTemplate</p>
             <p class="aboutDescription">Voluptate quisquam voluptatum velit facilis. Et nihil repellat architecto asperiores sequi facere. Eligendi distinctio iste Iste quis rerum molestias expedita necessitatibus. Laudantium in facere labore ut.</p>
             <v-row>
               <v-col cols="12" xl="4" lg="4" md="4" sm="12" xs="12" v-for="(keyboxitem, keyboxindex) in keyBoxes" :key="keyboxindex">
