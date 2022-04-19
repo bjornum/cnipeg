@@ -1,6 +1,16 @@
 <template>
   <div class="homePageWidth">
     <ResourceDialog ref="openingResourceDialog"></ResourceDialog>
+
+    <!-- Idea: 
+      1. Check all content. If no content = grey out the button.
+        - Map out the type, to get array with types.  
+        - Run an includes to see if the type exists or not.
+      2. Click on button to get the Data.
+      3. Phone: Fullscreen dialog? / Template change on same screen?
+      4. Both: Cards got image given by hikmet, for an visual boost. 
+        - Wording can change
+    -->
     <v-row>
       <!-- Cards -->
       <v-col cols="12" class="mt-10"></v-col>

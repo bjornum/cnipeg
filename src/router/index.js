@@ -11,9 +11,10 @@ import Resources from '../views/RessourcePage/Resources.vue'
 import RSSfeed from '../views/RssPage/RssFeed.vue'
 
 // Testing Pages
-import ResourcesSMAB from '../views/RessourcePage/SmabResources.vue'
+// import ResourcesSMAB from '../views/RessourcePage/SmabResources.vue'
 import HomeEntrepreneurshipSystem from '../views/HomePage/EntrepreneurSystemHome.vue'
 import TheBoard from '../views/TheBoardPage/TheBoard.vue'
+import TestingPage from '../views/TestingPage/Testing.vue'
 
 Vue.use(VueRouter)
 
@@ -27,7 +28,7 @@ const routes = [
   { path: '/digitalpedagogicalstrategy', name: 'DigitalPedagogicalStrategy', component: DigitalPedagogicalStrategy },
   { path: '/resources', name: 'Resources', component: Resources },
   { path: '/rss', name: 'RSS', component: RSSfeed },
-  { path: '/test', name: 'Test', component: TheBoard },
+  { path: '/test', name: 'Test', component: TestingPage },
   
 ]
 
