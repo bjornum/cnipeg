@@ -76,12 +76,33 @@
             </v-row>
           </v-col>
         </v-row>
-      </template>
+      </template> 
 
       <!-- Articles Content -->
       <template v-else-if="titleResourcePath == 'Articles'">
         <v-col cols="12">
           <p>Articles</p>
+
+          <v-row>
+            <v-col cols="6" v-for="(article, articleIndex) in dummyArticles" :key="articleIndex">
+              <v-card height="100%" flat>
+                <p class="title mb-0">{{article.topic}}</p>
+                <v-divider class="articleDivider"></v-divider>
+                <v-row>
+                  <v-col cols="12" v-for="(articles, articlesIndex) in article.articles" :key="articlesIndex" class="pb-0">
+                    <p class="ma-0">- {{articles.name}}</p>
+                  </v-col>
+                </v-row>
+              </v-card>
+            </v-col>
+          </v-row>
+          <!-- Topic - First iteration create the main topics -->
+
+          <!-- Entries displayed within, as simple sentences one can click to access the article -->
+
+          <!-- Click on a Sentence => Opens Dialog + display said content -->
+          
+
         </v-col>
       </template>
 
@@ -96,6 +117,64 @@
       <template v-else-if="titleResourcePath == 'Files'">
         <v-col cols="12">
           <p>Files</p>
+          <v-row>
+            <v-col cols="4">
+              <v-tabs v-model="tab">
+
+                <v-tab>Videos</v-tab>
+                <v-tab>Documents</v-tab>
+                <v-tab>Courses</v-tab>
+                <v-tab>Images</v-tab>
+                <v-tab>Files</v-tab>
+                
+                <v-tab-item class="pt-6 mt-5">
+                  <v-card style="border:2px solid black;">
+                    Tab 1 Videos
+                  </v-card>
+                </v-tab-item>
+
+                <v-tab-item class="pt-6 mt-5">
+                  <v-card>
+                    Tab 2 Documents
+                  </v-card>
+                </v-tab-item>
+
+                <v-tab-item class="pt-6 mt-5">
+                  Tab 3 Courses
+                </v-tab-item>
+
+                <v-tab-item class="pt-6 mt-5">
+                  Tab 4 Images
+                </v-tab-item>
+
+                <v-tab-item class="pt-6 mt-5">
+                  Tab 5 Files
+                </v-tab-item>
+
+              </v-tabs>
+              
+            </v-col>
+
+            <v-col cols="8">
+              <template>
+
+              </template>
+            </v-col>
+          </v-row>
+
+          <!-- Split in two section
+            - Left Side => File Categories in tab form.
+              - Display the content within as a card, with image, title, file type and size.
+            - Right Side => activate on click of file.
+              - Display content.
+                - File Preview = Image of the file
+                - Title, with some short description below.
+                - Open File button (With main language within)
+                - Share and Download - Features
+                - General Information of it.
+                - If more than 1 version are added, have Other languages on right side.
+                  - Open, share and download
+           -->
         </v-col>
       </template>
 
@@ -129,6 +208,7 @@
 export default {
   data(){
     return {
+      tab: null,
       // Used to display path and corresponding template
       titleResourcePath: "",
       resourceCards: [
@@ -145,6 +225,45 @@ export default {
         {name: "Case 2", description: "Case number 2", createdBy: "petra ", image: "/img/logo.png"},
         {name: "Case 3", description: "Case number 3", createdBy: "Jane", image: "/img/logo.png"},
         {name: "Case 4", description: "Case number 4", createdBy: "Joe", image: "/img/logo.png"},
+      ],
+      dummyArticles: [
+        {
+          topic: "Creativity",
+          articles: [
+            {name: "For a More Creative Brain Follow These 5 Steps", link: "", description: "", image: ""},
+            {name: "How to be Creative", link: "", description: "", image: ""},
+            {name: "Is there Such a thing as Naturally Creative?", link: "", description: "", image: ""},
+            {name: "The Proven Path to Doing Unique and Meaningful Work", link: "", description: "", image: ""},
+            {name: "Creativity is a Process, Not an Event", link: "", description: "", image: ""},
+            {name: "Albert Einsteins Incredible Work Ethic", link: "", description: "", image: ""},
+          ]
+        },
+        {
+          topic: "Decision Making",
+          articles: [
+            {name: "The Ultimate Productivity Hack is saying No", link: "", description: "", image: ""},
+            {name: "Why Facts Dont Change Our Minds", link: "", description: "", image: ""},
+            {name: "Dont Start From Scratch", link: "", description: "", image: ""},
+            {name: "How to Use Mental Models for Smart Decision Making", link: "", description: "", image: ""},
+            {name: "Top Mental Models to Improve Your Decision Making", link: "", description: "", image: ""},
+          ]
+        },
+        {
+          topic: "Focus",
+          articles: [
+            {name: "For a More Creative Brain Follow These 5 Steps", link: "", description: "", image: ""},
+            {name: "How to be Creative", link: "", description: "", image: ""},
+            {name: "The Myth of Multitasking", link: "", description: "", image: ""},
+          ]
+        },
+        {
+          topic: "Habits",
+          articles: [
+            {name: "The Ultimate Productivity Hack is Saying No", link: "", description: "", image: ""},
+            {name: "Why Facts Dont Change Our Minds", link: "", description: "", image: ""},
+            {name: "Where to Go From Here", link: "", description: "", image: ""},
+          ]
+        },
       ]
     }
   },
@@ -185,7 +304,6 @@ export default {
   cursor:pointer;
 }
 
-
 /* Resource Cards */
 .resourceCardTitle {
   font-size:36px;
@@ -204,5 +322,17 @@ export default {
   transform: scale(1); 
   top:-20px; 
   right:-46px;
+}
+
+/* Articles */
+.articleTopicTitle {
+  font-size:36px;
+  color: #2E3C46;
+  opacity: 1;
+  letter-spacing: 0px;
+}
+
+.articleDivider {
+  color: hotpink !important;
 }
 </style>
