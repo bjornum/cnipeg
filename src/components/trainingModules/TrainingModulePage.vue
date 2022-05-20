@@ -1,21 +1,6 @@
 <template>
   <div>
-
-    <!-- 
-      #Note 1: vue draggable
-      - Add "vuedraggable": "^2.24.3" to package.json dependencies
-      - or run the command in the terminal: npm install --save vuedraggable
-
-      #Note 2: Axios call may differ based on the project, and version.    try between:  this.$http  this.$axios  and    axios.
-
-      #Note 3: The URL might differ based on the project: - Where one define the first part or not.
-        - `https://app.followup.prios.no/api/task_library/lesson_chapters_content?chapter_id=`
-        - /task_library/lessons?mode=getchapters&courses_id=`
-
-      #Note 4: Be sure to hide the accessKey in an .env file. (for safety reason.)
-
-      #Note 5: Adjust the tenantID and collectionID accordingly to the project.
-     -->
+     <!-- Read the README for more info -->
     <TrainingDialog ref="openTrainingDialog"></TrainingDialog>
 
     <v-row>

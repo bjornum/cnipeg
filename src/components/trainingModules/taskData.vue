@@ -270,7 +270,6 @@ export default {
 }
 .correctAnswerStyle{
   background-color:green !important;
-  backgrond:green !important;
 }
 .incorrectAnswerStyle{
   background-color:red;
