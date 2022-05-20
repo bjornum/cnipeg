@@ -15,6 +15,7 @@ import RSSfeed from '../views/RssPage/RssFeed.vue'
 import HomeEntrepreneurshipSystem from '../views/HomePage/EntrepreneurSystemHome.vue'
 import TheBoard from '../views/TheBoardPage/TheBoard.vue'
 import TestingPage from '../views/TestingPage/Testing.vue'
+import Profile from '../views/ProfilePage/Profile.vue'
 
 Vue.use(VueRouter)
 
@@ -29,6 +30,7 @@ const routes = [
   { path: '/resources', name: 'Resources', component: Resources },
   { path: '/rss', name: 'RSS', component: RSSfeed },
   { path: '/test', name: 'Test', component: TestingPage },
+  { path: '/profile', name: 'Profile', component: Profile },
   
 ]
 

@@ -8,6 +8,10 @@
         <p class="trainingChapterDescription">This page will be designed when the content is decided</p>
       </v-col>
 
+      <v-col cols="12">
+        <!-- <TrainingModules></TrainingModules> -->
+      </v-col>
+
 
 
       <!-- <v-col cols="12">
@@ -21,8 +25,12 @@
 </template>
 
 <script>
+import TrainingModules from "@/components/trainingModules/TrainingModulePage.vue"
 export default {
   name: 'Training-Modules',
+  components: {
+    TrainingModules
+  },
   data(){
     return {
       

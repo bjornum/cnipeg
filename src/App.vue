@@ -40,5 +40,10 @@ export default {
 
 <style>
   /* @import url('https://fonts.googleapis.com/css2?family=Barlow:wght@700&family=Lato:wght@400;700&display=swap'); */
-  @import url('https://fonts.googleapis.com/css2?family=Barlow:wght@700&family=Josefin+Sans&family=Lato:wght@400;700&display=swap');
+  /* @import url('https://fonts.googleapis.com/css2?family=Barlow:wght@700&family=Josefin+Sans&family=Lato:wght@400;700&display=swap'); */
+
+  /* Pros-sans 700 - carousel title
+    - Heboo thin - description
+  */
+  @import url('https://fonts.googleapis.com/css2?family=Barlow:wght@700&family=Heebo:wght@100&family=Josefin+Sans&family=Lato:wght@400;700&family=Source+Sans+Pro:wght@700&display=swap');
 </style>
