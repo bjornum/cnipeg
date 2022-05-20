@@ -72,11 +72,9 @@ export default {
     }
   },
   methods:{
-    
-    
+    // Get all the courses to display on the page
     getAllCourseCollections(){
       this.courseCollections = [];
-      // this.$axios.get("api/courses/collection?tenant_id="+ this.currentUser.tenant_id)
       this.$http.get(`https://app.followup.prios.no/api/courses/collection?mode=getpubliccoursesbytenant&tenant_id=73&user_id=${null}`,{headers:{tempaccess:this.accessKey}}).then(response =>{
         response.data.forEach(item =>{
           item.collection_content = []
@@ -84,13 +82,14 @@ export default {
         })
       })
     },
+    // Get the content of said course, #CheckIfInUse
     getTargetCollectionContent(){
-      // this.$axios.get(`api/courses/collection_content?mode=getcollectioncontent&courses_collection_id=${this.selectedCourseCollection.id}`)
       this.$http.get(`https://app.followup.prios.no/api/courses/collection_content?mode=getcollectioncontent&courses_collection_id=14`,{headers:{tempaccess:this.accessKey}})
       .then(response =>{
         this.currentCollectionContent = response.data;
       })
     },
+    // Get the sub content of the chapters #CheckIfInUse
     getChaptersAndQuestions(){
       this.$http.get(`https://app.followup.prios.no/api/task_library/chapters?mode=getchapterandquestions&tenant_id=${this.currentUser.tenant_id}`,{headers:{tempaccess: this.accessKey}}).then(response =>{
         response.data.forEach(item =>{

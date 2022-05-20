@@ -9,9 +9,9 @@ Click of one, will open up an dialog where you can see its content.
     - Need to be logged in to see.
   - Register user once "enrolled" to a training module.
   - Track said user, and mark the module as complete once user have clicked everything.
+  - Cleanup, comment and removal of unused and poor code.
 
-
-## Installing this component.
+## Installing this component and some notes.
   - Simply copy paste this into your vue projects component folder.
   - Import then ```TrainingModulePage``` into your view/page.
 
