@@ -39,10 +39,10 @@
 
 <script>
 
-import ResourcesVersionTwo from "@/views/RessourcePage/ResourcesTwo.vue"
+
 export default {
   components: {
-    ResourcesVersionTwo
+    
   },
   data(){
     return {

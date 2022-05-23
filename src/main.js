@@ -9,10 +9,13 @@ import VueAxios from 'vue-axios'
 import VueI18n from 'vue-i18n';
 import messages from "./locales/export.js"
 import dotenv from 'dotenv';
+import twitter from 'vue-twitter';
+
 
 dotenv.config()
 
 Vue.use(VueI18n);
+Vue.use(twitter);
 Vue.prototype.$http = axios;
 const i18n = new VueI18n({
   locale: (localStorage.getItem('language') || 'en'),

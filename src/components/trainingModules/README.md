@@ -1,8 +1,14 @@
-# Training Module File
+# Training Modules
 
 ## Description.
 It will render in all courses / MOOCs / Training Modules made in Follow-up.
 Click of one, will open up an dialog where you can see its content.
+
+## Files
+  - README.md (this file)
+  - TrainingModulePage.vue
+  - TrainingModuleDialog.vue
+  - taskData.vue
 
 ## Features to come.
   - Lock on certain training modules (decided in follow-up)

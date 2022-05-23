@@ -15,22 +15,18 @@
     <v-row>
       <v-col cols="12" class="mt-5"></v-col>
       <!-- Intro Image -->
-
-      <v-col cols="12">
-        <v-img src="../assets/images/evolvebackground.jpg"><p class="introTitle">Welcome to projectTemplate</p>
-          <p class="introDescription">Some short information about the project</p></v-img>
-        
-      </v-col>
-      <!-- <v-col cols="12" class="pb-0">
-        <v-card class="pt-15 pb-3 introImage" style="height:650px;">
-          <p class="introTitle">Welcome to EVOLVE 5.0 headline</p>
-          <p class="introDescription">Some short information about the project</p>
+      <v-col cols="12" class="pb-0">
+        <v-card class="pt-15 pb-3 introImage">
+          <p v-if="$vuetify.breakpoint.mdAndDown" class="introTitlePhone">Welcome to projectTemplate</p>
+          <p v-else class="introTitle">Welcome to projectTemplate</p>
+          <p v-if="$vuetify.breakpoint.mdAndDown" class="introDescriptionPhone">Some short information about the project</p>
+          <p v-else class="introDescription">Some short information about the project</p>
         </v-card>
-      </v-col> -->
+      </v-col>
 
       <!-- 3 Cards in center of cards -->
-      <v-col cols="2" class="pt-0"></v-col>
-      <v-col cols="8" class="pt-0">
+      <v-col cols="12" xl="2" lg="2" md="2" sm="12" xs="12" class="pt-0"></v-col>
+      <v-col cols="12" xl="8" lg="8" md="8" sm="12" xs="12" class="pt-0">
         <v-row>
           <v-col cols="12" xl="4" lg="4" md="4" sm="12" xs="12" v-for="(pageCard, pageCardIndex) in pageCards" :key="pageCardIndex">
             <v-card class="pageCardPositioning" :to="pageCard.link" style="position:relative;">
@@ -45,7 +41,7 @@
                   <v-icon large class="pt-2 pageCardArrow">mdi-arrow-right</v-icon>
                 </v-col>
               </v-row>
-              <p class="pageCardDescription" style="height:50px;">{{pageCard.description}}</p>
+              <p class="pageCardDescription">{{pageCard.description}}</p>
             </v-card>
           </v-col>
         </v-row>
@@ -54,53 +50,26 @@
       <!-- Info Text -->
       <v-col cols="12">
         <v-row>
-          <v-col cols="4"></v-col>
-          <v-col cols="4">
+          <v-col cols="12" xl="4" lg="4" md="4" sm="12" xs="12"></v-col>
+          <v-col cols="12" xl="4" lg="4" md="4" sm="12" xs="12">
             <p class="shortInfoTitle">Some short info</p>
-            <p class="shortInfoDescription">projectTemplate will aim to develop an innovative training toolbox for VET organizations and trainers to exploit in order to support the industry and the industry workers through a successful transition to the industry 5.0 principles and values.</p>
+            <p class="shortInfoDescription">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Provident voluptas asperiores dolores aspernatur, inventore blanditiis mollitia harum quo adipisci quisquam, quod odit ad explicabo consequuntur eos saepe animi quasi maiores.</p>
           </v-col>
+
+
+
+
+     
         </v-row>
       </v-col>
 
+
+      <!-- <twitter>
+        <a class="twitter-timeline" data-width="270" data-height="300" data-link-color="#000" data-theme="dark"  href="https://twitter.com/TwitterDev/lists/national-parks?ref_src=twsrc%5Etfw"> A Twitter List by TwitterDev </a>
+      </twitter> -->
+
       <!-- News -->
-      <v-col cols="2" class="pt-0"></v-col>
-      <v-col cols="8">
-        <v-row>
-          <!-- Chapter Title -->
-          <v-col cols="12" class="pt-15 mt-15">
-            <p class="newsChapterTitle">News</p>
-          </v-col>
-          <!-- News Articles - Need a slice later (simulate) -->
-          <v-col cols="12" xl="4" lg="4" md="4" sm="12" xs="12" v-for="(fakeNews, fakeNewsIndex) in fakeNewsCards" :key="fakeNewsIndex">
-            <v-card height="100%" @click="$refs.openingNewsDialog.openNewsDialog(fakeNews)">
-              <v-row>
-                <v-col cols="12" class="pb-0">
-                  <v-row>
-                    <v-col cols="12">
-                      <v-img v-if="fakeNews.image" :src="fakeNews.image" alt="News Image" width="auto" height="200px" cover class="ml-2 mr-2"></v-img>
-                      <div v-else style="height:200px; width:auto; background-color:#D1D1D1; margin:0px 15px 0px 15px;"></div>
-                    </v-col>
-                    <v-col cols="12" style="height:110px;" class="mb-0 ml-2 pb-0">
-                      <p class="pl-2 mb-0 newsCardTitle">{{fakeNews.title}}</p>
-                      <p class="pa-2 mb-0 pb-0 newsCardDescription">{{fakeNews.article}}</p>
-                    </v-col>
-                    <v-col cols="12" class="pt-0 mt-0">
-                      <v-card-actions class="pt-0">
-                        <p class="newsCardButton mr-2 pt-3">Read article</p>
-                        <v-icon class="newsCardButtonArrow">mdi-arrow-right</v-icon>
-                      </v-card-actions>
-                    </v-col>
-                  </v-row>
-                  <v-divider v-if="fakeNewsIndex == 0" class="pageCardDividerBlue newsCardDividerPositioning" width="98%"></v-divider>
-                  <v-divider v-if="fakeNewsIndex == 1" class="pageCardDividerGreen newsCardDividerPositioning" width="98%"></v-divider>
-                  <v-divider v-if="fakeNewsIndex == 2" class="pageCardDividerRed newsCardDividerPositioning" width="98%"></v-divider>
-                </v-col>
-                <v-col cols="12"></v-col>
-              </v-row>
-            </v-card>
-          </v-col>
-        </v-row>
-      </v-col>
+      <NewsModule></NewsModule>
       <!-- See all news button - go to page -->
       <v-col cols="12" align="center">
         <v-btn class="seeAllButtonBorder seeAllButtonText" rounded to="/news">
@@ -108,9 +77,15 @@
         </v-btn>
       </v-col>
 
+      <!-- <v-col cols="12" align="center">
+        <v-btn class="seeAllButtonBorder seeAllButtonText" rounded to="/news" v-if="allTheNews != ''">
+          See all news
+        </v-btn>
+      </v-col> -->
+
       <!-- RSS -->
-      <v-col cols="2" class="pt-0"></v-col>
-      <v-col cols="8">
+      <v-col cols="12" xl="2" lg="2" md="2" sm="12" xs="12" class="pt-0"></v-col>
+      <v-col cols="12" xl="8" lg="8" md="8" sm="12" xs="12">
         <v-row>
           <v-col cols="12" class="pt-15 mt-15">
             <p class="newsChapterTitle">RSS feed</p>
@@ -152,15 +127,22 @@
 import NewsDialog from "@/components/dialogs/newsDialog.vue"
 import RssDialog from "@/components/dialogs/rssFeedDialog.vue"
 import RssTest from "@/components/rss/rssTest.vue"
+import NewsModule from "@/components/newsModule/NewsModulePage.vue"
   export default {
     name: 'Home',
     components:{
       NewsDialog,
       RssDialog,
-      RssTest
+      RssTest,
+      NewsModule
     },
     data(){
       return {
+        test: 1,
+        accessKey:window.btoa('bac436b32a36431bb437b9509b6d3495'),
+        tenant: 999,
+        allTheNews: [],
+        theNewsContent: [],
         colorArr:[
           "#205072",
           "#329D9C",
@@ -187,24 +169,13 @@ import RssTest from "@/components/rss/rssTest.vue"
         isContactFormValid: true,
         // In Page Pages Cards
         pageCards:[
-          { name: "Available resources", color: "", link: "/resources",  description: "Here you will find different resources made in project" },
-          { name: "About the project", color: "", link: "/about",  description: "Read about the project, aims and the results it will produce" },
+          { name: "Available resources", color: "", link: "/resources",  description: "Here you will find different resources made in the project" },
+          { name: "About the project", color: "", link: "/about",  description: "Read about the project, aims and the result it will produce" },
           { name: "Partners", color: "", link: "/partners", description: "Find the partners and learn more about them" },
         ],
+        
         // Dummy data below - Replace when db are implemented
         fakeNewsCards:[
-          // { 
-          //   title: "Smite officially the best game!", 
-          //   article: "10/10 best game! Play it now!", 
-          //   external_link: "https://www.smitegame.com/gods/", 
-          //   image: "https://i.ytimg.com/vi/xAPsmI_zDZs/maxresdefault.jpg" 
-          // },
-          // { 
-          //   title: "Lorem Ipsum", 
-          //   article: "Lorem Ipsum dolores dahls ",
-          //   external_link: "https://www.lipsum.com/", 
-          //   image: "https://www.multimediaxp.com/images/article_190508124638.1557333998.jpg" 
-          // },
           { 
             title: "News title", 
             article: "Lorem ipsum dolor sit amet, nihil repellat arcitecto asperiores sequi facere",
@@ -252,6 +223,9 @@ import RssTest from "@/components/rss/rssTest.vue"
         ],
       }
     },
+    mounted(){
+      this.getAllNews();
+    },
     methods: {
       
       // Form: Clear all data
@@ -275,6 +249,42 @@ import RssTest from "@/components/rss/rssTest.vue"
       messageSent() {
         this.contactToast = true
       },
+
+      // Get all news made for this tenant
+      getAllNews(){
+        this.$http.get(`https://app.followup.prios.no/api/resource_management/news?mode=getpublicnews&tenant_id=${this.tenant}`,{headers:{Tempaccess:this.accessKey}}).then(response =>{
+          this.allTheNews = response.data;
+          console.log("Responsen", response.data);
+        })
+      },
+
+      // Get all the content of the clicked news
+      getNewsContent(data){
+        this.$http.get(`https://app.followup.prios.no/api/resource_management/news_content?mode=getpublicnews&news_id=${data.id}`,{headers:{Tempaccess:this.accessKey}}).then(response =>{
+          this.theNewsContent = response.data;
+          console.log("Responsen", response.data);
+        }).then(responsen => {
+          this.openTheDialog(data, this.theNewsContent);
+        })
+      },
+
+      // Open the Dialog while passing the correct data
+      openTheDialog(originalData, contentData){
+        this.$refs.openingNewsDialog.openNewsDialog(originalData, contentData);
+      },
+      t (t) {
+      this.test = t;
+      console.log(this.test);
+    },
+    onErr () {
+      console.log('err')
+    },
+    onInstalled () {
+      console.log('installed')
+    },
+    onReady () {
+      console.log('ready')
+    }
     }
   }
 </script>
@@ -286,22 +296,25 @@ import RssTest from "@/components/rss/rssTest.vue"
   margin:auto auto;
 }
 
-
 /* Intro Classes for box and text at the top */
 .introImage {
-  /* height:650px; */
-  /* background-color:rgb(213, 211, 211); */
-  background: url('../assets/images/evolvebackground.jpg') no-repeat center  !important;
-  background-size: cover;
-  /* position: absolute; */
-  /* object-fit: cover; */
-  width: 100%;
-  height: 100%;
+  height:650px;
+  background-color:rgb(213, 211, 211);
 }
 .introTitle {
   font-size:48px;
-  /* color: #434343; */
-  color: #ffffff;
+  color: #434343;
+  opacity: 1;
+  letter-spacing: 0px;
+  margin-left: 15%; 
+  margin-top:10%;
+  font-weight: bold;
+  font-family: 'Barlow', sans-serif;
+  font-style:normal;
+}
+.introTitlePhone {
+  font-size:36px;
+  color: #434343;
   opacity: 1;
   letter-spacing: 0px;
   margin-left: 15%; 
@@ -312,8 +325,17 @@ import RssTest from "@/components/rss/rssTest.vue"
 }
 .introDescription {
   font-size:28px;
-  /* color: #434343;  */
-  color: #ffffff;
+  color: #434343; 
+  opacity: 1;
+  letter-spacing: 0px;
+  margin-left: 15%;
+  font-weight: bold;
+  font-family: 'Barlow', sans-serif;
+  font-style:normal;
+}
+.introDescriptionPhone {
+  font-size:18px;
+  color: #434343; 
   opacity: 1;
   letter-spacing: 0px;
   margin-left: 15%;
@@ -353,6 +375,7 @@ import RssTest from "@/components/rss/rssTest.vue"
   font-size: 14px;
   color: #6A6A6A;
   letter-spacing: 0;
+  height: 50px;
 }
 
 .pageCardArrow {
