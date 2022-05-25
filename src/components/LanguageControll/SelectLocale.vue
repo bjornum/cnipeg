@@ -24,11 +24,31 @@
         </v-btn>
       </template>
 
-      <v-list>
+      <!-- <v-list>
         <v-list-item-group>
           <v-list-item v-for="(item, i) in items" :key="i" @click="setLanguage(item)">
             <v-list-item-content class="text-center">
               <v-list-item-title v-text="item.text" v-model="$i18n.locale"></v-list-item-title>
+            </v-list-item-content>
+          </v-list-item>
+        </v-list-item-group>
+      </v-list>
+    </v-menu> -->
+    <v-list>
+        <v-list-item-group>
+          <v-list-item v-for="(item, i) in items" :key="i" @click="setLanguage(item)">
+            <v-list-item-content class="text-center">
+              <v-list-item-title v-model="$i18n.locale">
+                <v-row>
+                  <v-col cols="5">
+                    <v-img v-if="item.text == 'nb'" :src="item.flag" alt="Norwegian Flag" max-height="19" max-width="30" contain></v-img>
+                    <v-img v-if="item.text == 'en'" :src="item.flag" alt="English Flag" max-height="25" max-width="30" contain></v-img>
+                  </v-col>
+                  <v-col cols="2">
+                    {{item.text}} 
+                  </v-col>
+                </v-row>
+              </v-list-item-title>
             </v-list-item-content>
           </v-list-item>
         </v-list-item-group>

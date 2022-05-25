@@ -243,6 +243,7 @@ import NewsModule from "@/components/NewsModule/NewsModulePage.vue"
 
 <style scoped>
 
+
 /* Intro Classes for box and text at the top */
 .introImage {
   height:650px;

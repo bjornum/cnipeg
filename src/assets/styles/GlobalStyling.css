@@ -158,6 +158,8 @@
 /* ===== About ===== */
 .aboutHeaderTitle { font-size: var(--main__fontSize--headers); }
 .aboutDescription { color: #6A6A6A; }
+
+
 /* custom boxes at the top */
 .aboutKeyBoxes {
   margin: 0px;
