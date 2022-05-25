@@ -73,8 +73,8 @@
 </template>
 
 <script>
-import LanguageTest from "@/components/TestAndDevelopment/LanguageTest.vue"
-import SelectLocale from "@/components/TestAndDevelopment/SelectLocale.vue"
+import LanguageTest from "@/components/LanguageControll/LanguageTest.vue"
+import SelectLocale from "@/components/LanguageControll/SelectLocale.vue"
 export default {
   name: 'About',
   components:{

@@ -15,8 +15,8 @@
 <script>
 import Navbar from "@/components/Global/Navbar.vue"
 import NavbarPhone from "@/components/Global/NavbarPhone.vue"
-import LanguageTest from "@/components/TestAndDevelopment/LanguageTest.vue"
-import SelectLocale from "@/components/TestAndDevelopment/SelectLocale.vue"
+import LanguageTest from "@/components/LanguageControll/LanguageTest.vue"
+import SelectLocale from "@/components/LanguageControll/SelectLocale.vue"
 import Sidebar from "@/components/Global/Sidebar.vue"
 import Footer from "@/components/Global/Footer.vue"
 

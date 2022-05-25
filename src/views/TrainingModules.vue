@@ -25,7 +25,7 @@
 </template>
 
 <script>
-import TrainingModules from "@/components/trainingModules/TrainingModulePage.vue"
+import TrainingModules from "@/components/TrainingModules/TrainingModulePage.vue"
 export default {
   name: 'Training-Modules',
   components: {

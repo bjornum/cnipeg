@@ -62,7 +62,7 @@ O<template>
 
 <script>
 import ContactForm from "@/components/Global/ContactUs.vue"
-import LanguageSelection from "@/components/TestAndDevelopment/SelectLocale.vue"
+import LanguageSelection from "@/components/LanguageControll/SelectLocale.vue"
 
 export default {
   components:{

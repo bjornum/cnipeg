@@ -1,6 +1,6 @@
 <template>
   <div class="homePageWidth">
-    <NewsDialog ref="openingNewsDialog"></NewsDialog>
+    <!-- <NewsDialog ref="openingNewsDialog"></NewsDialog> -->
     <RssDialog ref="openingRssDialog"></RssDialog>
 
     <!-- Snackbar for Contact Form -->
@@ -47,6 +47,8 @@
         </v-row>
       </v-col>
 
+
+
       <!-- Info Text -->
       <v-col cols="12">
         <v-row>
@@ -55,18 +57,13 @@
             <p class="shortInfoTitle">Some short info</p>
             <p class="shortInfoDescription">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Provident voluptas asperiores dolores aspernatur, inventore blanditiis mollitia harum quo adipisci quisquam, quod odit ad explicabo consequuntur eos saepe animi quasi maiores.</p>
           </v-col>
-
-
-
-
-     
         </v-row>
       </v-col>
 
 
-      <!-- <twitter>
+      <twitter>
         <a class="twitter-timeline" data-width="270" data-height="300" data-link-color="#000" data-theme="dark"  href="https://twitter.com/TwitterDev/lists/national-parks?ref_src=twsrc%5Etfw"> A Twitter List by TwitterDev </a>
-      </twitter> -->
+      </twitter>
 
       <!-- News -->
       <NewsModule></NewsModule>
@@ -77,11 +74,7 @@
         </v-btn>
       </v-col>
 
-      <!-- <v-col cols="12" align="center">
-        <v-btn class="seeAllButtonBorder seeAllButtonText" rounded to="/news" v-if="allTheNews != ''">
-          See all news
-        </v-btn>
-      </v-col> -->
+
 
       <!-- RSS -->
       <v-col cols="12" xl="2" lg="2" md="2" sm="12" xs="12" class="pt-0"></v-col>
@@ -124,16 +117,14 @@
 </template>
 
 <script>
-import NewsDialog from "@/components/dialogs/newsDialog.vue"
+// import NewsDialog from "@/components/dialogs/newsDialog.vue"
 import RssDialog from "@/components/dialogs/rssFeedDialog.vue"
-import RssTest from "@/components/rss/rssTest.vue"
-import NewsModule from "@/components/newsModule/NewsModulePage.vue"
+import NewsModule from "@/components/NewsModule/NewsModulePage.vue"
   export default {
     name: 'Home',
     components:{
-      NewsDialog,
+      // NewsDialog,
       RssDialog,
-      RssTest,
       NewsModule
     },
     data(){
@@ -223,9 +214,9 @@ import NewsModule from "@/components/newsModule/NewsModulePage.vue"
         ],
       }
     },
-    mounted(){
-      this.getAllNews();
-    },
+    // mounted(){
+    //   this.getAllNews();
+    // },
     methods: {
       
       // Form: Clear all data
@@ -250,41 +241,41 @@ import NewsModule from "@/components/newsModule/NewsModulePage.vue"
         this.contactToast = true
       },
 
-      // Get all news made for this tenant
-      getAllNews(){
-        this.$http.get(`https://app.followup.prios.no/api/resource_management/news?mode=getpublicnews&tenant_id=${this.tenant}`,{headers:{Tempaccess:this.accessKey}}).then(response =>{
-          this.allTheNews = response.data;
-          console.log("Responsen", response.data);
-        })
-      },
+      // // Get all news made for this tenant
+      // getAllNews(){
+      //   this.$http.get(`https://app.followup.prios.no/api/resource_management/news?mode=getpublicnews&tenant_id=${this.tenant}`,{headers:{Tempaccess:this.accessKey}}).then(response =>{
+      //     this.allTheNews = response.data;
+      //     console.log("Responsen", response.data);
+      //   })
+      // },
 
-      // Get all the content of the clicked news
-      getNewsContent(data){
-        this.$http.get(`https://app.followup.prios.no/api/resource_management/news_content?mode=getpublicnews&news_id=${data.id}`,{headers:{Tempaccess:this.accessKey}}).then(response =>{
-          this.theNewsContent = response.data;
-          console.log("Responsen", response.data);
-        }).then(responsen => {
-          this.openTheDialog(data, this.theNewsContent);
-        })
-      },
+      // // Get all the content of the clicked news
+      // getNewsContent(data){
+      //   this.$http.get(`https://app.followup.prios.no/api/resource_management/news_content?mode=getpublicnews&news_id=${data.id}`,{headers:{Tempaccess:this.accessKey}}).then(response =>{
+      //     this.theNewsContent = response.data;
+      //     console.log("Responsen", response.data);
+      //   }).then(responsen => {
+      //     this.openTheDialog(data, this.theNewsContent);
+      //   })
+      // },
 
-      // Open the Dialog while passing the correct data
-      openTheDialog(originalData, contentData){
-        this.$refs.openingNewsDialog.openNewsDialog(originalData, contentData);
-      },
+      // // Open the Dialog while passing the correct data
+      // openTheDialog(originalData, contentData){
+      //   this.$refs.openingNewsDialog.openNewsDialog(originalData, contentData);
+      // },
       t (t) {
-      this.test = t;
-      console.log(this.test);
-    },
-    onErr () {
-      console.log('err')
-    },
-    onInstalled () {
-      console.log('installed')
-    },
-    onReady () {
-      console.log('ready')
-    }
+        this.test = t;
+        console.log(this.test);
+      },
+      onErr () {
+        console.log('err')
+      },
+      onInstalled () {
+        console.log('installed')
+      },
+      onReady () {
+        console.log('ready')
+      }
     }
   }
 </script>
