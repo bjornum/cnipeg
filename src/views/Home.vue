@@ -1,7 +1,5 @@
 <template>
   <div class="homePageWidth">
-    <!-- <NewsDialog ref="openingNewsDialog"></NewsDialog> -->
-    <RssDialog ref="openingRssDialog"></RssDialog>
 
     <!-- Snackbar for Contact Form -->
     <v-snackbar v-model="contactToast" dark color="success">
@@ -84,7 +82,7 @@
             <p class="newsChapterTitle">RSS feed</p>
           </v-col>
           <v-col cols="12" xl="6" lg="6" md="6" sm="12" xs="12" v-for="(rssFeed, rssFeedIndex) in fakeRSSfeed" :key="rssFeedIndex">
-            <v-card height="100%" :style="`border-right:3px solid ${colorArr[rssFeedIndex]}`" @click="$refs.openingRssDialog.openRssDialog(rssFeed)">
+            <v-card height="100%" :style="`border-right:3px solid ${colorArr[rssFeedIndex]}`">
               <v-row>
                 <!-- Image -->
                 <v-col cols="3" style="height: 100px;" class="ma-0 pa-0">
@@ -117,14 +115,10 @@
 </template>
 
 <script>
-// import NewsDialog from "@/components/dialogs/newsDialog.vue"
-import RssDialog from "@/components/dialogs/rssFeedDialog.vue"
 import NewsModule from "@/components/NewsModule/NewsModulePage.vue"
   export default {
     name: 'Home',
     components:{
-      // NewsDialog,
-      RssDialog,
       NewsModule
     },
     data(){
@@ -241,51 +235,13 @@ import NewsModule from "@/components/NewsModule/NewsModulePage.vue"
         this.contactToast = true
       },
 
-      // // Get all news made for this tenant
-      // getAllNews(){
-      //   this.$http.get(`https://app.followup.prios.no/api/resource_management/news?mode=getpublicnews&tenant_id=${this.tenant}`,{headers:{Tempaccess:this.accessKey}}).then(response =>{
-      //     this.allTheNews = response.data;
-      //     console.log("Responsen", response.data);
-      //   })
-      // },
-
-      // // Get all the content of the clicked news
-      // getNewsContent(data){
-      //   this.$http.get(`https://app.followup.prios.no/api/resource_management/news_content?mode=getpublicnews&news_id=${data.id}`,{headers:{Tempaccess:this.accessKey}}).then(response =>{
-      //     this.theNewsContent = response.data;
-      //     console.log("Responsen", response.data);
-      //   }).then(responsen => {
-      //     this.openTheDialog(data, this.theNewsContent);
-      //   })
-      // },
-
-      // // Open the Dialog while passing the correct data
-      // openTheDialog(originalData, contentData){
-      //   this.$refs.openingNewsDialog.openNewsDialog(originalData, contentData);
-      // },
-      t (t) {
-        this.test = t;
-        console.log(this.test);
-      },
-      onErr () {
-        console.log('err')
-      },
-      onInstalled () {
-        console.log('installed')
-      },
-      onReady () {
-        console.log('ready')
-      }
+    
+      
     }
   }
 </script>
 
 <style scoped>
-/* General Page */
-.homePageWidth {
-  width: 90vw; 
-  margin:auto auto;
-}
 
 /* Intro Classes for box and text at the top */
 .introImage {

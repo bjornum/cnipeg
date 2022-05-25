@@ -3,8 +3,8 @@
     <v-row>
       <v-col cols="12" xl="2" lg="2" md="2" sm="12" xs="12"></v-col>
       <v-col cols="12" xl="10" lg="10" md="10" sm="12" xs="12" class="ma-0 pa-0 pt-16 mt-16">
-        <v-card class="ma-0 pa-0 box" flat>
-          <p class="ma-0 pa-0 partnerChapterTitle">Partners</p>
+        <v-card class="ma-0 pa-0 lineBelowHeader" flat>
+          <p class="ma-0 pa-0 mainTitle titleChapterFontSize">Partners</p>
         </v-card>
       </v-col>
       <v-col cols="12" xl="6" lg="6" md="6" sm="12" xs="12" v-for="(item, index) in projectPartners" :key="index">
@@ -16,7 +16,7 @@
               </v-card>
             </v-col>
             <v-col class="pb-0 mb-0" cols="12">
-              <p class="pl-3 partnerTitle">{{item.title}} 
+              <p class="pl-3 mainTitle titleFontSize">{{item.title}} 
                 <span> 
                   <v-btn icon :href="item.link" target="_blank">
                     <v-icon color="green">mdi-open-in-new</v-icon>
@@ -25,7 +25,7 @@
               </p>
             </v-col>
             <v-col v-if="selectedIndex !== index" cols="12" class="ma-0 pa-0 pl-3 pr-3">
-              <p class="pl-3 pr-3 partnerDescriptionPre">{{item.description}}</p>
+              <p class="pl-3 pr-3 partnerDescriptionPre textLimiter">{{item.description}}</p>
             </v-col>
           </v-row>
           <v-card-actions>
@@ -80,41 +80,12 @@ export default {
 </script>
 
 <style scoped>
-/* General Page */
-.homePageWidth {
-  width: 90vw; 
-  margin:auto auto;
-  margin-bottom: 50px;
-}
-/* Card CSS */
-.box{
-  border-bottom: 3px solid transparent;
-  border-image: linear-gradient(to right,  #DD9A30 5%, transparent 5%);
-  border-image-slice: 1;
-}
-.cardBorder{
-  border: 3px #329D9C solid;
-}
+
+/* Border around the cards */
+.cardBorder{ border: 3px #329D9C solid; }
 
 
 /* Text styling */
-.partnerChapterTitle {
-  font-family: 'Barlow', sans-serif;
-  font-weight: bold;
-  font-size: 46px;
-  color: #434343;
-  opacity: 1;
-  letter-spacing: 0px;
-  text-align: left;
-}
-.partnerTitle {
-  font-family: 'Barlow', sans-serif;
-  font-weight: bold;
-  font-size: 24px;
-  color: #434343;
-  letter-spacing: 0px;
-  text-align: left;
-}
 .partnerDescriptionPre {
   font-family: 'Lato', sans-serif;
   font-weight: normal;
@@ -122,19 +93,12 @@ export default {
   color: #6A6A6A;
   opacity: 1;
   letter-spacing: 0px;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  display: -webkit-box;
-  -webkit-line-clamp: 2; /* number of lines to show */
-  line-clamp: 2; 
-  -webkit-box-orient: vertical;
 }
 .partnerDescriptionPost {
   font-family: 'Lato', sans-serif;
   font-weight: normal;
   text-align: left;
   color: #6A6A6A;
-  opacity: 1;
   opacity: 1;
   letter-spacing: 0px;
 }

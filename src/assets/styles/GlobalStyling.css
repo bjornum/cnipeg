@@ -1,0 +1,216 @@
+:root {
+  /* Page Color Theme */
+  --main__primary-color: #205072;
+  --main__secondary-color: #329D9C;
+  --main__third-color: #D83636;
+
+  --main__background--color: brown;
+
+  /* Font Colours */
+  --main__text--header-color: #434343;
+  --main__text--subheader-color: #6A6A6A;
+  --main__text--title-color: #212121;
+  --main__text--description-color: #424242;
+  --main__text--date-color: #6A6A6A;
+
+  /* Font style, sizes and such */
+  --main__fontSize--headers: 46px;
+  --main__fontSize--header-phone: 36px;
+  --main__fontSize--title: 16px;
+  --main__fontSize--description: 14px;
+  --main__fontSize--date: 11px;
+  --main__fontSize--cardTitle: 24px;
+
+}
+
+
+/* Sort and rewamp the css - Try creating generic classes.  Module specific goes into its own thing */
+
+/* ===== GENERAL ===== */
+.homePageWidth {
+  width: 90vw; 
+  margin:auto auto;
+}
+
+/* To come
+  - Logo main
+  - Logo Phone
+  - 
+*/
+
+.mainHeader {
+  font-weight: bold;
+  font-family: 'Barlow', sans-serif;
+  color: var(--main__text--header-color);
+  opacity: 1;
+  letter-spacing: 0px;
+  text-align: left;
+}
+
+.mainHeaderPhone {
+  font-family: 'Barlow', sans-serif;
+  font-weight: bold;
+  font-size: var(--main__fontSize--header-phone);
+  color: var(--main__text--header-color);
+  opacity: 1;
+  letter-spacing: 0px;
+  text-align: left;
+}
+
+.mainSubHeader{
+  font-size: var(--main__fontSize--description);
+  font-weight: normal;
+  font-family: 'Lato', sans-serif;
+  color: var(--main__text--subheader-color);
+  opacity: 1;
+  letter-spacing: 0px;
+  text-align: left;
+}
+
+.mainTitle {
+  color: var(--main__text--header-color);
+  font-family: 'Barlow', sans-serif;
+  font-weight: bold;
+  letter-spacing: 0px;
+  text-align: left;
+}
+
+.mainDescription {
+  font-size: var(--main__fontSize--description);
+  font-family: 'Lato', sans-serif;
+  font-weight: normal;
+  text-align: left;
+  opacity: 1;
+  letter-spacing: 0px;
+}
+
+/* Displaying Dates */
+.mainDate {
+  font-size: var(--main__fontSize--date);
+  font-weight: normal;
+  font-family: 'Lato', sans-serif;
+  color: var(--main__text--date-color);
+  opacity: 1;
+  letter-spacing: 0px;
+  text-align: left;
+}
+
+/* Text Limiter  */
+.textLimiter {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 3; /* number of lines to show */
+  line-clamp: 2; 
+  -webkit-box-orient: vertical;
+}
+
+/* Style the button to as text */
+.cardTextButton {
+  font-family: 'Lato', sans-serif;
+  font-weight: normal;
+  font-size: 18px;
+  text-align: left;
+  color: #205072;
+  opacity: 1;
+  letter-spacing: 0px;
+  text-decoration: underline;
+}
+
+/* Arrow Button */
+.arrowButton {
+  color: var(--main__primary-color);
+  opacity: 1;
+}
+
+/* Create some space around the dividers */
+.dividerPositioning{
+  margin-left:1%; 
+  margin-bottom:2%;
+}
+
+/* ===== Dialog Styling ===== */
+
+/* Closing Button */
+.floatingCloseDialogButton {
+  position:fixed; 
+  top:30px; 
+  right:30px; 
+  z-index: 5; 
+  border:1px solid black; 
+  background-color:rgba(255, 0, 0, 0.2);
+}
+
+
+
+/* ===== RSS ===== */
+.rssHeaderTitle { font-size: var(--main__fontSize--headers); }
+.rssCardTitle { font-size: var(--main__fontSize--title); }
+.rssCardDescription { color: var(--main__text--description-color); }
+
+/* ===== News ===== */
+.newsHeaderTitle { font-size: var(--main__fontSize--headers); }
+.newsCardTitle { font-size: var(--main__fontSize--cardTitle); }
+
+/* ===== Training Modules ===== */
+.trainingHeaderTitle { font-size: var(--main__fontSize--headers); }
+
+/* ===== About ===== */
+.aboutHeaderTitle { font-size: var(--main__fontSize--headers); }
+.aboutDescription { color: #6A6A6A; }
+/* custom boxes at the top */
+.aboutKeyBoxes {
+  margin: 0px;
+  color: #6A6A6A;
+  opacity: 1;
+  letter-spacing: 0px;
+  font-family: 'Lato', sans-serif;
+  font-weight: normal;
+  text-align: center; 
+  background-color: #E0F1FF;
+  padding: 5px 10px 5px 10px;
+  font-size: 12px;
+}
+
+/* Image box templates (no image) */
+.imageTemplateBox {
+  width: 100%;
+  height: 100%;
+  background-color: #D1D1D1;
+  opacity: 1;
+}
+
+/* Header Titles */
+.aboutHeadlines { font-size: 34px; }
+.whomBackground {
+  background-color: #F2F2F2;
+  opacity: 1;
+}
+
+
+/* ===== Home ===== */
+
+
+/* ===== Partners ===== */
+
+/* Minor Line below header */
+.lineBelowHeader{
+  border-bottom: 3px solid transparent;
+  border-image: linear-gradient(to right,  #DD9A30 5%, transparent 5%);
+  border-image-slice: 1;
+}
+.titleChapterFontSize {font-size: 46px;}
+.titleFontSize {font-size: 24px;}
+
+
+
+/* ===== CLEANUP BELOW ===== */
+
+/* Used in Prototyping */
+.missingImageBlock {
+  height:200px; 
+  width:auto; 
+  background-color:#D1D1D1;
+   margin:0px 15px 0px 15px;
+}
+
