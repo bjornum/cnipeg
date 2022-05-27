@@ -1,8 +1,7 @@
 O<template>
   <v-app-bar app class="navbarStyling" flat>
     <ContactForm ref="OpenContactForm"></ContactForm>
-    
-    <!-- <p v-if="$i18n.locale == 'en'">asd</p> -->
+    <!-- {{ $t('navbar.partners') }} -->
     <!-- Logo -->
     <!-- <div class="d-flex align-center">
       <v-img alt="Vuetify Logo" class="shrink mr-2" contain src="img/DIGI_logo.png" transition="scale-transition" width="40"/>
@@ -13,49 +12,24 @@ O<template>
     <!-- <v-img class="mt-15 ml-10" src="img/EVOLVE.png"  max-height="130" max-width="130" contain></v-img> -->
       <p class="pt-15" style="font-weight: bold; font-size: 20px; color: blue;">projectTemplate</p>
     <v-spacer></v-spacer>
-    <!-- Links -->
-    <!-- 
-      1. Logo
-      2. Home Button
-      3. About
-      4. News
-      5. Training Modules
-      6. Digital Learning Design
-      7. Digital Pedagogical Strategy
-      8. Contact (dialog)
-      9. Login (Link to followup? OR same as valuable creativity) 
-    -->
     <div class="mt-10">
-      <a href="/">Home</a>
-      <a href="/about">About</a>
-      <a href="/partners">Partners</a>
-      <a href="/news">News</a>
-      <a href="/rss">RSS</a>
-      <a href="/trainingmodules">Training Modules</a>
-      <a href="/resources" class="mr-2">Resources</a>
-
-      <!-- <v-btn text to="/">{{ $t('navbar.home') }}</v-btn>
-      <v-btn text to="/about">{{ $t('navbar.about') }}</v-btn>
-      <v-btn text to="/news">{{ $t('navbar.news') }}</v-btn>
-      <v-btn text to="/trainingmodules">Training Modules</v-btn>
-      <v-btn text to="/resources">Resources</v-btn> -->
-      <!-- <v-btn text to="/digitallearningdesign">Digital Learning Design</v-btn> -->
-      <!-- <v-btn text to="/digitalpedagogicalstrategy">Digital Pedagogical Strategy</v-btn> -->
-      <!-- <v-btn class="contactButton" small text @click="$refs.OpenContactForm.openContactDialog()">Contact</v-btn> -->
-      <span class="contactButton" @click="$refs.OpenContactForm.openContactDialog()">Contact</span>
-      <!-- <v-btn icon @click="$refs.OpenContactForm.openContactDialog()">
-        <v-icon>mdi-email-outline</v-icon>
-      </v-btn> -->
+      <a href="/">{{ $t('navbar.home') }}</a>
+      <a href="/about">{{ $t('navbar.about') }}</a>
+      <a href="/partners">{{ $t('navbar.partners') }}</a>
+      <a href="/news">{{ $t('navbar.news') }}</a>
+      <a href="/rss">{{ $t('navbar.rss') }}</a>
+      <a href="/trainingmodules">{{ $t('navbar.training modules') }}</a>
+      <a href="/resources" class="mr-2">{{ $t('navbar.resources') }}</a>
+      <span class="contactButton" @click="$refs.OpenContactForm.openContactDialog()">{{ $t('navbar.contact') }}</span>
     </div>
-    <!-- <div class="mt-10">
+    <div class="mt-10 ml-3">
       <LanguageSelection></LanguageSelection>
-    </div> -->
-
+    </div>
 
     <v-spacer></v-spacer>
     <!-- Login -->
     <!-- <div class="mt-7">
-      <v-btn text href="https://app.followup.prios.no/#/login" target="_blank">Login</v-btn>
+      <v-btn text href="https://app.followup.prios.no/#/login" target="_blank">{{ $t('navbar.login') }}</v-btn>
     </div> -->
   </v-app-bar>
 </template>

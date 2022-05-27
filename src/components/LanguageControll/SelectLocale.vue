@@ -34,7 +34,7 @@
         </v-list-item-group>
       </v-list>
     </v-menu> -->
-    <v-list>
+      <v-list>
         <v-list-item-group>
           <v-list-item v-for="(item, i) in items" :key="i" @click="setLanguage(item)">
             <v-list-item-content class="text-center">
@@ -114,9 +114,9 @@ export default {
       langs: ['en', , 'nb'],
       languageDialog: false,
       selectedLanguage: this.$store.getters.getAppLanguage,
-      items:[
-        {text: 'nb'},
-        {text: 'en'},
+      items: [
+        {text: 'nb', flag: require('@/assets/flags/norway.png')},
+        {text: 'en', flag: require('@/assets/flags/england.png')}
       ]
     }
   },
