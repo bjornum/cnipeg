@@ -17,7 +17,7 @@ O<template>
       <a href="/about">{{ $t('navbar.about') }}</a>
       <a href="/partners">{{ $t('navbar.partners') }}</a>
       <a href="/news">{{ $t('navbar.news') }}</a>
-      <a href="/rss">{{ $t('navbar.rss') }}</a>
+      <!-- <a href="/rss">{{ $t('navbar.rss') }}</a> -->
       <a href="/trainingmodules">{{ $t('navbar.training modules') }}</a>
       <a href="/resources" class="mr-2">{{ $t('navbar.resources') }}</a>
       <span class="contactButton" @click="$refs.OpenContactForm.openContactDialog()">{{ $t('navbar.contact') }}</span>

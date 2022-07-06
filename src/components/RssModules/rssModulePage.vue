@@ -1,52 +1,65 @@
 <template>
-  <div class="homePageWidth">
+  <div class="mb-10">
+    <RssModuleDialog ref="openRssDialog"></RssModuleDialog>
     <v-row>
-      <v-col cols="12" class="mt-15"></v-col>
-      <v-col cols="12" xl="2" lg="2" md="2" sm="12" xs="12"></v-col>
-      <!-- RSS feed Chapter info -->
-      <v-col cols="12" xl="8" lg="8" md="8" sm="12" xs="12" class="mb-15">
-        <v-row> 
-          <v-col cols="12">
-            <p class="mainHeader rssHeaderTitle">RSS feed</p>
-            <p class="mainSubHeader">Keep up to date about the projectTemplate</p>
-          </v-col>
-        </v-row>
+      <v-col cols="12" class="pt-15 mt-15 pb-0">
+        <p class="rssHeadlinerTitle text-center">External News</p>
       </v-col>
-
+      <v-divider class="newsCardDividerPositioning" width="98%" style="padding: 2px;"></v-divider>
       <!-- Display RSS cards -->
-      <v-col cols="6" v-for="(item, index) in rssEntryContent" :key="index">
-        <p class="text-center">
-          <span>Source: </span> 
-          <span>{{item.link[0]}}</span>
-        </p>
+      <v-col cols="12" v-for="(item, index) in rssEntryContent" :key="index">
+        
         <v-row>
-          <v-col cols="12" v-for="(rssCard, rssCardIndex) in item.items" :key="rssCardIndex">
-            <v-card :href="rssCard.link" target="_blank" height="100%" class="pa-3 blue lighten-4">
-              <p class="mainTitle text-center pb-0 mb-0 pa-1">{{rssCard.title[0]}}</p>
-              <p class="mainDescription rssCardDescription mb-0 pt-0 pa-1">{{rssCard.description[0]}}</p>
-            </v-card>
+          <v-col cols="12" xl="4" lg="4" md="4" sm="12" xs="12" v-for="(rssCard, rssCardIndex) in item.items" :key="rssCardIndex">
+            <v-hover v-slot:default="{ hover }">
+              <!-- <v-card class="pa-5 pb-1" :elevation="hover ? 12 : 2" @click="$refs.openRssDialog.openDialog(rssCard)"> -->
+              <v-card class="pa-5 pb-1" :elevation="hover ? 12 : 2" :href="rssCard.link" target="_blank">
+              <!-- <v-card class="pa-5 pb-1" :elevation="hover ? 12 : 2" > -->
+                <v-row>
+                  <!-- Image comes, and Logo comes here when created (make a new col) -->
+                  <v-col cols="12" style="height:80px;" class="mb-0 ml-2 pb-0">
+                    <p class="rssCardTitle">{{rssCard.title[0]}}</p>
+                  </v-col>
+                  <v-col style="height:70px;" class="mb-0 ml-2 pb-0 mt-3">
+                    <p class="rssDescriptionPre" v-html="rssCard.description[0].replace(/<img[^>]*>/, '')"></p>
+                  </v-col>
+                  <v-col cols="12" class="pt-0 mt-0 pb-0">
+                    <v-card-actions class="pt-0 mt-5">
+                      <p class="rssCardButton mr-2 pt-3">Read article</p>
+                      <v-icon class="rssCardButtonArrow">mdi-arrow-right</v-icon>
+                    </v-card-actions>
+                  </v-col>
+                  <v-col cols="12" class="pt-0">
+                    <p style="font-size: 12px">{{item.link[0]}}</p>
+                    <!-- <pre>{{item}}</pre> -->
+                  </v-col>
+                </v-row>
+                <v-divider class="newsCardDividerPositioning" width="98%" style="padding: 2px;" :style="`background-color:${colorArr[rssCardIndex]}`"></v-divider>
+              </v-card>
+            </v-hover>
           </v-col>
         </v-row>
       </v-col>
-
     </v-row>
   </div>
 </template>
 
 <script>
+import  RssModuleDialog from "@/components/rss/rssModuleDialog.vue"
 export default {
   components: {
-    
+    RssModuleDialog
   },
   data(){
     return {
       accessKey:window.btoa('bac436b32a36431bb437b9509b6d3495'),
-      mainRssEntries: [],
       rssEntryContent: [],
-
-      // Testing Purposes
-      rssUrl: "https://www.nrk.no/trondelag/toppsaker.rss",
-      rssCount: 10,
+      colorArr:[
+        "#0E3196",
+        "#249ebe",
+        "#FF7E26",
+        "#FFD43D"
+      ],
     }
   },
   mounted(){
@@ -56,8 +69,7 @@ export default {
 
     // #1. Get ALL entries of type RSS and pass them to the iterator
     getAllRSSEntries(){
-      this.$http.get(`https://app.followup.prios.no/api/resource_management/content?type=rss`,{headers:{Tempaccess:this.accessKey}}).then((response) => {
-        // this.mainRssEntries = response.data;
+      this.$http.get(`https://app.followup.prios.no/api/resource_management/content?tenant_id=108`,{headers:{Tempaccess:this.accessKey}}).then((response) => {
         let allRssEntriesFromFollowup = response.data;
         this.getRssSources(allRssEntriesFromFollowup);
       })
@@ -77,13 +89,88 @@ export default {
         - Else, display custom error message.
     */
     getRssContent(rssSource){
-      this.$http.get(`https://app.followup.prios.no/api/resource_management/content?mode=getrssdata&url=${rssSource}&rss_count=10`,{headers:{Tempaccess:this.accessKey}}).then((response) => {
+      this.$http.get(`https://app.followup.prios.no/api/resource_management/content?mode=getrssdata&url=${rssSource}&rss_count=3`,{headers:{Tempaccess:this.accessKey}}).then((response) => {
         this.rssEntryContent.push(response.data);
+        this.filterAwayImage();
       }).catch(function (error) {
         console.log("%cError", "color: red; display: block; width: 100%; font-size:36px; font-weight: bold; border:solid black 2px; padding:5px; background-color: lightblue;",error.toJSON());
       });
     },
 
+    filterAwayImage(){
+
+      // let testing = this.rssEntryContent.description[0].replaceAll("(?i)<td[^>]*>", "");
+      // console.log("halla", this.rssEntryContent.description);
+      // const regex = /(<img[^>]*>)/ig
+      // const body = this.rssEntryContent.description[0];
+      // console.log("body is", body);
+      // const result = body.replace(regex, "");
+      // console.log("asad", result);
+    }
+
   }
 }
 </script>
+
+<style scoped>
+.mainTitle{
+  font-weight: bold; 
+}
+
+/* a {
+  color: hotpink;
+} */
+.rssCardTitle {
+  font-family: 'Barlow', sans-serif;
+  font-weight: bold;
+  font-size: 18px;
+  color: #434343;
+  letter-spacing: 0px;
+  text-align: left;
+}
+.rssDescriptionPre {
+  font-family: 'Lato', sans-serif;
+  font-weight: normal;
+  text-align: left;
+  color: #6A6A6A;
+  opacity: 1;
+  letter-spacing: 0px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 3; /* number of lines to show */
+  line-clamp: 3; 
+  -webkit-box-orient: vertical;
+}
+
+.rssCardButton {
+  font-family: 'Lato', sans-serif;
+  font-weight: regular;
+  font-size: 18px;
+  text-align: left;
+  color: #205072;
+  opacity: 1;
+  letter-spacing: 0px;
+  text-decoration: underline;
+}
+
+.rssCardButtonArrow {
+  color: #205072;
+  opacity: 1;
+}
+
+.newsCardDividerPositioning {
+  margin-left:1%; 
+  margin-bottom:2%;
+}
+
+.rssHeadlinerTitle {
+  font-family: 'Barlow', sans-serif;
+  font-weight: bold;
+  font-size: 26px;
+  color: #434343;
+  opacity: 1;
+  letter-spacing: 0px;
+  text-align: left;
+}
+</style>

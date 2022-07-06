@@ -24,6 +24,40 @@ const i18n = new VueI18n({
 
 Vue.config.productionTip = false;
 
+
+
+
+
+
+
+
+
+
+
+// const store = Vue.observable({
+//   cart: {
+//     items: [
+//       { title: "Ice Cream "},
+//       { title: "Ice Cream "}
+//     ],
+//     add(item) {
+//       store.cart.items.push(item);
+//     }
+//   }
+// });
+
+// Vue.prototype.$store = store;
+
+
+
+
+
+
+
+
+
+
+
 new Vue({
   router,
   store,

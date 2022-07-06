@@ -2,7 +2,7 @@
   <div>
     <v-row>
       <v-col class="mt-15"></v-col>
-     
+
     </v-row>
 
     <!-- <div v-for="(item, yeps) in yesTest" :key="yeps">
@@ -23,7 +23,7 @@
     </div> -->
     <!-- <pre>{{yesTest}}</pre> -->
 
-<pre>{{yesTest}}</pre>
+<!-- <pre>{{yesTest}}</pre> -->
 <!-- 
 
     <div v-for="(item, yeps) in yesTest" :key="yeps" cols="12">
@@ -31,18 +31,22 @@
       <v-img :src="url +  item.attributes.url" height="100px" width="100px"></v-img>
     </div> -->
 
-
+    <ComplicatedForm></ComplicatedForm>
+    <!-- <StorageTest></StorageTest> -->
    
     <!-- <ResourcesVersionTwo></ResourcesVersionTwo> -->
   </div>
 </template>
 
 <script>
+import ComplicatedForm from "@/components/Development/complicatedStepper.vue"
 
+import StorageTest from "@/components/Development/storageTest.vue"
 
 export default {
   components: {
-    
+    ComplicatedForm,
+    StorageTest
   },
   data(){
     return {

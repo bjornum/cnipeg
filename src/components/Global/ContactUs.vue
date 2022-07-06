@@ -26,7 +26,7 @@
           <v-btn icon @click="clearForm"><v-icon>mdi-close</v-icon></v-btn>
           <v-btn color="success" icon :disabled="!isContactFormValid" @click="postContactForm()"><v-icon>mdi-send</v-icon></v-btn>
         </v-card-actions>
-      </v-card>
+      </v-card> 
     </v-dialog>
 
     <v-snackbar v-model="contactToast" dark color="success">
