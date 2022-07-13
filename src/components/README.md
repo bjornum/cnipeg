@@ -18,15 +18,12 @@
     - Implementation of i18n
   7. Misc
     - Singular Components like frontCarousell.vue
+  8. Development
+    - As name say, here all components that are not finished ends up.
 
 ## Future plans
   - Cleanup in the components.
-    - Removal of unused code.
-    - General css (avoiding repetitions)
     - trainingmodule -> taskdata need a refactor
-  - Safely removal of the dialogs folder.
-  - RSS prototype display, with either link to external pages, or opening of a dialog.
-  - 
 
 
 ## Rules
