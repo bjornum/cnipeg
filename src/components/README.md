@@ -12,10 +12,12 @@
     - Navbar, Footer, Contact dialog.
   2. NewsModule
   3. TrainingModules
-  4. LanguageControll
+  4. RssModule
+  5. ResourceModule
+  6. LanguageControll
     - Implementation of i18n
-  5. Misc
-    - Under development
+  7. Misc
+    - Singular Components like frontCarousell.vue
 
 ## Future plans
   - Cleanup in the components.
