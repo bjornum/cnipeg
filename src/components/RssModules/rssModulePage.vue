@@ -45,7 +45,7 @@
 </template>
 
 <script>
-import  RssModuleDialog from "@/components/rss/rssModuleDialog.vue"
+import  RssModuleDialog from "@/components/RssModules/rssModuleDialog.vue"
 export default {
   components: {
     RssModuleDialog
@@ -67,9 +67,9 @@ export default {
   },
   methods: {
 
-    // #1. Get ALL entries of type RSS and pass them to the iterator
+    // #1. Get ALL entries of type RSS and pass them to the iterator - CHANGE TO CORRECT TENANT ID (108 Works as an example)
     getAllRSSEntries(){
-      this.$http.get(`https://app.followup.prios.no/api/resource_management/content?tenant_id=108`,{headers:{Tempaccess:this.accessKey}}).then((response) => {
+      this.$http.get(`https://app.followup.prios.no/api/resource_management/content?tenant_id=1`,{headers:{Tempaccess:this.accessKey}}).then((response) => {
         let allRssEntriesFromFollowup = response.data;
         this.getRssSources(allRssEntriesFromFollowup);
       })
