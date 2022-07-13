@@ -64,13 +64,20 @@
       </twitter>
 
       <!-- News -->
-      <NewsModule></NewsModule>
+      <v-col cols="12" xl="2" lg="2" md="2" sm="12" xs="12" class="pt-0"></v-col>
+      <v-col cols="12" xl="8" lg="8" md="8" sm="12" xs="12" class="pt-0">
+        <NewsModule></NewsModule>
+      </v-col>
+      
       <!-- See all news button - go to page -->
       <v-col cols="12" align="center">
         <v-btn class="seeAllButtonBorder seeAllButtonText" rounded to="/news">
           See all news
         </v-btn>
       </v-col>
+
+      <!-- To keep the structure -->
+      <v-col cols="12"></v-col>
 
       <!-- RSS -->
       <v-col cols="12" xl="2" lg="2" md="2" sm="12" xs="12" class="pt-0"></v-col>

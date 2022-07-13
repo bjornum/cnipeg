@@ -1,5 +1,8 @@
+// Import packages
 import Vue from 'vue'
 import VueRouter from 'vue-router'
+
+// Import Pages
 import Home from '../views/Home.vue'
 import About from '../views/About.vue'
 import News from '../views/News.vue'
@@ -20,8 +23,8 @@ const routes = [
   { path: '/news', name: 'News', component: News },
   { path: '/trainingmodules', name: 'TrainingModules', component: TrainingModules },
   { path: '/resources', name: 'Resources', component: Resources },
-  { path: '/test', name: 'Test', component: TestingPage },
   { path: '/profile', name: 'Profile', component: Profile },
+  { path: '/test', name: 'Test', component: TestingPage },
   
 ]
 

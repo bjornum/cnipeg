@@ -17,3 +17,4 @@ These should be displayed as cards, be fully phone friendly and clickable.
 ## Installing this component and some notes.
 1. Copy this folder, and place into your components folder.
 2. Render in "newspage.vue" where you wish to display it.
+3. Change tenantID
