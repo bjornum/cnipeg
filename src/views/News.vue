@@ -1,15 +1,15 @@
 <template>
   <div class="homePageWidth">
-    <NewsModule></NewsModule>
+    <!-- <NewsModule></NewsModule> -->
   </div>
 </template>
 
 <script>
-import NewsModule from "@/components/NewsModule/NewsModulePage.vue"
+// import NewsModule from "@/components/NewsModule/NewsModulePage.vue"
 export default {
   name: 'News',
   components: {
-    NewsModule
+    // NewsModule
   },
   data(){
     return {
