@@ -1,6 +1,5 @@
 <template>
   <div>
-    <!-- FIX -->
     <v-dialog v-model="contactDialog" scrollable persistent max-width="500px" transition="dialog-transition">
       <v-card light>
         <v-card-title>
@@ -42,7 +41,6 @@
 export default {
   data() {
     return {
-      // accessKey:window.btoa('bac436b32a36431bb437b9509b6d3495'), 
       accessKey:process.env.VUE_APP_API_KEY,
       contactDialog: false,
       contactToast: false,
@@ -67,9 +65,8 @@ export default {
 
   methods: {
 
-    // Open the Contact Form
+    // Open the Contact Form - Can include parent data if needed
     openContactDialog(){
-      // Can include parent data if needed
       this.contactDialog = true;
     },
 
@@ -98,9 +95,8 @@ export default {
         message: this.contactFormData.message,
         sentFrom: this.contactFormData.sentFrom
       };
+      // Display the data sent
       console.log("Sending Contact Form", ContactForm);
-      // this.messageSent();
-      // this.closeContact();
       // Post it to DB
       this.$http.post('https://app.followup.prios.no/api/crm/contactform/prios', ContactForm,{headers:{Tempaccess:this.accessKey}}).then(()=> {
         this.messageSent()
