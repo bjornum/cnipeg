@@ -13,6 +13,7 @@ Some of the components, may have other components nested into it.
   - Navbar
   - Sidebar
   - Footer
+    - Got some images imported to it, simply remove or change these to the ones of choice.
   
 
 ## Features to come.
