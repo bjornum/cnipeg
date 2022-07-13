@@ -1,14 +1,6 @@
 <template>
   <div class="homePageWidth">
 
-    <!-- Snackbar for Contact Form -->
-    <v-snackbar v-model="contactToast" dark color="success">
-      <span>The message has been sent!</span>
-      <v-btn class="float-right" x-small dark icon @click="contactToast = false">
-        <v-icon>mdi-close</v-icon>
-      </v-btn>
-    </v-snackbar>
-
     <!-- Home Page Content -->
     <v-row>
       <v-col cols="12" class="mt-5"></v-col>
@@ -45,8 +37,6 @@
         </v-row>
       </v-col>
 
-
-
       <!-- Info Text -->
       <v-col cols="12">
         <v-row>
@@ -58,7 +48,7 @@
         </v-row>
       </v-col>
 
-
+      <!-- Twitter displayed through vue-twitter package -->
       <twitter>
         <a class="twitter-timeline" data-width="270" data-height="300" data-link-color="#000" data-theme="dark"  href="https://twitter.com/TwitterDev/lists/national-parks?ref_src=twsrc%5Etfw"> A Twitter List by TwitterDev </a>
       </twitter>
@@ -89,7 +79,7 @@
 </template>
 
 <script>
-import NewsModule from "@/components/NewsModule/NewsModulePage.vue"
+import NewsModule from "../components/NewsModule/NewsModulePage.vue"
 import RssForHome from "@/components/RssModules/rssModulePage.vue"
   export default {
     name: 'Home',
@@ -99,126 +89,19 @@ import RssForHome from "@/components/RssModules/rssModulePage.vue"
     },
     data(){
       return {
-        test: 1,
-        accessKey:window.btoa('bac436b32a36431bb437b9509b6d3495'),
-        tenant: 999,
-        allTheNews: [],
-        theNewsContent: [],
-        colorArr:[
-          "#205072",
-          "#329D9C",
-          "#D83636",
-          "#DD9A30"
-        ],
-        contactToast: false,
-        // Contact Form
-        contactForm: {
-          name: "",
-          email: "",
-          message: "",
-          subject: "",
-          sentFrom: "projectTemplate"
-        },
-        // Rules for the contact Form
-        rules:{
-          requiredField: value => !!value || 'This field is required',
-          requiredName: value => !!value || 'Your name is required',
-          requiredEmail: value => !!value || 'A propper email adress is required',
-          emailRequirement: value => /.+@.+\..+/.test(value) || 'A proper email address is required',
-        },
-        contactToast: false,
-        isContactFormValid: true,
+        colorArr:[ "#205072", "#329D9C", "#D83636", "#DD9A30" ],
         // In Page Pages Cards
         pageCards:[
           { name: "Available resources", color: "", link: "/resources",  description: "Here you will find different resources made in the project" },
           { name: "About the project", color: "", link: "/about",  description: "Read about the project, aims and the result it will produce" },
           { name: "Partners", color: "", link: "/partners", description: "Find the partners and learn more about them" },
         ],
-        
-        // Dummy data below - Replace when db are implemented
-        fakeNewsCards:[
-          { 
-            title: "News title", 
-            article: "Lorem ipsum dolor sit amet, nihil repellat arcitecto asperiores sequi facere",
-            external_link: "", 
-            image: "" 
-          },
-          { 
-            title: "News title", 
-            article: "Lorem ipsum dolor sit amet, nihil repellat arcitecto asperiores sequi facere",
-            external_link: "", 
-            image: "" 
-          },
-          { 
-            title: "News title", 
-            article: "Lorem ipsum dolor sit amet, nihil repellat arcitecto asperiores sequi facere",
-            external_link: "", 
-            image: "" 
-          },
-        ],
-        fakeRSSfeed: [
-          { 
-            title: "RSS feed title", 
-            image: "", 
-            content: "Lorem ipsum dolor sit amet, eligendi distinctio iste Iste quis rerum", 
-            date: "02.03.2022"
-          },
-          { 
-            title: "RSS feed title", 
-            image: "", 
-            content: "Lorem ipsum dolor sit amet, eligendi distinctio iste Iste quis rerum", 
-            date: "02.03.2022"
-          },
-          { 
-            title: "RSS feed title", 
-            image: "", 
-            content: "Lorem ipsum dolor sit amet, eligendi distinctio iste Iste quis rerum", 
-            date: "02.03.2022"
-          },
-          { 
-            title: "RSS feed title", 
-            image: "", 
-            content: "Lorem ipsum dolor sit amet, eligendi distinctio iste Iste quis rerum", 
-            date: "02.03.2022"
-          },
-        ],
       }
-    },
-    // mounted(){
-    //   this.getAllNews();
-    // },
-    methods: {
-      
-      // Form: Clear all data
-      clearForm(){
-        this.$refs.form.reset()
-      },
-      // Form: Send Data
-      postContactForm(){
-        const ContactForm = {
-          name: this.contactForm.name,
-          email: this.contactForm.email,
-          subject: this.contactForm.subject,
-          message: this.contactForm.message,
-          sentFrom: this.contactForm.sentFrom
-        };
-        console.log("Sending Contact Form", ContactForm);
-        this.messageSent();
-        this.clearForm();
-      },
-      // Form: Notification that message have been sent, through Toast.
-      messageSent() {
-        this.contactToast = true
-      },
-
-    
-      
     }
   }
 </script>
 
 <style scoped>
-
 
 /* Intro Classes for box and text at the top */
 .introImage {
@@ -267,6 +150,7 @@ import RssForHome from "@/components/RssModules/rssModulePage.vue"
   font-family: 'Barlow', sans-serif;
   font-style:normal;
 }
+
 /* Styling the 3 cards close to the intro top */
 .pageCardPositioning {
   position:relative;
@@ -301,7 +185,6 @@ import RssForHome from "@/components/RssModules/rssModulePage.vue"
   letter-spacing: 0;
   height: 50px;
 }
-
 .pageCardArrow {
   color: #205072;
   opacity: 1;
@@ -327,61 +210,7 @@ import RssForHome from "@/components/RssModules/rssModulePage.vue"
   letter-spacing: 0px;
 }
 
-/* Used several places */
-
-
-/* NEWS */
-.newsChapterTitle {
-  font-family: 'Barlow', sans-serif;
-  font-weight: bold;
-  font-size: 26px;
-  color: #434343;
-  opacity: 1;
-  letter-spacing: 0px;
-  text-align: left;
-}
-.newsCardTitle {
-  font-family: 'Barlow', sans-serif;
-  font-weight: bold;
-  font-size: 24px;
-  color: #434343;
-  letter-spacing: 0px;
-  text-align: left;
-}
-.newsCardDescription {
-  font-family: 'Lato', sans-serif;
-  font-weight: regular;
-  text-align: left;
-  color: #6A6A6A;
-  opacity: 1;
-  letter-spacing: 0px;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  display: -webkit-box;
-  -webkit-line-clamp: 2; /* number of lines to show */
-  line-clamp: 2; 
-  -webkit-box-orient: vertical;
-}
-.newsCardButton {
-  font-family: 'Lato', sans-serif;
-  font-weight: regular;
-  font-size: 18px;
-  text-align: left;
-  color: #205072;
-  opacity: 1;
-  letter-spacing: 0px;
-  text-decoration: underline;
-}
-.newsCardButtonArrow {
-  color: #205072;
-  opacity: 1;
-}
-.newsCardDividerPositioning {
-  margin-left:1%; 
-  margin-bottom:2%;
-}
-
-/* See All News / RSS Button */
+/* See All News Button */
 .seeAllButtonText {
   font-family: 'Lato', sans-serif;
   font-weight: normal;
@@ -410,37 +239,5 @@ import RssForHome from "@/components/RssModules/rssModulePage.vue"
   box-shadow: 0px 2px 12px #00000033;
 }
 
-/* RSS feed */
-.rssCardTitle {
-  font-family: 'Barlow', sans-serif;
-  font-weight: bold;
-  font-size: 28px;
-  color: #434343;
-  opacity: 1;
-  letter-spacing: 0px;
-  text-align: left;
-}
-.rssCardDescription {
-  font-family: 'Lato', sans-serif;
-  font-weight: normal;
-  font-size: 14px;
-  color: #6A6A6A;
-  opacity: 1;
-  letter-spacing: 0px;
-  text-align: left;
-}
-.rssCardDate {
-  font-family: 'Lato', sans-serif;
-  font-weight: normal;
-  font-size: 11px;
-  color: #6A6A6A;
-  opacity: 1;
-  letter-spacing: 0px;
-  text-align: left;
-}
-.rssCardArrow {
-  color: #205072;
-  opacity: 1;
-}
 
 </style>
