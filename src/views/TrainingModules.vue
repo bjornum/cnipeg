@@ -9,7 +9,7 @@
       </v-col>
 
       <v-col cols="12">
-        <!-- <TrainingModules></TrainingModules> -->
+        <TrainingModules></TrainingModules>
       </v-col>
 
     </v-row>
@@ -17,11 +17,11 @@
 </template>
 
 <script>
-// import TrainingModules from "@/components/TrainingModules/TrainingModulePage.vue"
+import TrainingModules from "@/components/TrainingModules/TrainingModulePage.vue"
 export default {
   name: 'Training-Modules',
   components: {
-    // TrainingModules
+    TrainingModules
   },
   data(){
     return {
