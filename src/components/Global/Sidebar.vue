@@ -46,7 +46,6 @@
           </v-list-item-content>
         </v-list-item>
       </v-list>
-      <!-- <v-btn text href="https://app.followup.prios.no/#/login" target="_blank">Login</v-btn> -->
     </v-navigation-drawer>
   </div>
 </template>
@@ -66,7 +65,6 @@ export default {
         { name: "About", location: "/about", icon: "" },
         { name: "Partners", location: "/partners", icon: "" },
         { name: "News", location: "/news", icon: "" },
-        // { name: "RSS", location: "/rss", icon: "" },
         { name: "Training Modules", location: "/trainingmodules", icon: "" },
         { name: "Resources", location: "/resources", icon: "" },
       ]

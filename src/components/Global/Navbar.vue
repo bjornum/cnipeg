@@ -1,13 +1,11 @@
 O<template>
   <v-app-bar app class="navbarStyling" flat>
     <ContactForm ref="OpenContactForm"></ContactForm>
-    <!-- {{ $t('navbar.partners') }} -->
     <!-- Logo -->
     <!-- <div class="d-flex align-center">
       <v-img alt="Vuetify Logo" class="shrink mr-2" contain src="img/DIGI_logo.png" transition="scale-transition" width="40"/>
       <v-img alt="Vuetify Name" class="shrink mt-1 hidden-sm-and-down" contain min-width="100" src="https://cdn.vuetifyjs.com/images/logos/vuetify-name-dark.png" width="100"/>
     </div> -->
-    <!-- <v-img src="img/DIGI_logo.png" height="40" width="260px" contain/> -->
     <v-spacer></v-spacer>
     <!-- <v-img class="mt-15 ml-10" src="img/EVOLVE.png"  max-height="130" max-width="130" contain></v-img> -->
       <p class="pt-15" style="font-weight: bold; font-size: 20px; color: blue;">projectTemplate</p>
@@ -17,7 +15,6 @@ O<template>
       <a href="/about">{{ $t('navbar.about') }}</a>
       <a href="/partners">{{ $t('navbar.partners') }}</a>
       <a href="/news">{{ $t('navbar.news') }}</a>
-      <!-- <a href="/rss">{{ $t('navbar.rss') }}</a> -->
       <a href="/trainingmodules">{{ $t('navbar.training modules') }}</a>
       <a href="/resources" class="mr-2">{{ $t('navbar.resources') }}</a>
       <span class="contactButton" @click="$refs.OpenContactForm.openContactDialog()">{{ $t('navbar.contact') }}</span>
@@ -27,10 +24,6 @@ O<template>
     </div>
 
     <v-spacer></v-spacer>
-    <!-- Login -->
-    <!-- <div class="mt-7">
-      <v-btn text href="https://app.followup.prios.no/#/login" target="_blank">{{ $t('navbar.login') }}</v-btn>
-    </div> -->
   </v-app-bar>
 </template>
 

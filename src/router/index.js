@@ -6,7 +6,6 @@ import News from '../views/News.vue'
 import Partners from '../views/Partner.vue'
 import TrainingModules from '../views/TrainingModules.vue'
 import Resources from '../views/Resources.vue'
-import RSSfeed from '../views/RssFeed.vue'
 
 // Testing Pages
 import TestingPage from '../views/Testing.vue'
@@ -21,7 +20,6 @@ const routes = [
   { path: '/news', name: 'News', component: News },
   { path: '/trainingmodules', name: 'TrainingModules', component: TrainingModules },
   { path: '/resources', name: 'Resources', component: Resources },
-  { path: '/rss', name: 'RSS', component: RSSfeed },
   { path: '/test', name: 'Test', component: TestingPage },
   { path: '/profile', name: 'Profile', component: Profile },
   

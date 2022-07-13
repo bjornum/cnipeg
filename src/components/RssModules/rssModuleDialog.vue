@@ -1,20 +1,25 @@
 <template>
-  <v-dialog v-model="rssModule">
+  <v-dialog v-model="rssModule" width="70vw">
     <v-card class="pa-5">
       <v-row>
         <v-col cols="12">
           <p class="text-center title">{{rssContent.title[0]}}</p>
         </v-col>
         <v-col cols="12">
+          <!-- <p class="mb-0">Date: {{rssDate}}</p> -->
+          <p class="mb-0">
+            <span style="font-weight:bold;">Author: </span>
+            <span> {{rssContent["dc:creator"][0]}}</span>
+          </p>
+          <!-- <p class="mb-0">Category: {{rssContent.category}}</p> -->
+        </v-col>
+        <v-col cols="12">
           <div v-html="rssContent.description[0]" style="font-size:18px;"></div>
         </v-col>
         <v-col cols="12">
           <v-btn class="seeAllButtonBorder seeAllButtonText" rounded :href="rssContent.link" target="_blank">
-            Go to Eternal Page
+            Go to External Page
           </v-btn>
-        </v-col>
-        <v-col cols="12">
-          <pre>{{rssContent}}</pre>
         </v-col>
       </v-row>
     </v-card>
@@ -26,7 +31,8 @@ export default {
   data() {
     return {
       rssModule: false,
-      rssContent: []
+      rssContent: [],
+      rssDate: ""
     }
   },
   methods: {
@@ -35,12 +41,13 @@ export default {
     openDialog(rssData){
       this.rssModule = true;
       this.rssContent = rssData;
+      this.rssDate = rssData.pubDate[0];
     },
 
     // Close Dialog
     closeDialog(){
       this.rssModule = false;
-    }
+    },
   }
 }
 </script>

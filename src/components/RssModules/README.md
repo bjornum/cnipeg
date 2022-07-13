@@ -9,6 +9,7 @@ Display it cards.
 ## Files
   - README.md
   - RssModulePage.vue
+  - RssModuleDialog.vue  (Not in use)
   
 
 ## Features to come.
@@ -19,3 +20,4 @@ Display it cards.
 ## Installing this component and some notes.
 1. Copy this folder, and place into your components folder.
 2. Render in "RssModulePage.vue" where you wish to display it.
+3. Change tenantid to correct tenant
