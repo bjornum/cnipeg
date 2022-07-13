@@ -10,7 +10,7 @@
 ## Components List
   1. Global
     - Navbar, Footer, Contact dialog.
-  2. NewsModule
+  2. NewsComp (renamed from NewsModule due to weird error)
   3. TrainingModules
   4. RssModule
   5. ResourceModule
