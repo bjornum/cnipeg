@@ -56,7 +56,7 @@
       <!-- News -->
       <v-col cols="12" xl="2" lg="2" md="2" sm="12" xs="12" class="pt-0"></v-col>
       <v-col cols="12" xl="8" lg="8" md="8" sm="12" xs="12" class="pt-0">
-        <!-- <NewsModule></NewsModule> -->
+        <NewsPage></NewsPage>
       </v-col>
       
       <!-- See all news button - go to page -->
@@ -79,12 +79,12 @@
 </template>
 
 <script>
-// import NewsModule from "../components/NewsModule/NewsModulePage.vue"
+import NewsPage from "@/components/NewsComp/NewsPage.vue"
 import RssForHome from "@/components/RssModules/rssModulePage.vue"
   export default {
     name: 'Home',
     components:{
-      // NewsModule,
+      NewsPage,
       RssForHome
     },
     data(){
