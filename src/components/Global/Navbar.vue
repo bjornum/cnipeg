@@ -22,7 +22,6 @@ O<template>
     <div class="mt-10 ml-3">
       <LanguageSelection></LanguageSelection>
     </div>
-
     <v-spacer></v-spacer>
   </v-app-bar>
 </template>
@@ -58,7 +57,6 @@ a {
   text-decoration: none;
   font-size: 16px;
   font-family: 'Lato', sans-serif;
-  /* font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif */
 }
 a:visited {
   color: #6A6A6A;
