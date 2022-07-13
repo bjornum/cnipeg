@@ -29,48 +29,6 @@ export default {
       // 73 - default 999
       tenant: 73,
       courseCollections:[],
-      selectedCourseCollection:null,
-      currentCollectionContent:[],
-      newSubject:"",
-      subjectsToAdd:[],
-      newCollectionTabs:0,
-      newCollection:{
-        id:null,
-        name:null,
-        description:null,
-        tenant_id:null,
-        owner:null,
-        background_image:null,
-        estimated_time:null,
-        language:null,
-        level:null,
-        subjects:[]
-      },
-      newCollectionContentDialog:false,
-      newCollectionDialog:false,
-      selectedContentType:null,
-      selectedContent:{
-        content:null,
-        label:null,
-        description:null,
-        background:null,
-      },
-      addCollectionContentStepper:1,
-      courses:[],
-      newContentUrlValid:false,
-      chaptersAndQuestions:[],
-      selectedCategoryChapter:null,
-      allowedExternalLinks:[
-        "concordia.ca",
-        "padlet.com",
-        "prezi.com",
-        "code.org",
-        "thinglink.com",
-        "colorado.edu",
-        "docs.google.com",
-        "drive.google.com",
-        "ndla.no"
-      ]
     }
   },
   mounted(){
@@ -87,7 +45,6 @@ export default {
         })
       })
     },
-    
   }
 }
 </script>

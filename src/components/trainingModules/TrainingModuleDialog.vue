@@ -30,10 +30,6 @@
             <v-divider></v-divider>
           </v-col>
 
-          <!-- <v-col cols="12">
-            <pre>{{trainingSubChapterData}}</pre>
-          </v-col> -->
-
           <!-- Chapter Cards -->
           <v-col cols="12" xl="3" lg="3" md="3" sm="12" xs="12" v-for="(trainingChapter, trainingChapterIndex) in trainingChapterData" :key="trainingChapterIndex" class="pa-5">
 
@@ -45,21 +41,16 @@
                   <span style="color: grey; font-size: 12px;">{{trainingChapter.type}}</span>
                 </p>
                 <p>{{trainingChapter.content_description}}</p>
-                <!-- <p>{{trainingChapter.id}}</p> -->
-                <!-- <pre>{{trainingChapter}}</pre> -->
               </v-card>
             </template>
 
             <template v-else>
-              <!-- <pre>{{trainingChapter}}</pre> -->
               <v-card height="100%" @click="SingleTypeContentWindow(trainingChapter)" class="pa-3">
                 <v-img :src="trainingChapter.content_background" aspect-ratio="3" class="pa-5"></v-img>
                 <p class="title text-center pt-5">{{trainingChapter.content_label}}
                   <span style="color: grey; font-size: 12px;">{{trainingChapter.type}}</span>
                 </p>
                 <p>{{trainingChapter.content_description}}</p>
-                <!-- <p>{{trainingChapter.id}}</p> -->
-                <!-- <pre>{{trainingChapter}}</pre> -->
               </v-card>
             </template>
 
@@ -202,10 +193,6 @@ export default {
     // Close Dialog
     closeDialog(){
       this.trainingDialog = false;
-    },
-    // Reset Dialog
-    resetDialog(){
-
     },
 
 
