@@ -86,22 +86,11 @@ export default {
 
 
 <style>
- @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap');
+/* Import of fonts from google fonts */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro&display=swap');
 
- .fontTitle{
-  font-family: 'Poppins', sans-serif;
-  font-size: 24px;
-}
-.fontSubTitle{
-font-family: 'Poppins', sans-serif;
-  font-size: 19px;
-}
-.fontContent{
-font-size:19px;
-font-family: 'Source Sans Pro', sans-serif;
-}
-p{
-  font-family: 'Source Sans Pro', sans-serif;
-}
+/* Element styling */
+p{ font-family: 'Source Sans Pro', sans-serif; }
+
 </style>

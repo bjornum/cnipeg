@@ -12,12 +12,13 @@ Some of the components, may have other components nested into it.
     - Contact form. (Utilise a .env file.  Can be bypassed by having the accesskey itself)
   - Navbar
   - Sidebar
+    - ContactUs component are connected, simply add or remove this one.
   - Footer
     - Got some images imported to it, simply remove or change these to the ones of choice.
   
 
 ## Features to come.
-  - 
+  - Cleanup
 
 
 ## Installing this component and some notes.
