@@ -10,6 +10,10 @@ Click of one, will open up an dialog where you can see its content.
   - TrainingModuleDialog.vue
   - taskData.vue
 
+## Changelog
+Weird naming convention to fix the error on netlify, within its build.
+All is the same, just different folder name
+
 ## Features to come.
   - Lock on certain training modules (decided in follow-up)
     - Need to be logged in to see.
