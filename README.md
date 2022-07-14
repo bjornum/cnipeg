@@ -18,3 +18,5 @@ Project template to quickly create new projects.
   - Change Logo (navbar, sidebar and footer)
   - Change Text (Marked as ```projectTemplate```) 
 
+## Readme files
+Every main folder and components should have a README.md file, giving more information.
