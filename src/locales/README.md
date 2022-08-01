@@ -9,6 +9,9 @@ Are reliant of the ***SelectLocale*** component found at ```src/components/Langu
   - German
   - Norwegian
   - English
+  - Polish
+  - Spanish
+  - Greek
 
 ## Adding new Languages.
 Simply add a new file within named.   ```lang.COUNTRYCODE.json```
