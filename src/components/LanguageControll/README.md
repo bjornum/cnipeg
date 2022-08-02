@@ -4,12 +4,19 @@
 This Module will asume that you copied the template project.
 Otherwise you will have to set up i18n within the new project.
 
-The component are a toggle, between the different languages.
+SelectLocale.vue
+  - The component are a toggle, between the different languages.
+  - It mainly utilise VUEX to do the heavy lifting, setting the localstorage key to correct language.
+
+Including an LanguageTest.vue component.
+  - Simply import and you will see if it works or not, when changing the language.
 
 
 ## Files
   - README.md
   - HowToGetI18N.md  (in progress)
+  - LanguageTest.vue
+  - SelectLocale.vue
   
 
 ## Features to come.
