@@ -8,8 +8,11 @@ Project template to quickly create new projects.
 ## Build the project for deployment
   - Within the terminal ```npm run build```
 
-## Tip
-  - All places within the project where ```projectTemplate``` are mentioned, require change
+## Change
+  - Search for all location within the project, where the text ```ChangeMe``` are mentioned.
+  - These will (should) be in form of a comment, that you will look into and delete once changed.
+
+  - Note: ```projectTemplate``` might be in use untill project are gone through.
 
 ## Reminder
   - Install all used dependencies within the project. ```npm install```

@@ -29,6 +29,9 @@
             <v-list-item-title>{{item.name}}</v-list-item-title>
           </v-list-item-content>
         </v-list-item>
+
+        <!-- ===== Contact Form - Remove if not used within the sidebar ===== -->
+        
         <!-- <v-list-item @click="$refs.OpenContactForm.openContactDialog()">
           <v-list-item-icon>
             <v-icon>mdi-email-outline</v-icon>
@@ -37,10 +40,10 @@
             <v-list-item-title>Contact</v-list-item-title>
           </v-list-item-content>
         </v-list-item> -->
+        
         <v-list-item href="https://app.followup.prios.no/#/login" target="_blank">
-          <v-list-item-icon>
-            <!-- <v-icon>{{item.icon}}</v-icon> -->
-          </v-list-item-icon>
+          <!-- v-list-item-icon added to push login to correct position -->
+          <v-list-item-icon></v-list-item-icon>
           <v-list-item-content>
             <v-list-item-title >Login</v-list-item-title>
           </v-list-item-content>
