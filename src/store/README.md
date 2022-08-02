@@ -1,5 +1,5 @@
 # VUEX Store
 
 ## Description
-Basic VUEX.
-Dunno if still in use
+Used for the language changer.
+Mainly utilising localstorage when the client change the i18n language state.

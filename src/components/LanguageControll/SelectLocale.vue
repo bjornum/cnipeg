@@ -7,7 +7,7 @@
           <!-- Statement, to Adjust the flag image -->
           <v-img v-if="$i18n.locale == 'en'" src="../../assets/flags/england.png" alt="English Flag" max-height="25" max-width="30" contain></v-img>
           <v-img v-if="$i18n.locale == 'nb'" src="../../assets/flags/norway.png" alt="Norwegian Flag" max-height="19" max-width="30" contain></v-img>
-          <v-img v-if="$i18n.locale == 'de'" src="../../assets/flags/de.png" alt="German Flag" max-height="19" max-width="30" contain></v-img>
+          <v-img v-if="$i18n.locale == 'de'" src="../../assets/flags/germany.png" alt="German Flag" max-height="19" max-width="30" contain></v-img>
           <v-img v-if="$i18n.locale == 'es'" src="../../assets/flags/spain.png" alt="Spanish Flag" max-height="19" max-width="30" contain></v-img>
           <v-img v-if="$i18n.locale == 'el'" src="../../assets/flags/greece.png" alt="Greek Flag" max-height="19" max-width="30" contain></v-img>
           <v-img v-if="$i18n.locale == 'pl'" src="../../assets/flags/polen.png" alt="Polish Flag" max-height="19" max-width="30" contain></v-img>
@@ -18,7 +18,7 @@
       <!-- Displaying the list of flags one can pick from -->
       <v-list>
         <v-list-item-group>
-          <v-list-item v-for="(item, index) in items" :key="index" @click="setLanguage(item)">
+          <v-list-item v-for="(item, index) in items" :key="index" @click="setNewLanguage(item)">
             <v-list-item-content class="text-center">
               <v-list-item-title v-model="$i18n.locale">
                 <v-row>
@@ -52,7 +52,7 @@ export default {
       items: [
         {text: 'en', flag: require('@/assets/flags/england.png')},
         {text: 'nb', flag: require('@/assets/flags/norway.png')},
-        {text: 'de', flag: require('@/assets/flags/de.png')},
+        {text: 'de', flag: require('@/assets/flags/germany.png')},
         {text: 'es', flag: require('@/assets/flags/spain.png')},
         {text: 'el', flag: require('@/assets/flags/greece.png')},
         {text: 'pl', flag: require('@/assets/flags/polen.png')},
@@ -61,34 +61,40 @@ export default {
   },
   methods:{
 
-    // Simply add to this one, for each language. * Find a better solution
-    setLanguage (item) {
+    // Change language version 1 - not in use but kept just in case something breaks
+    setLanguage (item) { 
       if (item.text == 'en') {
         this.$i18n.locale = 'en'
         this.$store.commit('setAppLanguage', 'en')
-        location.reload();   
       } else if (item.text == 'nb') {
         this.$i18n.locale = 'nb'
         this.$store.commit('setAppLanguage', 'nb')
-        location.reload();      
       } else if (item.text == 'de') {
         this.$i18n.locale = 'de'
         this.$store.commit('setAppLanguage', 'de')
-        location.reload();      
       } else if (item.text == 'es') {
         this.$i18n.locale = 'es'
         this.$store.commit('setAppLanguage', 'es')
-        location.reload();    
       } else if (item.text == 'el') {
         this.$i18n.locale = 'el'
         this.$store.commit('setAppLanguage', 'el')
-        location.reload();   
       } else if (item.text == 'pl') {
         this.$i18n.locale = 'pl'
         this.$store.commit('setAppLanguage', 'pl')
-        location.reload();   
       }
+      location.reload();   
     },
+
+    /*
+      Change language version 2
+        - Minimised and simplified the code, will now do the same as version 2.
+        - But not tested enough just yet. 
+    */
+    setNewLanguage(item){
+      this.$i18n.locale = item.text;
+      this.$store.commit('setAppLanguage', item.text);
+      location.reload();
+    }
   }
 }
 </script>
