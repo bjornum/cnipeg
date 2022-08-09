@@ -3,6 +3,13 @@
     <v-row>
       <v-col class="mt-15"></v-col>
 
+      <v-col cols="5" class="mt-15">
+        <!-- <CalendarInProgress></CalendarInProgress> -->
+        <CalendarInProgressTwo></CalendarInProgressTwo>
+      </v-col>
+
+      <v-col cols="3"></v-col>
+
     </v-row>
 
     <!-- <div v-for="(item, yeps) in yesTest" :key="yeps">
@@ -31,22 +38,24 @@
       <v-img :src="url +  item.attributes.url" height="100px" width="100px"></v-img>
     </div> -->
 
-    <ComplicatedForm></ComplicatedForm>
+    <!-- <ComplicatedForm></ComplicatedForm> -->
     <!-- <StorageTest></StorageTest> -->
    
-    <!-- <ResourcesVersionTwo></ResourcesVersionTwo> -->
+
   </div>
 </template>
 
 <script>
 import ComplicatedForm from "@/components/Development/complicatedStepper.vue"
-
 import StorageTest from "@/components/Development/storageTest.vue"
-
+import CalendarInProgress from "@/components/Development/CalendarDev.vue"
+import CalendarInProgressTwo from "@/components/Development/CalendarDevTwo.vue"
 export default {
   components: {
     ComplicatedForm,
-    StorageTest
+    StorageTest,
+    CalendarInProgress,
+    CalendarInProgressTwo
   },
   data(){
     return {
