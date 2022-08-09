@@ -54,6 +54,7 @@
         </v-card>
       </v-col>
     </v-row>
+    <v-btn @click="Test()">test</v-btn>
   </div>
 </template>
 
@@ -65,7 +66,12 @@ export default {
   },
   data(){
     return {
-      // Make sure to have the .env file
+      /*
+        .env
+          - Be sure to have the .env file imported, as it normaly lies within .gitignore for safety reasons
+          - Localy the .env file works well.
+          - Buildwise and on netlify you will have to create the key there, or within the .toml file
+      */
       // accessKey: process.env.VUE_APP_API_KEY_Two,
       accessKey: window.btoa('bac436b32a36431bb437b9509b6d3495'),
       tenant: 104,
@@ -83,6 +89,10 @@ export default {
     this.getAllNews();
   },
   methods: {
+
+    Test(){
+      console.log('test', process.env.MY_EPIC_CODE);
+    },
     // Get all news made for this tenant
     getAllNews(){
       this.$http.get(`https://app.followup.prios.no/api/resource_management/news?mode=getpublicnews&tenant_id=${this.tenant}`,{headers:{Tempaccess:this.accessKey}}).then(response =>{
