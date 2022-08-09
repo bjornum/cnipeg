@@ -66,7 +66,8 @@ export default {
   data(){
     return {
       // Make sure to have the .env file
-      accessKey: process.env.VUE_APP_API_KEY_Two,
+      // accessKey: process.env.VUE_APP_API_KEY_Two,
+      accessKey: window.btoa('bac436b32a36431bb437b9509b6d3495'),
       tenant: 104,
       allTheNews: [],
       theNewsContent: [],
