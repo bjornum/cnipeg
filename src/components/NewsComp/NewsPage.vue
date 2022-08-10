@@ -86,7 +86,7 @@ export default {
 
       envTestOne: process.env.VUE_APP_TEST_ME,
       envTestTwo: process.env.TEST_ME,
-      envTestThree: VUE_APP_TEST_ME,
+      // envTestThree: VUE_APP_TEST_ME,
       envTestFour: TEST_ME,
       envTestFive: "This should show no matter what"
     }
@@ -101,7 +101,7 @@ export default {
       console.log('test 2', process.env.TEST_ME);
       console.log('test 3', envTestOne);
       console.log('test 4', envTestTwo);
-      console.log('test 5', envTestThree);
+      // console.log('test 5', envTestThree);
       console.log('test 6', envTestFour);
       console.log('test 7', envTestFive);
     },
