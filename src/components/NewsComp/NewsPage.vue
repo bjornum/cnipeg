@@ -81,7 +81,7 @@ export default {
         "#1b1b61",
         "#387b9d",
         "#47b5b0",
-        "#2a4b7f"
+        "#2a4b7f" 
       ],
 
       envTestOne: process.env.VUE_APP_TEST_ME,
