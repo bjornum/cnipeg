@@ -91,7 +91,7 @@ export default {
   methods: {
 
     Test(){
-      console.log('test', process.env.TEST_ME);
+      console.log('test', process.env.VUE_APP_TEST_ME);
     },
     // Get all news made for this tenant
     getAllNews(){
