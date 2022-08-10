@@ -83,6 +83,12 @@ export default {
         "#47b5b0",
         "#2a4b7f"
       ],
+
+      envTestOne: process.env.VUE_APP_TEST_ME,
+      envTestTwo: process.env.TEST_ME,
+      envTestThree: VUE_APP_TEST_ME,
+      envTestFour: TEST_ME,
+      envTestFive: "This should show no matter what"
     }
   },
   mounted(){
@@ -91,7 +97,13 @@ export default {
   methods: {
 
     Test(){
-      console.log('test', process.env.VUE_APP_TEST_ME);
+      console.log('test 1', process.env.VUE_APP_TEST_ME);
+      console.log('test 2', process.env.TEST_ME);
+      console.log('test 3', envTestOne);
+      console.log('test 4', envTestTwo);
+      console.log('test 5', envTestThree);
+      console.log('test 6', envTestFour);
+      console.log('test 7', envTestFive);
     },
     // Get all news made for this tenant
     getAllNews(){
