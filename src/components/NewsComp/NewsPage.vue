@@ -108,6 +108,11 @@ export default {
       console.log('test 7', this.envTestFive);
       console.log('test 8', this.envTestSix);
       console.log('test 9', this.envTestSeven);
+
+      const myTest = process.env.TEST_ME;
+      const myTestTwo = process.env.VUE_APP_TEST_ME;
+      console.log("Testing 10", myTest);
+      console.log("Testing 11", myTestTwo);
     },
     // Get all news made for this tenant
     getAllNews(){
