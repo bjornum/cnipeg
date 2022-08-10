@@ -115,6 +115,7 @@ export default {
       console.log("Testing 11", myTestTwo);
       console.log("Testing 12", process.env);
       console.log("Testing 13", process.env.VUE_APP);
+      console.log("Testing 13", process.env.CONTEXT);
     },
     // Get all news made for this tenant
     getAllNews(){
