@@ -88,7 +88,9 @@ export default {
       envTestTwo: process.env.TEST_ME,
       // envTestThree: VUE_APP_TEST_ME,
       // envTestFour: TEST_ME,
-      envTestFive: "This should show no matter what"
+      envTestFive: "This should show no matter what",
+      envTestSix: process.env.VUE_APP_CONTEXT_TEST_ME,
+      envTestSeven: process.env.VUE_APP_CONTEXT,
     }
   },
   mounted(){
@@ -104,6 +106,8 @@ export default {
       // console.log('test 5', envTestThree);
       // console.log('test 6', envTestFour);
       // console.log('test 7', this.envTestFive);
+      console.log('test 8', this.envTestSix);
+      console.log('test 9', this.envTestSeven);
     },
     // Get all news made for this tenant
     getAllNews(){
