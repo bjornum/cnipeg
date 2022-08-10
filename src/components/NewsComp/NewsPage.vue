@@ -113,6 +113,7 @@ export default {
       const myTestTwo = process.env.VUE_APP_TEST_ME;
       console.log("Testing 10", myTest);
       console.log("Testing 11", myTestTwo);
+      console.log("Testing 12", process.env);
     },
     // Get all news made for this tenant
     getAllNews(){
