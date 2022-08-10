@@ -97,13 +97,13 @@ export default {
   methods: {
 
     Test(){
-      console.log('test 1', process.env.VUE_APP_TEST_ME);
-      console.log('test 2', process.env.TEST_ME);
-      console.log('test 3', this.envTestOne);
-      console.log('test 4', this.envTestTwo);
+      console.log('test 1', process.env.VUE_APP_API_KEY_Two);
+      // console.log('test 2', process.env.VUE_APP_A);
+      // console.log('test 3', this.envTestOne);
+      // console.log('test 4', this.envTestTwo);
       // console.log('test 5', envTestThree);
       // console.log('test 6', envTestFour);
-      console.log('test 7', this.envTestFive);
+      // console.log('test 7', this.envTestFive);
     },
     // Get all news made for this tenant
     getAllNews(){
