@@ -293,7 +293,6 @@ export default {
     /*
       In prog with internationalise the months
     */
-
     testt(){
       var format = new Date().toLocaleString('nl-BE', { month: 'long' });
       console.log(format)

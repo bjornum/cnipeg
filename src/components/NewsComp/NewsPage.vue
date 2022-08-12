@@ -97,7 +97,7 @@ export default {
     this.getAllNews();
   },
   methods: {
-
+    // Attempting to get netlify env variable to work, with the build
     Test(){
       console.log('test 1', process.env.VUE_APP_API_KEY_Two);
       // console.log('test 2', process.env.VUE_APP_A);
@@ -109,13 +109,14 @@ export default {
       console.log('test 8', this.envTestSix);
       console.log('test 9', this.envTestSeven);
 
-      const myTest = process.env.TEST_ME;
-      const myTestTwo = process.env.VUE_APP_TEST_ME;
       console.log("Testing 10", myTest);
       console.log("Testing 11", myTestTwo);
       console.log("Testing 12", process.env);
+      
+      const myTest = process.env.TEST_ME;
+      const myTestTwo = process.env.VUE_APP_TEST_ME;
       console.log("Testing 13", process.env.VUE_APP);
-      console.log("Testing 13", process.env.CONTEXT);
+      console.log("Testing 14", process.env.CONTEXT);
     },
     // Get all news made for this tenant
     getAllNews(){
