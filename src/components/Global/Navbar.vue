@@ -8,7 +8,7 @@ O<template>
     </div> -->
     <v-spacer></v-spacer>
     <!-- <v-img class="mt-15 ml-10" src="img/EVOLVE.png"  max-height="130" max-width="130" contain></v-img> -->
-      <p class="pt-15" style="font-weight: bold; font-size: 20px; color: blue;">projectTemplate</p>
+      <p class="pt-15" style="font-weight: bold; font-size: 20px; color: blue;">Yss Project</p>
     <v-spacer></v-spacer>
     <div class="mt-10">
       <a href="/">{{ $t('navbar.home') }}</a>

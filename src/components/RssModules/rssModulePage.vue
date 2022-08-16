@@ -3,7 +3,7 @@
     <!-- <RssModuleDialog ref="openRssDialog"></RssModuleDialog> -->
     <v-row>
       <v-col cols="12" class="pt-15 mt-15 pb-0">
-        <p class="rssHeadlinerTitle text-center">External News</p>
+        <p class="rssHeadlinerTitle text-center" v-if="!rssEntryContent">External News</p>
       </v-col>
       <v-divider class="newsCardDividerPositioning" width="98%" style="padding: 2px;"></v-divider>
       <!-- Display RSS cards -->
@@ -71,7 +71,7 @@ export default {
 
     // #1. Get ALL entries of type RSS and pass them to the iterator
     getAllRSSEntries(){
-      this.$http.get(`https://app.followup.prios.no/api/resource_management/content?tenant_id=108`,{headers:{Tempaccess:this.accessKey}}).then((response) => {
+      this.$http.get(`https://app.followup.prios.no/api/resource_management/content?tenant_id=109`,{headers:{Tempaccess:this.accessKey}}).then((response) => {
         let allRssEntriesFromFollowup = response.data;
         this.getRssSources(allRssEntriesFromFollowup);
       })

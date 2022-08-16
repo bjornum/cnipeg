@@ -51,7 +51,7 @@ export default {
         email: '',
         message: '',
         subject: '',
-        sentFrom: 'projectTemplate'
+        sentFrom: 'YssProject'
       },
       // Rules for the contact Form
       rules:{

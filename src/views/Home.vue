@@ -7,10 +7,10 @@
       <!-- Intro Image -->
       <v-col cols="12" class="pb-0">
         <v-card class="pt-15 pb-3 introImage">
-          <p v-if="$vuetify.breakpoint.mdAndDown" class="introTitlePhone">Welcome to projectTemplate</p>
-          <p v-else class="introTitle">Welcome to projectTemplate</p>
-          <p v-if="$vuetify.breakpoint.mdAndDown" class="introDescriptionPhone">Some short information about the project</p>
-          <p v-else class="introDescription">Some short information about the project</p>
+          <p v-if="$vuetify.breakpoint.mdAndDown" class="introTitlePhone">Welcome to Yss Project</p>
+          <p v-else class="introTitle">Welcome to Yss Project</p>
+          <p v-if="$vuetify.breakpoint.mdAndDown" class="introDescriptionPhone">Train the trainers in Lifeskills</p>
+          <p v-else class="introDescription">Train the trainers in Lifeskills</p>
         </v-card>
       </v-col>
 
@@ -49,9 +49,9 @@
       </v-col>
 
       <!-- Twitter displayed through vue-twitter package -->
-      <twitter>
+      <!-- <twitter>
         <a class="twitter-timeline" data-width="270" data-height="300" data-link-color="#000" data-theme="dark"  href="https://twitter.com/TwitterDev/lists/national-parks?ref_src=twsrc%5Etfw"> A Twitter List by TwitterDev </a>
-      </twitter>
+      </twitter> -->
 
       <!-- News -->
       <v-col cols="12" xl="2" lg="2" md="2" sm="12" xs="12" class="pt-0"></v-col>
