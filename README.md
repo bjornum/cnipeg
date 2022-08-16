@@ -23,3 +23,13 @@ Project template to quickly create new projects.
 
 ## Readme files
 Every main folder and components should have a README.md file, giving more information.
+
+
+## Creating a new project
+  - First simply copy this entire folder into the location of your choice.
+  - Then rename it.
+  - Remove the origin, using the terminal. ```git remote remove origin```
+  - Create a new project on gitlab (double check where you place it.)
+  - Push it up there as you would a normal project.
+
+  
