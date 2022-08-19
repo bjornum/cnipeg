@@ -44,6 +44,16 @@
               </v-card>
             </template>
 
+            <template v-else-if="trainingChapter.type == 'lesson_single'">
+              <v-card height="100%" @click="singleLessonData(trainingChapter)" class="pa-3">
+                <v-img :src="trainingChapter.content_background" aspect-ratio="3" class="pa-5"></v-img>
+                <p class="title text-center pt-5">{{trainingChapter.content_label}}
+                  <span style="color: grey; font-size: 12px;">{{trainingChapter.type}}</span>
+                </p>
+                <p>{{trainingChapter.content_description}}</p>
+              </v-card>
+            </template>
+
             <template v-else>
               <v-card height="100%" @click="SingleTypeContentWindow(trainingChapter)" class="pa-3">
                 <v-img :src="trainingChapter.content_background" aspect-ratio="3" class="pa-5"></v-img>
@@ -242,6 +252,17 @@ export default {
       this.$http.get(`https://app.followup.prios.no/api/task_library/lesson_chapters_content?chapter_id=` + LessionID, {headers:{tempaccess:this.accessKey}}).then(response => {
         this.lessonContentData = response.data;
         this.trainingTemplate = 3;
+      })
+    },
+
+     // #4. Get all Main Data on type single_lesson
+    singleLessonData(lessongData){
+      this.$http.get(`https://app.followup.prios.no/api/task_library/lessons?mode=getchapters&courses_id=` + lessongData.content,{headers:{tempaccess:this.accessKey}}).then(response =>{
+        this.trainingSubChapterData = response.data;
+        this.mainLessonData = lessongData;
+        this.trainingTemplate = 2;
+        console.log("All the data lesson", response.date);
+        console.log("getting id", lessongData);
       })
     },
 

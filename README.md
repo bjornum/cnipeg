@@ -14,6 +14,8 @@ Project template to quickly create new projects.
 
   - Note: ```projectTemplate``` might be in use untill project are gone through.
 
+  - Make sure to also change it within package.json and such (see tab if worked.)
+
 ## Reminder
   - Install all used dependencies within the project. ```npm install```
   - Change project name within package.json
@@ -31,5 +33,3 @@ Every main folder and components should have a README.md file, giving more infor
   - Remove the origin, using the terminal. ```git remote remove origin```
   - Create a new project on gitlab (double check where you place it.)
   - Push it up there as you would a normal project.
-
-  
