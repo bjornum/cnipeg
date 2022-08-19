@@ -205,7 +205,7 @@ export default {
       this.getAllResources();
     },
     getAllResources(){
-      this.$http.get(`https://app.followup.prios.no/api/resource_management/content?tenant_id=108`,{headers:{Tempaccess:this.accessKey}}).then((response) => {
+      this.$http.get(`https://app.followup.prios.no/api/resource_management/content?tenant_id=109`,{headers:{Tempaccess:this.accessKey}}).then((response) => {
         this.resourceContent = response.data;
       })
     },

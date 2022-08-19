@@ -27,7 +27,7 @@ export default {
       // Access Key to followup API
       accessKey: "YmFjNDM2YjMyYTM2NDMxYmI0MzdiOTUwOWI2ZDM0OTU=",
       // 73 - default 999
-      tenant: 73,
+      tenant: 109,
       courseCollections:[],
     }
   },

@@ -11,7 +11,7 @@
 
       <!-- Description -->
       <v-col cols="12" class="mb-15">
-        <p class="newsChapterDescription">Keep up to date about the Skills 4 Work project</p>
+        <p class="newsChapterDescription">Keep up to date about the Yss project</p>
       </v-col>
     
       <!-- Implement once gotten News -->
@@ -54,7 +54,7 @@
         </v-card>
       </v-col>
     </v-row>
-    <v-btn @click="Test()">test</v-btn>
+    <!-- <v-btn @click="Test()">test</v-btn> -->
   </div>
 </template>
 
@@ -74,7 +74,7 @@ export default {
       */
       // accessKey: process.env.VUE_APP_API_KEY_Two,
       accessKey: window.btoa('bac436b32a36431bb437b9509b6d3495'),
-      tenant: 104,
+      tenant: 109,
       allTheNews: [],
       theNewsContent: [],
       colorArr:[
