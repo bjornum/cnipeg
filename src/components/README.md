@@ -13,12 +13,13 @@
   2. NewsComp (renamed from NewsModule due to weird error)
   3. TrainingModules
   4. RssModule
-  5. ResourceModule
-  6. LanguageControll
+  5. Partners
+  6. ResourceModule
+  7. LanguageControll
     - Implementation of i18n
-  7. Misc
+  8. Misc
     - Singular Components like frontCarousell.vue
-  8. Development
+  9. Development
     - As name say, here all components that are not finished ends up.
 
 ## Future plans

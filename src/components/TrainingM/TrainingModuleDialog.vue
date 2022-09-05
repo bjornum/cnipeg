@@ -246,7 +246,7 @@ export default {
       })
     },
 
-    // #3. Get specific Lesson Data
+    // #3. Get specific Lesson Data - Clicked upon (Path: task_library_lesson_chapters_content) - Look for the chapter_id
     getSpecificLessionData(LessionID){
       this.toTop();
       this.$http.get(`https://app.followup.prios.no/api/task_library/lesson_chapters_content?chapter_id=` + LessionID, {headers:{tempaccess:this.accessKey}}).then(response => {
@@ -261,8 +261,8 @@ export default {
         this.trainingSubChapterData = response.data;
         this.mainLessonData = lessongData;
         this.trainingTemplate = 2;
-        console.log("All the data lesson", response.date);
-        console.log("getting id", lessongData);
+        // console.log("All the data lesson", response.date);
+        // console.log("getting id", lessongData);
       })
     },
 
