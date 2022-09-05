@@ -1,5 +1,5 @@
 <template>
-  <v-dialog v-model="partnerDialog">
+  <v-dialog v-model="partnerDialog" width="700px">
     <v-card>
       <!-- Close button floating -->
       <v-card-title>
