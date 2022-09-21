@@ -15,16 +15,19 @@ First time, then key **hasVisited** are set to *yes* and entry will be recorded 
 If not the first time, then nothing will happen.
   - This to make sure we get unique hits.
 
-
-## Note
+### Note: Unique visitors and ways to bypass it.
 Users CAN visit from incognito mode, or simply clear localstorage from their developer tool (f12).
 This will make them into another unique user, and create another entry.
   - But it is highly unlikely that someone will do such a thing.
 
+### Access key
 Another thing that may fail, are the access key.
 Should not fail if set up correctly, within the project.
 Otherwise just add it as you would in a axios request.
 
+### Axios call.
+The way it is written, can differ from project to project.
+Look into your projects method of axios, and just fix it accordingly.
 
 ## Imlpementation
 Simply copy this folder into component folder of your project.
