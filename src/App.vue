@@ -3,6 +3,8 @@
     <Sidebar v-if="$vuetify.breakpoint.mdAndDown"></Sidebar>
     <Navbar v-else></Navbar>
 
+    <VisitorTracker></VisitorTracker>
+
     <v-main>
       <router-view/>
     </v-main>
@@ -15,13 +17,15 @@
 import Navbar from "@/components/Global/Navbar.vue"
 import Sidebar from "@/components/Global/Sidebar.vue"
 import Footer from "@/components/Global/Footer.vue"
+import VisitorTracker from "@/components/VisitTracker/VisitorTracker.vue"
 
 export default {
   name: 'App',
   components:{
     Navbar,
     Sidebar,
-    Footer
+    Footer,
+    VisitorTracker
   },
   data(){
     return {
