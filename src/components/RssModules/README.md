@@ -21,3 +21,11 @@ Display it cards.
 1. Copy this folder, and place into your components folder.
 2. Render in "RssModulePage.vue" where you wish to display it.
 3. Change tenantid to correct tenant
+
+## Update 1.
+The RSS Comes with different time formats.
+So installing moment to convert these into an uniform one.
+``` npm i moment ```
+
+Also updated the file, in terms of getting directly to the posts one wish to use.
+

@@ -43,7 +43,7 @@ export default {
       - Send to Database
     */
     submitUserVisited(){
-       const location = Intl.DateTimeFormat().resolvedOptions().timeZone;
+      const location = Intl.DateTimeFormat().resolvedOptions().timeZone;
       this.visitor.location = location;
       const finalData = JSON.parse(JSON.stringify(this.visitor));
       this.$http.post('https://app.followup.prios.no/api/page_visitor', finalData,{headers:{Tempaccess:this.accessKey}}).then(()=> {
