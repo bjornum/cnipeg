@@ -105,7 +105,7 @@ export default {
       questionData:[],
       questionProgress:[],
       questionStepper:1,
-      selectedValue:null,
+      selectedValue: "",
       currentAttempts:0,
       loadProgressDialog:true,
       // Access Key to need to be placed in a .env file.
