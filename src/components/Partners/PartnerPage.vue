@@ -4,13 +4,13 @@
     <v-col cols="12" align="center">
       <v-col cols="12" align="left" xl="8" lg="10" md="12" sm="12" xs="12" :class="$vuetify.breakpoint.smAndDown ? 'mt-0' : 'mt-15'">
         <v-row>
-          <v-col cols="12" xl="10" lg="10" md="10" sm="12" xs="12" class="mt-12">
+          <v-col cols="12" xl="12" lg="12" md="12" sm="12" xs="12" class="mt-12">
             <!-- <v-card class="ma-0 pa-0 box" flat> -->
-            <p class="ma-0 pa-0 caHeadline">Partners</p>
+            <p class="ma-0 pa-0 mainHeader aboutHeaderTitle text-center mb-15">Partners</p>
             <!-- </v-card> -->
           </v-col>
           <v-col cols="12" xl="6" lg="6" md="6" sm="12" xs="12" v-for="(item, index) in projectPartners" :key="index">
-            <v-card class="cardBorder ma-2 pa-2 px-2" height="100%">
+            <v-card class="cardBorder ma-2 pa-1" height="100%">
               <v-row>
                 <v-col cols="12">
                   <v-card height="90px" flat class="d-flex" :href="item.link" target="_blank" v-if="item.title == 'PRIOS KOMPETANSE'">
@@ -22,20 +22,21 @@
                 </v-col>
                 <v-col class="pb-0 mb-0" cols="12">
                   <p class="pl-3 partnerTitle text-center mb-0" style="min-height:70px;">
-                    {{ item.title }}
+                    <!-- {{ item.title }} -->
                     <span>
-                      <v-btn icon :href="item.link" target="_blank">
-                        <v-icon>mdi-open-in-new</v-icon>
+                      <v-btn text :href="item.link" target="_blank">
+                        <p>{{item.linkText}}</p>
                       </v-btn>
+                      
                     </span>
                   </p>
                 </v-col>
                 
               </v-row>
               <!-- <p class="text-center mb-0 mt-0 pt-0" v-if="selectedIndex !== index">read more</p> -->
-              <v-card-actions class="pt-0 pb-0">
+              <v-card-actions class="pa-0 ma-0 px-4">
                 <v-spacer></v-spacer>
-                <v-btn block color="#BBDEFB" @click="$refs.openPartnerDialog.openDialog(item)" class="mt-5">Read More</v-btn>
+                <v-btn block color="#E0F1FF" @click="$refs.openPartnerDialog.openDialog(item)" class="aboutKeyBoxes" style="color:#6A6A6A">Read More</v-btn>
                 <v-spacer></v-spacer>
               </v-card-actions>
             </v-card>
@@ -60,6 +61,7 @@ export default {
           title: "Partner 1", 
           image: "img/logo.png",
           link: "https://developer.mozilla.org/en-US/",
+          linkText: "www.developer.mozilla.org/en-US/",
           description: `
             <p>hello</p>
             <br>
@@ -70,24 +72,28 @@ export default {
           title: "Partner 2", 
           image: "img/logo.png", 
           link: "https://developer.mozilla.org/en-US/",
+          linkText: "www.developer.mozilla.org/en-US/",
           description: "Description of Partner here"
         },
         { 
           title: "Partner 3", 
           image: "", 
           link: "",
+          linkText: "",
           description: "Description of Partner here"
         },
         { 
           title: "Partner 4", 
           image: "",
           link: "",
+          linkText: "",
           description: ""
         },
         { 
           title: "Partner 5", 
           image: "", 
           link: "",
+          linkText: "",
           description: `
             <p>hello</p>
             <br>

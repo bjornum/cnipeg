@@ -13,37 +13,58 @@
           <p v-else class="introDescription">Train the trainers in Lifeskills</p>
         </v-card>
       </v-col>
-
       <!-- 3 Cards in center of cards -->
       <v-col cols="12" xl="2" lg="2" md="2" sm="12" xs="12" class="pt-0"></v-col>
       <v-col cols="12" xl="8" lg="8" md="8" sm="12" xs="12" class="pt-0">
         <v-row>
           <v-col cols="12" xl="4" lg="4" md="4" sm="12" xs="12" v-for="(pageCard, pageCardIndex) in pageCards" :key="pageCardIndex">
-            <v-card class="pageCardPositioning" :to="pageCard.link" style="position:relative;">
-              <v-divider v-if="pageCardIndex == 0" class="pageCardDividerBlue"></v-divider>
+            <v-card v-if="pageCardIndex == 0" class="pageCardPositioning" style="position:relative;">
+              <a :href="pageCard.link" style="text-decoration: none;" target="_blank">
+
+                <v-divider class="pageCardDividerBlue"></v-divider>
+                <v-row>
+                  <v-col cols="9" xl="9" lg="9" md="9" sm="9" xs="9">
+                    <p class="pt-2 pageCardTitle">{{pageCard.name}}</p>
+                  </v-col>
+                  <v-col cols="2" class="pl-0">
+                    <v-icon large class="pt-2 pageCardArrow">mdi-arrow-right</v-icon>
+                  </v-col>
+                  <v-col cols="12" class="pa-0 px-2">
+                    <p class="pageCardDescription">{{pageCard.description}}</p>
+                  </v-col>
+                </v-row>
+              </a>
+            </v-card>
+            <v-card v-else class="pageCardPositioning" :to="pageCard.link" style="position:relative;">
               <v-divider v-if="pageCardIndex == 1" class="pageCardDividerGreen"></v-divider>
               <v-divider v-if="pageCardIndex == 2" class="pageCardDividerRed"></v-divider>
               <v-row>
-                <v-col cols="10">
+                <v-col cols="9" xl="9" lg="9" md="9" sm="9" xs="9">
                   <p class="pt-2 pageCardTitle">{{pageCard.name}}</p>
                 </v-col>
-                <v-col cols="2">
+                <v-col cols="2" class="pl-0">
                   <v-icon large class="pt-2 pageCardArrow">mdi-arrow-right</v-icon>
                 </v-col>
+                <v-col cols="12" class="pa-0 px-2">
+                  <p class="pageCardDescription">{{pageCard.description}}</p>
+                </v-col>
               </v-row>
-              <p class="pageCardDescription">{{pageCard.description}}</p>
+              <!-- <p class="pageCardDescription">{{pageCard.description}}</p> -->
             </v-card>
           </v-col>
         </v-row>
       </v-col>
 
       <!-- Info Text -->
-      <v-col cols="12">
+      <v-col cols="12" class="my-0 py-0">
         <v-row>
-          <v-col cols="12" xl="4" lg="4" md="4" sm="12" xs="12"></v-col>
-          <v-col cols="12" xl="4" lg="4" md="4" sm="12" xs="12">
-            <p class="shortInfoTitle">Some short info</p>
-            <p class="shortInfoDescription">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Provident voluptas asperiores dolores aspernatur, inventore blanditiis mollitia harum quo adipisci quisquam, quod odit ad explicabo consequuntur eos saepe animi quasi maiores.</p>
+          <v-col cols="12" xl="4" lg="4" md="4" sm="12" xs="12" class="mt-0 pt-0"></v-col>
+          <v-col cols="12" xl="4" lg="4" md="4" sm="12" xs="12" class="mt-0 pt-0">
+            <!-- <p class="shortInfoTitle">Some short info</p> -->
+            <p class="shortInfoDescription mb-15 pt-0 mt-0">
+              The Innovative Entrepreneurs project aims to develop and test a concept for implementing sustainable social Innovation. 
+              The concept should enable innovative entrepreneurs to thrive and contribute to significant societal development
+            </p>
           </v-col>
         </v-row>
       </v-col>

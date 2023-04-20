@@ -2,6 +2,7 @@
   <div>
     <v-dialog v-model="newsDialog" fullscreen>
       <v-card>
+        <p>asd</p>
         <v-card-title>
           <v-spacer></v-spacer>
           <span v-if="$vuetify.breakpoint.mdAndDown" class="newsDialogTitlePhone" >{{newsCardData.title}}</span>

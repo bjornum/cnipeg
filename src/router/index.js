@@ -14,13 +14,22 @@ import Resources from '../views/Resources.vue'
 import TestingPage from '../views/Testing.vue'
 import Profile from '../views/Profile.vue'
 
+
+import NewsSlug from '../components/NewsComp/NewsDisplay.vue'
+
 Vue.use(VueRouter)
 
 const routes = [
   { path: '/', name: 'Home', component: Home },
   { path: '/about', name: 'About', component: About },
   { path: '/partners', name: 'Partner', component: Partners },
-  { path: '/news', name: 'News', component: News },
+  { 
+    path: '/news', 
+    name: 'News', 
+    component: News
+  },
+  { path: '/test/:id', name: 'News Article', component: NewsSlug, props: true },
+  // { path: '/news:id?', name: 'News Article', component: NewsSlug, props: true },
   { path: '/trainingmodules', name: 'TrainingModules', component: TrainingModules },
   { path: '/resources', name: 'Resources', component: Resources },
   { path: '/profile', name: 'Profile', component: Profile },

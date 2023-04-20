@@ -181,8 +181,8 @@ export default {
       accessKey:window.btoa('bac436b32a36431bb437b9509b6d3495'),
       colorArr:[ "#205072", "#329D9C", "#D83636", "#DD9A30", "#205072", "#329D9C" ],
       resourceFolders:[
-        { title: this.$t('resources.video'), colour: "", image: "", description: "", template: 1 },
-        { title: this.$t('resources.files'), colour: "", image: "", description: "", template: 2 },
+        { title: "video", colour: "", image: "", description: "", template: 1 },
+        { title: "files", colour: "", image: "", description: "", template: 2 },
         // { title: this.$t('resources.courses'), colour: "", image: "", description: "", template: 3 },
         // { title: this.$i18n.t('resources.podcast'), colour: "", image: "", description: "", template: 4 },
         // { title: "Other", colour: "", image: "", description: "", template: 5 },

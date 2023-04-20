@@ -10,6 +10,7 @@
       </v-card-title>
       <!-- Content -->
       <v-row class="ma-0 pa-0">
+        <!-- <pre>{{partnerContent}}</pre> -->
         <v-col cols="12" >
           <v-card height="80px" flat class="d-flex" v-if="partnerContent.title == 'PRIOS KOMPETANSE'">
             <v-img class="mt-5" :src="partnerContent.image" contain />
@@ -24,6 +25,16 @@
         </v-col>
         <v-col cols="12" class="ma-0 pa-0 pa-5">
           <p class="descriptionText" v-html="partnerContent.description"></p>
+          
+        </v-col>
+        <v-col class="pb-0 mb-0" cols="12">
+          <p class="pl-3 partnerTitle text-center mb-0" style="min-height:70px;">
+            <span>
+              <v-btn text :href="partnerContent.link" target="_blank">
+                <p>{{partnerContent.linkText}}</p>
+              </v-btn>
+            </span>
+          </p>
         </v-col>
       </v-row>
     </v-card>
@@ -56,5 +67,6 @@
 <style scoped>
 .descriptionText {
   font-size: 16px;
+  white-space: pre-line;
 }
 </style>

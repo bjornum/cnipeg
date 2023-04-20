@@ -18,7 +18,13 @@ export default {
   },
   data(){
     return {
-     
+      testing: [
+        {title: "test1", content: "test1", id: 1},
+        {title: "test2", content: "test2", id: 2},
+        {title: "test3", content: "test3", id: 3},
+        {title: "test4", content: "test4", id: 4},
+        {title: "test5", content: "test5", id: 5},
+      ]
     }
   },
 }

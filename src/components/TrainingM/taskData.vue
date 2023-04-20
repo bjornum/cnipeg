@@ -129,11 +129,7 @@ export default {
     },
     getTask(){
       this.questionData = []
-      // this.$axios.get(`/task_library/chapters?mode=getsinglechapterandquestions&chapter_id=${this.gettingChapterContentTask}`)
-      // this.$axios.get(`/task_library/chapters?mode=getsinglechapterandquestions&chapter_id=${this.gettingChapterContentTask}` + this.gettingChapterContentTask,{headers:{Tempaccess:this.accessKey}}).then(response =>{
       this.$http.get("https://app.followup.prios.no/api/task_library/chapters?mode=getsinglechapterandquestions&chapter_id=" + this.gettingChapterContentTask, {headers:{tempaccess:this.accessKey}}).then(response =>{
-        // console.log("Responsen av tasken", response);
-        // console.log("sdfiuhjkahdajksh", this.gettingChapterContentTask);
         response.data.questions.forEach(item =>{
           if(item.options){
             item.options = item.options.split("---")
@@ -150,7 +146,6 @@ export default {
             active:false,
             correct_answer:false,
             user_answer:""
-
           }
           this.questionProgress.push(questionProgressObj)
         })
