@@ -1,6 +1,14 @@
 <template>
   <div class="homePageWidth">
     <v-row>
+
+
+      <!-- 
+
+
+
+        Add images
+       -->
       <!-- ===== About Company ===== -->
       <v-col cols="12" xl="2" lg="2" md="2" sm="12" xs="12" class="pt-0"></v-col>
       <v-col cols="12" xl="8" lg="8" md="8" sm="12" xs="12" class="mt-15">
@@ -18,7 +26,7 @@
             </v-row>
           </v-col>
           <v-col cols="12" xl="6" lg="6" md="6" sm="12" xs="12">
-            <v-img src="../assets/images/AboutTopImage.jpg" height="500px"></v-img>
+            <!-- <v-img src="../assets/images/AboutTopImage.jpg" height="500px"></v-img> -->
           </v-col>
         </v-row>
       </v-col>
@@ -29,7 +37,7 @@
       <v-col cols="12" xl="8" lg="8" md="8" sm="12" xs="12">
         <v-row>
           <v-col cols="12" xl="5" lg="5" md="5" sm="12" xs="12">
-            <v-img src="../assets/images/AboutGoalImage.jpg" ></v-img>
+            <!-- <v-img src="../assets/images/AboutGoalImage.jpg" ></v-img> -->
           </v-col>
           <v-col cols="12" xl="7" lg="7" md="7" sm="12" xs="12" class="my-auto" >
             <p class="mainTitle aboutHeadlines">The goal</p>
@@ -58,7 +66,7 @@
           </v-col>
           <v-col cols="12" xl="1" lg="1" md="1" sm="12" xs="12" class="whomBackground"></v-col>
           <v-col cols="12" xl="5" lg="5" md="5" sm="12" xs="12" class="whomBackground">
-            <v-img src="../assets/images/AboutForWhomImage.jpg" ></v-img>
+            <!-- <v-img src="../assets/images/AboutForWhomImage.jpg" ></v-img> -->
           </v-col>
         </v-row>
       </v-col>
@@ -71,7 +79,7 @@
       <v-col cols="12" xl="8" lg="8" md="8" sm="12" xs="12">
         <v-row>
           <v-col cols="12" xl="5" lg="5" md="5" sm="12" xs="12">
-            <v-img src="../assets/images/AboutWhyImage.jpg" ></v-img>
+            <!-- <v-img src="../assets/images/AboutWhyImage.jpg" ></v-img> -->
           </v-col>
           <v-col cols="12" xl="7" lg="7" md="7" sm="12" xs="12" class="my-auto" >
             <p class="mainTitle aboutHeadlines">Why</p>
