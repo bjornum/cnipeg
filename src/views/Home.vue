@@ -131,22 +131,22 @@ import RssForHome from "@/components/RssModules/rssModulePage.vue"
 }
 .introTitle {
   font-size:48px;
-  color: #434343;
+  color: white;
   opacity: 1;
   letter-spacing: 0px;
   margin-left: 15%; 
-  margin-top:10%;
+  margin-top:20%;
   font-weight: bold;
   font-family: 'Barlow', sans-serif;
   font-style:normal;
 }
 .introTitlePhone {
   font-size:36px;
-  color: #434343;
+  color: white;
   opacity: 1;
   letter-spacing: 0px;
   margin-left: 15%; 
-  margin-top:10%;
+  margin-top:35%;
   font-weight: bold;
   font-family: 'Barlow', sans-serif;
   font-style:normal;

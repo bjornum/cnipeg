@@ -36,7 +36,7 @@
               <!-- <p class="text-center mb-0 mt-0 pt-0" v-if="selectedIndex !== index">read more</p> -->
               <v-card-actions class="pa-0 ma-0 px-4">
                 <v-spacer></v-spacer>
-                <v-btn block color="#E0F1FF" @click="$refs.openPartnerDialog.openDialog(item)" class="aboutKeyBoxes" style="color:#6A6A6A">Read More</v-btn>
+                <v-btn text color="#E0F1FF" @click="$refs.openPartnerDialog.openDialog(item)" class="" style="color:#6A6A6A;">Read More</v-btn>
                 <v-spacer></v-spacer>
               </v-card-actions>
             </v-card>
