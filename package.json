@@ -32,7 +32,7 @@
     "vuetify-loader": "^1.7.0"
   },
   "engines": {
-    "node": "16.x"
+    "node": "16.0"
   },
   "browserslist": [
     "> 1%",
