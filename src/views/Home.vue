@@ -11,9 +11,13 @@
           </p>
           <p v-else class="introTitle">Welcome to CNIPEG</p>
           <p v-if="$vuetify.breakpoint.mdAndDown" class="introDescriptionPhone">
-            Text coming
+            CNIPEG: Carbon Neutrality and Increased Energy Productivity of SMEs
+            in Gabrovo and Gabrovo Region
           </p>
-          <p v-else class="introDescription">Text coming</p>
+          <p v-else class="introDescription">
+            CNIPEG: Carbon Neutrality and Increased Energy Productivity of SMEs
+            in Gabrovo and Gabrovo Region
+          </p>
         </v-card>
       </v-col>
       <!-- 3 Cards in center of cards -->
@@ -127,6 +131,8 @@
               concept should enable innovative entrepreneurs to thrive and
               contribute to significant societal development
             </p>
+            <p>asdadad</p>
+            <TextToSpeech />
           </v-col>
         </v-row>
       </v-col>
@@ -180,11 +186,13 @@
 <script>
 import NewsPage from "@/components/NewsComp/NewsPage.vue";
 import RssForHome from "@/components/RssModules/rssModulePage.vue";
+import TextToSpeech from "@/components/TextToSpeech.vue";
 export default {
   name: "Home",
   components: {
     NewsPage,
     RssForHome,
+    TextToSpeech,
   },
   data() {
     return {
