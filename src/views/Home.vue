@@ -7,9 +7,13 @@
       <v-col cols="12" class="pb-0">
         <v-card class="pt-15 pb-3 introImage">
           <p v-if="$vuetify.breakpoint.mdAndDown" class="introTitlePhone">
-            Welcome to CNIPEG
+            CNIPEG: Carbon Neutrality and Increased Energy Productivity of SMEs
+            in Gabrovo and Gabrovo Region
           </p>
-          <p v-else class="introTitle">Welcome to CNIPEG</p>
+          <p v-else class="introTitle">
+            CNIPEG: Carbon Neutrality and Increased Energy Productivity of SMEs
+            in Gabrovo and Gabrovo Region
+          </p>
           <p v-if="$vuetify.breakpoint.mdAndDown" class="introDescriptionPhone">
             CNIPEG: Carbon Neutrality and Increased Energy Productivity of SMEs
             in Gabrovo and Gabrovo Region
@@ -126,13 +130,28 @@
           >
             <!-- <p class="shortInfoTitle">Some short info</p> -->
             <p class="shortInfoDescription mb-15 pt-0 mt-0">
-              The Innovative Entrepreneurs project aims to develop and test a
-              concept for implementing sustainable social Innovation. The
-              concept should enable innovative entrepreneurs to thrive and
-              contribute to significant societal development
+              "Carbon Neutrality and Increased Energy Productivity of SMEs in
+              Gabrovo and Gabrovo Region" is a project which aims to support
+              SMEs from Gabrovo and Gabrovo region in their effort to improve
+              their carbon neutrality and achieve increased energy productivity.
+              The project will result in the development of a training program,
+              guidelines, self-assessment tool and consultancy package for the
+              needs of the SMEs. The aim is to develop comprehensive resources
+              and mentoring support system tailored specifically to the needs of
+              these businesses. The project's core focus lies in two crucial
+              areas: reducing carbon emissions and increasing energy
+              productivity. By addressing these key aspects, the initiative
+              endeavors to empower SMEs, guiding them toward sustainable
+              practices and enhanced efficiency.
+              <br />
+              Furthermore, the project holds a vision of fostering bilateral
+              relationships between SMEs in the Gabrovo region of Bulgaria and
+              Trøndelag, Norway. This collaboration aims to create a platform
+              for knowledge exchange and mutual growth, nurturing a stronger and
+              more interconnected business community.
             </p>
-            <p>asdadad</p>
-            <TextToSpeech />
+            <!-- <p>asdadad</p>
+            <TextToSpeech /> -->
           </v-col>
         </v-row>
       </v-col>
@@ -237,7 +256,7 @@ export default {
   opacity: 1;
   letter-spacing: 0px;
   margin-left: 15%;
-  margin-top: 20%;
+  margin-top: 10%;
   font-weight: bold;
   font-family: "Barlow", sans-serif;
   font-style: normal;
@@ -248,7 +267,7 @@ export default {
   opacity: 1;
   letter-spacing: 0px;
   margin-left: 15%;
-  margin-top: 35%;
+  margin-top: 20%;
   font-weight: bold;
   font-family: "Barlow", sans-serif;
   font-style: normal;
